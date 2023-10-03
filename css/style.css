@@ -1,0 +1,55 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.navbar h1 {
+  margin: 0 5rem;
+}
+
+.logo-description {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.logo-description .description {
+  position: absolute;
+  text-align: center;
+  flex-direction: column;
+  width: 30vw;
+}
+.logo-description .description h1 {
+  font-size: 8rem;
+  margin: 0;
+}
+.logo-description .center-logo {
+  position: relative;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  margin-right: 6rem;
+}
+.logo-description .center-logo img {
+  height: 75vh;
+}
+
+.images {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+.images img {
+  margin: 1rem;
+  height: 90vh;
+}/*# sourceMappingURL=style.css.map */

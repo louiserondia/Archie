@@ -1,0 +1,65 @@
+* {
+
+}
+
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 0.1rem solid rgba($color: black, $alpha: 0.1);
+	background-color: rgba($color: black, $alpha: 0.05);
+	h1 {
+		margin: 0 5rem;
+		// background-color: red;
+	}
+}
+
+.logo-description {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	.description {
+		position: absolute;
+		text-align: center;
+		flex-direction: column;
+		h1 {
+			font-size: 8rem;
+			margin: 0;
+		}
+		width: 30vw;
+	}
+	.center-logo {
+		position: relative;
+		z-index: -1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 5rem;
+		margin-right: 6rem;
+		img {
+			//faire une transition quand on arrive sur le site c'est à 100 et puis ça devient un peu - 
+			//et on voit les differents morceaux du site apparaitre par ex ou la description du site
+			// filter: opacity(70%);
+			height: 75vh;
+			
+		}
+	}
+}
+
+.images {
+	display: flex;
+	overflow: hidden;
+	justify-content: center;
+	img {
+		margin: 1rem;
+		height: 90vh;
+	}
+}
