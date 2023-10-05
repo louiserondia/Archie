@@ -1,24 +1,83 @@
-* {
-
+body,
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	cursor: url("../static/img/carre.png"), wait;
 }
 
+// ---------------------
+//  	   FONTS
+// ---------------------
+
+@font-face {
+	font-family: "YoungSerif-Regular";
+	src:
+		url("../static/font/YoungSerif-Regular.woff2") format("woff2"),
+		url("../static/font/YoungSerif-Regular.ttf") format("ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato-Regular";
+	src:
+		url("../static/font/Lato/Lato-Regular.woff2") format("woff2"),
+		url("../static/font/Lato/Lato-Regular.ttf") format("ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Lato-Light";
+	src:
+	url("../static/font/Lato/Lato-Light.woff2") format("woff2"),
+	url("../static/font/Lato/Lato-Light.ttf") format("ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+// ---------------------
+//  	  NAVBAR
+// ---------------------
 
 .navbar {
 	position: fixed;
-	top: 0;
+	top: -100px;
 	left: 0;
-	height: 3rem;
+	height: 3.5rem;
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	border-bottom: 0.1rem solid rgba($color: black, $alpha: 0.1);
-	background-color: rgba($color: black, $alpha: 0.05);
+	transition: top 0.3s ease-in-out;
+	background-color: rgba($color: white, $alpha: 0.9);
+	border-bottom: 0.1rem solid  rgb(196, 22, 22);
+	// border-bottom: 0.1rem solid  rgb(14, 63, 227); // bleu foncé
+	// background-color: rgba(255, 226, 224, 0.7); //beige
+	// background-color: rgba(195, 230, 203, 0.8); // vert clair
+	z-index: +2;
 	h1 {
 		margin: 0 5rem;
-		// background-color: red;
 	}
 }
+
+h2 {
+	font-family: "Lato-Light";
+}
+
+h1 {
+	font-family: "YoungSerif-Regular";
+	letter-spacing: 0.1rem;
+}
+
+.title {
+	font-family: "YoungSerif-Regular";
+	letter-spacing: 0.7rem;
+}
+
+// ---------------------
+// LOGO AND DESCRIPTION
+// ---------------------
 
 .logo-description {
 	position: relative;
@@ -30,29 +89,40 @@
 		position: absolute;
 		text-align: center;
 		flex-direction: column;
-		h1 {
-			font-size: 8rem;
+		width: fit-content;
+		.title {
+			opacity: 0;
+			font-size: 7rem;
 			margin: 0;
+			transition: opacity 0.5s ease-in-out;
 		}
-		width: 30vw;
+		#text {
+			opacity: 0;
+			width: 30rem;
+			margin: 0;
+			font-family: "Lato-Light";
+			transition: opacity 0.5s ease-in-out;
+		}
 	}
 	.center-logo {
+		img {
+			height: 0;
+		}
+	}
+	.canvas- {
 		position: relative;
-		z-index: -1;
+		height: 75vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 5rem;
 		margin-right: 6rem;
-		img {
-			//faire une transition quand on arrive sur le site c'est à 100 et puis ça devient un peu - 
-			//et on voit les differents morceaux du site apparaitre par ex ou la description du site
-			// filter: opacity(70%);
-			height: 75vh;
-			
-		}
 	}
 }
+
+// ---------------------
+// 		   IMAGES
+// ---------------------
 
 .images {
 	display: flex;
