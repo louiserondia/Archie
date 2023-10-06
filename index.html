@@ -6,13 +6,17 @@
 	<title>Archie</title>
 </head>
 
-<body>
+<body id="body">
 	<div class="navbar" id="navbar">
 		<h2>Contact</h2>
 		<h2>Catering</h2>
-		<h1>Archie</h1>
+		<a href="#body">
+			<h1>Archie</h1>
+		</a>
 		<h2>Horaires</h2>
-		<h2>Instagram</h2>
+		<a target="_blank" href="https://www.instagram.com/archie_brussels/">
+			<h2>Instagram</h2>
+		</a>
 	</div>
 	<div class="logo-description">
 		<div class="center-logo" id="center-logo">
@@ -23,10 +27,42 @@
 			<h1 class="title" id="title">Archie</h1>
 			<div id="text">
 				<h3>Nous sommes un restaurant végétarien</h3>
-				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et
+					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip
 					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</h3>
 			</div>
+		</div>
+	</div>
+
+	<button class="menu" onclick="toggleDropdownMenu()">
+		<img id="menu-lines" src="static/img/menu1.png" alt="menu" />
+		<img id="menu-cross" src="static/img/cross.png" alt="menu" />
+	</button>
+
+	<div class="menu-content" id="menu-content">
+		<div>
+			<a href="#">
+				<h2>
+					HORAIRES
+				</h2>
+			</a>
+			<a href="#">
+				<h2>
+					CONTACT
+				</h2>
+			</a>
+			<a href="#">
+				<h2>
+					CATERING
+				</h2>
+			</a>
+			<a href="#">
+				<h2>
+					INSTAGRAM
+				</h2>
+			</a>
 		</div>
 	</div>
 

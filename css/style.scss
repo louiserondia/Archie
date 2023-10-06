@@ -1,9 +1,18 @@
+// ---------------------
+//  	  GLOBAL
+// ---------------------
+
 body,
 html {
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	cursor: url("../static/img/carre.png"), wait;
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }
 
 // ---------------------
@@ -30,8 +39,8 @@ html {
 @font-face {
 	font-family: "Lato-Light";
 	src:
-	url("../static/font/Lato/Lato-Light.woff2") format("woff2"),
-	url("../static/font/Lato/Lato-Light.ttf") format("ttf");
+		url("../static/font/Lato/Lato-Light.woff2") format("woff2"),
+		url("../static/font/Lato/Lato-Light.ttf") format("ttf");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -51,7 +60,7 @@ html {
 	align-items: center;
 	transition: top 0.3s ease-in-out;
 	background-color: rgba($color: white, $alpha: 0.9);
-	border-bottom: 0.1rem solid  rgb(196, 22, 22);
+	border-bottom: 0.1rem solid rgb(197, 22, 22);
 	// border-bottom: 0.1rem solid  rgb(14, 63, 227); // bleu foncé
 	// background-color: rgba(255, 226, 224, 0.7); //beige
 	// background-color: rgba(195, 230, 203, 0.8); // vert clair
@@ -119,6 +128,73 @@ h1 {
 		margin-right: 6rem;
 	}
 }
+
+// ---------------------
+// 	  MENU DEROULANT
+// ---------------------
+
+.menu {
+	//essayer de mettre en sticky et ne pas avoir la navbar en haut alors
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	border: none;
+	background-color: inherit;
+	padding: 0;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+		height: 2rem;
+		width: auto;
+	}
+	#menu-cross {
+		display: none;
+		z-index: +1;
+	}
+	#menu-lines {
+		z-index: +1;
+		display: block;
+	}
+}
+
+.menu-content {
+	background-color: rgba(231, 72, 43, 0.7);
+	position: absolute;
+	top: 0;
+	left: -500px;
+	flex-direction: column;
+	width: 35vw;
+	max-width: 400px;
+	height: 250vh;
+	transition: left 0.3s ease-in-out;
+	div {
+		margin: 6rem 0 0 2rem;
+		h2 {
+			font-family: 'Lato-Regular';
+			font-size: x-large;
+			padding: 1rem 0;
+			margin: 0;
+		}
+	}
+}
+
+.menu-content div a {
+	color: black; /* Couleur de texte par défaut */
+	transition: color 0.3s ease-in-out;
+  }
+  
+  .menu-content div a:hover {
+	color: white; /* Couleur de texte au survol */
+  }
+
+  .menu-content div:not(:hover) a {
+	color: black;  /* Couleur du texte lorsque rien n'est survolé */
+  }
+
+// p-e changer les couleurs pour avoir que 
+// tous deviennent une couleur a part celui qui est selectionné
 
 // ---------------------
 // 		   IMAGES
