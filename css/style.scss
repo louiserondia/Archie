@@ -15,6 +15,15 @@ a {
 	color: black;
 }
 
+h2, h3 {
+	font-family: "Lato-Light";
+}
+
+h1 {
+	font-family: "YoungSerif-Regular";
+	letter-spacing: 0.1rem;
+}
+
 // ---------------------
 //  	   FONTS
 // ---------------------
@@ -68,15 +77,6 @@ a {
 	h1 {
 		margin: 0 5rem;
 	}
-}
-
-h2 {
-	font-family: "Lato-Light";
-}
-
-h1 {
-	font-family: "YoungSerif-Regular";
-	letter-spacing: 0.1rem;
 }
 
 .title {
@@ -208,4 +208,36 @@ h1 {
 		margin: 1rem;
 		height: 90vh;
 	}
+}
+
+// ---------------------
+// 		  HORAIRES
+// ---------------------
+
+.schedule {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40%;
+	max-width: 400px;
+	margin: 2rem auto;
+	padding: 2rem;
+	border: 0.1rem solid black;
+	h3 {
+		margin: 0;
+	}
+	.calendar {
+		width: 10rem;
+		height: auto;
+	}
+}
+
+
+// ---------------------
+// 		WHITE BOX
+// ---------------------
+
+.box {
+	width: 1rem;
+	height:5rem;
 }

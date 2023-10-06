@@ -12,6 +12,15 @@ a {
   color: black;
 }
 
+h2, h3 {
+  font-family: "Lato-Light";
+}
+
+h1 {
+  font-family: "YoungSerif-Regular";
+  letter-spacing: 0.1rem;
+}
+
 @font-face {
   font-family: "YoungSerif-Regular";
   src: url("../static/font/YoungSerif-Regular.woff2") format("woff2"), url("../static/font/YoungSerif-Regular.ttf") format("ttf");
@@ -46,15 +55,6 @@ a {
 }
 .navbar h1 {
   margin: 0 5rem;
-}
-
-h2 {
-  font-family: "Lato-Light";
-}
-
-h1 {
-  font-family: "YoungSerif-Regular";
-  letter-spacing: 0.1rem;
 }
 
 .title {
@@ -169,4 +169,27 @@ h1 {
 .images img {
   margin: 1rem;
   height: 90vh;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 0.1rem solid black;
+}
+.schedule h3 {
+  margin: 0;
+}
+.schedule .calendar {
+  width: 10rem;
+  height: auto;
+}
+
+.box {
+  width: 1rem;
+  height: 5rem;
 }/*# sourceMappingURL=style.css.map */
