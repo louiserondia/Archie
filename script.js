@@ -77,3 +77,25 @@ function toggleDropdownMenu() {
 	menuCross.style.display =
 		(menuCross.style.display === 'block') ? 'none' : 'block';
 }
+
+// Carousel images
+// (on cache l'ancienne image et on affiche la suivante)
+
+let carousel = ['carousel-1', 'carousel-2', 'carousel-3'];
+let carouselIndex = 0;
+let arrowLeft = document.getElementById('arrow-left');
+let arrowRight = document.getElementById('arrow-right');
+
+arrowLeft.addEventListener('click', () => { 
+	document.getElementById(carousel[carouselIndex]).style.display = 'none';
+	carouselIndex = (carouselIndex === 0) ? carousel.length - 1 : carouselIndex - 1;
+	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
+});
+
+arrowRight.addEventListener('click', () => { 
+	document.getElementById(carousel[carouselIndex]).style.display = 'none';
+	carouselIndex = (carouselIndex === carousel.length - 1) ? 0 : carouselIndex + 1;
+	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
+});
+
+

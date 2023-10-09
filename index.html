@@ -8,16 +8,16 @@
 
 <body id="body">
 	<div class="navbar" id="navbar">
-		<a href="#contact">
+		<a href="#contact-anchor">
 			<h2>Contact</h2>
 		</a>
-		<a href="#catering">
+		<a href="#catering-anchor">
 			<h2>Catering</h2>
 		</a>
 		<a href="#body">
 			<h1>Archie</h1>
 		</a>
-		<a href="#schedule">
+		<a href="#schedule-anchor">
 			<h2>Horaires</h2>
 		</a>
 		<a target="_blank" href="https://www.instagram.com/archie_brussels/">
@@ -41,47 +41,62 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<button class="menu" onclick="toggleDropdownMenu()">
-		<img id="menu-lines" src="static/img/menu1.png" alt="menu" />
-		<img id="menu-cross" src="static/img/cross.png" alt="menu" />
+		<img id="menu-lines" src="static/img/menu1.png" alt="menu" draggable="false"/>
+		<img id="menu-cross" src="static/img/cross.png" alt="menu" draggable="false"/>
 	</button>
-
+	
 	<div class="menu-content" id="menu-content">
 		<div>
-			<a href="#schedule">
+			<a href="#schedule-anchor">
 				<h2>
 					HORAIRES
 				</h2>
 			</a>
-			<a href="#contact">
+			<a href="#contact-anchor">
 				<h2>
 					CONTACT
 				</h2>
 			</a>
-			<a href="#">
+			<a href="#catering-anchor">
 				<h2>
 					CATERING
 				</h2>
 			</a>
-			<a href="#">
+			<a target="_blank" href="https://www.instagram.com/archie_brussels/">
 				<h2>
 					INSTAGRAM
 				</h2>
 			</a>
 		</div>
 	</div>
-
+	
 	<div class="images">
 		<img class="ig" src="static/img/1.PNG" alt="1" />
 		<img src="static/img/2.PNG" alt="2" />
 	</div>
-
+	
 	<div class="schedule" id="schedule">
 		<h3>Le restaurant est ouvert</h3>
 		<h2>du LUNDI au SAMEDI</h2>
 		<h2>de 9h à 17h</h2>
+		<span class="anchor" id="schedule-anchor">
 	</div>
+	
+	<div class="carousel">
+		<button class="arrow">
+			<img src="static/img/arrow.png" id="arrow-left" alt="arrow-left" draggable="false"/>
+		</button>
+		<div class="carousel-imgs">
+			<img class="carousel-img" id="carousel-1" src="static/img/3.PNG" alt="carousel-1" />
+			<img class="carousel-img" id="carousel-2" src="static/img/4.PNG" alt="carousel-2" />
+				<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
+			</div>
+			<button class="arrow">
+				<img src="static/img/arrow.png" id="arrow-right" alt="arrow-right" draggable="false"/>
+			</button>
+		</div>
 
 	<div class="schedule" id="contact">
 		<h3>Contactez-nous pour un évènement,</h3>
@@ -89,11 +104,14 @@
 		<h2>par mail</h2>
 		<h2>sur Instagram</h2>
 		<h2>par téléphone</h2>
+		<span class="anchor" id="contact-anchor">
 	</div>
 
 	<div class="schedule" id="catering">
-		<h3>Envoyez-nous par mail votre évènement, >la date et toutes les infos nécessaires pour un catering, nous vous recontacterons !</h3>
-		<img src="static/img/calendar.jpg" alt="calendar" class="calendar"/>
+		<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
+			Nous vous recontacterons !</h3>
+		<img src="static/img/calendar.jpg" alt="calendar" class="calendar" />
+		<span class="anchor" id="catering-anchor">
 	</div>
 
 

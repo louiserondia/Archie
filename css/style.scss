@@ -4,9 +4,8 @@
 
 body,
 html {
-	height: 100%;
-	width: 100%;
 	margin: 0;
+	padding: 0;
 	cursor: url("../static/img/carre.png"), wait;
 }
 
@@ -15,7 +14,8 @@ a {
 	color: black;
 }
 
-h2, h3 {
+h2,
+h3 {
 	font-family: "Lato-Light";
 }
 
@@ -89,11 +89,12 @@ h1 {
 // ---------------------
 
 .logo-description {
-	position: relative;
+	width: clamp(400px, 90%, 600px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	margin: 0 auto;
+
 	.description {
 		position: absolute;
 		text-align: center;
@@ -118,14 +119,13 @@ h1 {
 			height: 0;
 		}
 	}
-	.canvas- {
+	.canvas {
 		position: relative;
-		height: 75vh;
+		// width: clamp(400px, 90vw, 600px);
+		margin-top: 4rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: 5rem;
-		margin-right: 6rem;
 	}
 }
 
@@ -172,7 +172,7 @@ h1 {
 	div {
 		margin: 6rem 0 0 2rem;
 		h2 {
-			font-family: 'Lato-Regular';
+			font-family: "Lato-Regular";
 			font-size: x-large;
 			padding: 1rem 0;
 			margin: 0;
@@ -183,17 +183,17 @@ h1 {
 .menu-content div a {
 	color: black; /* Couleur de texte par défaut */
 	transition: color 0.3s ease-in-out;
-  }
-  
-  .menu-content div a:hover {
+}
+
+.menu-content div a:hover {
 	color: white; /* Couleur de texte au survol */
-  }
+}
 
-  .menu-content div:not(:hover) a {
-	color: black;  /* Couleur du texte lorsque rien n'est survolé */
-  }
+.menu-content div:not(:hover) a {
+	color: black; /* Couleur du texte lorsque rien n'est survolé */
+}
 
-// p-e changer les couleurs pour avoir que 
+// p-e changer les couleurs pour avoir que
 // tous deviennent une couleur a part celui qui est selectionné
 
 // ---------------------
@@ -201,7 +201,7 @@ h1 {
 // ---------------------
 
 .images {
-	display: flex;
+	display: none;
 	overflow: hidden;
 	justify-content: center;
 	img {
@@ -218,8 +218,7 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 40%;
-	max-width: 400px;
+	width: clamp(400px, 95vw, calc(600px - 2rem));
 	margin: 2rem auto;
 	padding: 2rem;
 	border: 0.1rem solid black;
@@ -227,11 +226,52 @@ h1 {
 		margin: 0;
 	}
 	.calendar {
-		width: 10rem;
-		height: auto;
+		width: 50%;
 	}
 }
 
+.anchor {
+	position: absolute;
+	transform: translateY(-40vh);
+}
+
+// ---------------------
+// 		 CAROUSEL
+// ---------------------
+
+.carousel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	margin: 3rem 0;
+	.carousel-imgs {
+		display: flex;
+		justify-content: center;
+		.carousel-img {
+			width: clamp(200px, 90%, 800px);
+			display: none;
+		}
+		#carousel-1 {
+			display: inline;
+		}
+	}
+	.arrow {
+		background-color: inherit;
+		border: none;
+		margin: 0 0.5rem;
+		img {
+			height: 3rem;
+		}
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	#arrow-left {
+		transform: scaleX(-1);
+	}
+}
 
 // ---------------------
 // 		WHITE BOX
@@ -239,5 +279,5 @@ h1 {
 
 .box {
 	width: 1rem;
-	height:5rem;
+	height: 15rem;
 }
