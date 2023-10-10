@@ -63,7 +63,7 @@ h1 {
 }
 
 .logo-description {
-  width: clamp(400px, 90%, 600px);
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,8 +73,6 @@ h1 {
   position: absolute;
   text-align: center;
   flex-direction: column;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .logo-description .description .title {
   opacity: 0;
@@ -84,22 +82,26 @@ h1 {
 }
 .logo-description .description #text {
   opacity: 0;
-  width: 30rem;
   margin: 0;
   font-family: "Lato-Light";
   transition: opacity 0.5s ease-in-out;
 }
-.logo-description .center-logo img {
+.logo-description .canvas-img {
+  height: clamp(300px, 90%, 90%);
+  display: flex;
+}
+.logo-description .canvas-img img {
   height: 0;
 }
-.logo-description .canvas {
-  position: relative;
+.logo-description .canvas-img .canvas {
   margin-top: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
+@media (max-width: 600px) {
+  .logo-description .description .title {
+    font-family: "Courier New", Courier, monospace;
+  }
+}
 .menu {
   position: absolute;
   top: 2rem;
