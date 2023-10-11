@@ -4,10 +4,11 @@
 <head>
 	<link rel="stylesheet" href="css/style.css">
 	<title>Archie</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body id="body">
-	<div class="navbar" id="navbar">
+	<!-- <div class="navbar" id="navbar">
 		<a href="#contact-anchor">
 			<h2>Contact</h2>
 		</a>
@@ -23,30 +24,8 @@
 		<a target="_blank" href="https://www.instagram.com/archie_brussels/">
 			<h2>Instagram</h2>
 		</a>
-	</div>
-	<div class="logo-description">
-		<div class="canvas-img">
-				<img src="static/img/logo.PNG" alt="logo" id="logo" />
-			<canvas class="canvas" id="canvas"></canvas>
-		</div>
-		<div class="description" id="description">
-			<h1 class="title" id="title">Archie</h1>
-			<div id="text">
-				<h3>Nous sommes un restaurant végétarien</h3>
-				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et
-					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip
-					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</h3>
-			</div>
-		</div>
-	</div>
-	
-	<button class="menu" onclick="toggleDropdownMenu()">
-		<img id="menu-lines" src="static/img/menu1.png" alt="menu" draggable="false"/>
-		<img id="menu-cross" src="static/img/cross.png" alt="menu" draggable="false"/>
-	</button>
-	
+	</div> -->
+
 	<div class="menu-content" id="menu-content">
 		<div>
 			<a href="#schedule-anchor">
@@ -72,16 +51,42 @@
 		</div>
 	</div>
 	
+	<button class="menu" onclick="toggleDropdownMenu()">
+		<img id="menu-lines" src="static/img/menu1.png" alt="menu" draggable="false"/>
+		<img id="menu-cross" src="static/img/cross.png" alt="menu" draggable="false"/>
+	</button>
+	
+	<div class="logo-description">
+		<div class="canvas-img">
+			<img src="static/img/logo.PNG" alt="logo" id="logo" />
+			<canvas class="canvas" id="canvas"></canvas>
+		</div>
+		<div class="description" id="description">
+			<h1 class="title" id="title">Archie</h1>
+			<div id="text">
+				<h3>Nous sommes un restaurant végétarien</h3>
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et
+					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip
+					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</h3>
+			</div>
+		</div>
+	</div>
+	
 	<div class="images">
 		<img class="ig" src="static/img/1.PNG" alt="1" />
 		<img src="static/img/2.PNG" alt="2" />
 	</div>
 	
 	<div class="schedule" id="schedule">
-		<h3>Le restaurant est ouvert</h3>
-		<h2>du LUNDI au SAMEDI</h2>
-		<h2>de 9h à 17h</h2>
-		<span class="anchor" id="schedule-anchor">
+		<div>
+
+			<h3>Le restaurant est ouvert</h3>
+			<h2>du LUNDI au SAMEDI</h2>
+			<h2>de 9h à 17h</h2>
+			<span class="anchor" id="schedule-anchor">
+		</div>
 	</div>
 	
 	<div class="carousel">
@@ -99,19 +104,25 @@
 		</div>
 
 	<div class="schedule" id="contact">
-		<h3>Contactez-nous pour un évènement,</h3>
-		<h3>une réservation ou une question</h3>
-		<h2>par mail</h2>
-		<h2>sur Instagram</h2>
-		<h2>par téléphone</h2>
-		<span class="anchor" id="contact-anchor">
+		<div>
+
+			<h3>Contactez-nous pour un évènement,</h3>
+			<h3>une réservation ou une question</h3>
+			<h2>par mail</h2>
+			<h2>sur Instagram</h2>
+			<h2>par téléphone</h2>
+			<span class="anchor" id="contact-anchor">
+		</div>
 	</div>
 
 	<div class="schedule" id="catering">
-		<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
-			Nous vous recontacterons !</h3>
-		<img src="static/img/calendar.jpg" alt="calendar" class="calendar" />
-		<span class="anchor" id="catering-anchor">
+		<div>
+
+			<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
+				Nous vous recontacterons !</h3>
+				<img src="static/img/calendar.jpg" alt="calendar" class="calendar" />
+				<span class="anchor" id="catering-anchor">
+		</div>
 	</div>
 
 

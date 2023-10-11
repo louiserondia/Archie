@@ -69,11 +69,10 @@ window.onscroll = function () {
 // Ouvre et ferme le menu déroulant des options quand on clique sur les trois petites lignes
 
 function toggleDropdownMenu() {
-
 	menuContent.style.left =
 		(menuContent.style.left === '0px') ? '-500px' : '0px';
 	menuLines.style.display =
-		(menuLines.style.display === 'none') ? 'block' : 'none';
+		(menuLines.style.display === 'none') ? 'flex' : 'none';
 	menuCross.style.display =
 		(menuCross.style.display === 'block') ? 'none' : 'block';
 }
