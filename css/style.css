@@ -5,21 +5,24 @@ html {
   padding: 0;
   cursor: url("../static/img/carre.png"), wait;
   scroll-behavior: smooth;
+  background-color: #dbe3e1;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #00333b;
 }
 
 h2,
 h3 {
-  font-family: "Lato-Light";
+  font-family: "futura-pt-medium";
+  color: #00333b;
 }
 
 h1 {
-  font-family: "YoungSerif-Regular";
+  font-family: "petale-bold";
   letter-spacing: 0.1rem;
+  color: #00333b;
 }
 
 @font-face {
@@ -40,35 +43,23 @@ h1 {
   font-weight: normal;
   font-style: normal;
 }
-.navbar {
-  position: fixed;
-  top: -100px;
-  left: 0;
-  height: 3.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  transition: top 0.3s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-bottom: 0.1rem solid rgb(197, 22, 22);
-  z-index: 2;
+@font-face {
+  font-family: "petale-bold";
+  src: url("../static/font/petale-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
 }
-.navbar h1 {
-  margin: 0 5rem;
+@font-face {
+  font-family: "futura-pt-medium";
+  src: url("../static/font/futura-pt-medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
-
-.title {
-  font-family: "YoungSerif-Regular";
-  letter-spacing: 0.7rem;
-}
-
 .logo-description {
-  height: 85vh;
+  height: 100vh;
   width: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 0 auto;
 }
 .logo-description .description {
@@ -76,40 +67,68 @@ h1 {
   text-align: center;
   justify-content: center;
   flex-direction: column;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo-description .description .title {
   opacity: 0;
   font-size: 7rem;
-  margin: 0;
-  transition: opacity 0.5s ease-in-out;
+  margin: 12rem 0 0 0;
+  transition: opacity 0.75s ease-in-out;
 }
 .logo-description .description #text {
   opacity: 0;
   max-width: 28rem;
   margin: 0 1rem;
   font-family: "Lato-Light";
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  transform: translateY(-8rem);
 }
 .logo-description .canvas-img {
-  height: clamp(300px, 85%, 85%);
   display: flex;
+  height: clamp(300px, 85vh, 85vh);
 }
 .logo-description .canvas-img img {
   height: 0;
 }
 .logo-description .canvas-img .canvas {
   height: 85%;
-  margin-top: 4rem;
+  margin-top: 12vh;
+  transition: height 1s ease-in-out, transform 1s ease-in-out;
 }
 
 @media (max-width: 600px) {
   .logo-description .description .title {
-    font-size: 5rem;
+    font-size: 4rem;
+    margin: 13rem 0 3.5rem 0;
+  }
+  .logo-description .canvas-img {
+    height: clamp(300px, 60%, 60%);
+    margin-top: 0;
+  }
+  #menu-cross {
+    border: 2px solid #dbe3e1;
+  }
+  #menu-lines {
+    border: 2px solid black;
   }
 }
+.arrow-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: none;
+  background-color: #dbe3e1;
+}
+.arrow-bottom .anchor-arrow-bottom #arrow-bottom {
+  height: 6rem;
+  width: 3rem;
+  transform: rotate(90deg);
+}
+
 .menu {
   position: fixed;
   top: 2rem;
@@ -125,14 +144,19 @@ h1 {
   width: auto;
 }
 .menu #menu-cross {
+  background-color: rgba(0, 51, 59, 0.9);
   display: none;
+  padding: 0.2rem 0.4rem;
+  background-color: none;
 }
 .menu #menu-lines {
   display: block;
+  padding: 0.2rem 0.4rem;
+  background-color: transparent;
 }
 
 .menu-content {
-  background-color: rgba(231, 72, 43, 0.7);
+  background-color: rgba(0, 51, 59, 0.9);
   position: fixed;
   top: 0;
   left: -500px;
@@ -153,19 +177,18 @@ h1 {
   margin: 0;
 }
 
-.menu-content div a {
-  color: black;
-  /* Couleur de texte par défaut */
+.menu-content div a h2 {
+  color: #dbe3e1;
   transition: color 0.2s ease-out;
 }
 
-.menu-content div a:hover {
-  color: white;
+.menu-content div a:hover h2 {
+  color: #a73c00;
   /* Couleur de texte au survol */
 }
 
-.menu-content div:not(:hover) a {
-  color: black;
+.menu-content div:not(:hover) a h2 {
+  color: #dbe3e1;
   /* Couleur du texte lorsque rien n'est survolé */
 }
 
@@ -192,7 +215,7 @@ h1 {
   max-width: calc(600px - 2rem);
   margin: 2rem 1rem;
   padding: 2rem;
-  border: 0.1rem solid black;
+  border: 0.1rem solid #00333b;
 }
 .schedule > div h3 {
   margin: 0;
@@ -216,8 +239,8 @@ h1 {
 .carousel .carousel-imgs {
   display: flex;
   justify-content: center;
-  width: clamp(200px, 90vw, 800px);
-  height: clamp(200px, 75vh, 800px);
+  width: clamp(200px, 90vw, 600px + 2rem);
+  height: clamp(300px, 112.5vw, (600px + 2rem) * 1.25);
   overflow: hidden;
 }
 .carousel .carousel-imgs .carousel-img {
@@ -244,6 +267,20 @@ h1 {
 }
 .carousel #arrow-left {
   transform: scaleX(-1);
+}
+@media (max-width: 600px) {
+  .carousel .arrow {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .carousel #arrow-left {
+    left: 0;
+  }
+  .carousel #arrow-right {
+    right: 0;
+  }
 }
 
 .box {

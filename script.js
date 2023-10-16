@@ -2,37 +2,20 @@ const menuContent = document.getElementById('menu-content');
 const menuLines = document.getElementById('menu-lines');
 const menuCross = document.getElementById('menu-cross');
 
-
-//  La navbar ne s'affiche que si on scroll un peu vers le bas,
-//  donc elle est cachée quand on est tout en haut du site
-//  + on cache le menu déroulant si on scrolle vers le bas 
-
-window.onscroll = function () {
-	let currentScrollPos = window.scrollY;
-
-	if (currentScrollPos > window.screenY + window.innerHeight / 3) {
-		document.getElementById('navbar').style.top = '0';
-		menuContent.style.left = '-500px';
-		menuLines.style.display = 'block';
-		menuCross.style.display = 'none';
-	} else {
-		document.getElementById('navbar').style.top = '-100px';
-	}
-};
-
-
 // Quand on hover la première fois le logo, le texte descriptif apparaît
 // Apparaît aussi après 2 secondes d'inactivité
 
 {
 	timeoutId = setTimeout(() => {
+		canvas.style.height = 'clamp(150px, 30%, 30%)';
+		canvas.style.transform = 'rotate(-35deg)';
 		title.style.opacity = '1';
 		setTimeout(() => {
 			text.style.opacity = '1';
 		}, 200);
 	}, 2000); // Affiche le texte après 2 secondes d'inactivité
 
-	const image = document.getElementById('logo');
+	const logoRadis = document.getElementById('logo');
 	const canvas = document.getElementById('canvas');
 	const title = document.getElementById('title');
 	const text = document.getElementById('text');
@@ -40,7 +23,7 @@ window.onscroll = function () {
 
 	// Load the image
 	const img = new Image();
-	img.src = image.src;
+	img.src = logoRadis.src;
 	img.onload = () => {
 		canvas.width = img.width;
 		canvas.height = img.height;
@@ -48,6 +31,7 @@ window.onscroll = function () {
 	};
 
 	document.addEventListener('mousemove', (e) => { handleMouseMove(e); });
+
 
 	function handleMouseMove(event) {
 		const rect = canvas.getBoundingClientRect();
@@ -58,6 +42,8 @@ window.onscroll = function () {
 		const isTransparent = pixelData[3] === 0
 
 		if (!isTransparent) {
+			canvas.style.height = 'clamp(150px, 30%, 30%)';
+			canvas.style.transform = 'rotate(-35deg)';
 			title.style.opacity = '1';
 			setTimeout(() => {
 				text.style.opacity = '1';
@@ -76,6 +62,8 @@ function toggleDropdownMenu() {
 	menuCross.style.display =
 		(menuCross.style.display === 'block') ? 'none' : 'block';
 }
+
+menuContent.addEventListener('click', () => (toggleDropdownMenu()));
 
 // Carousel images
 // (on cache l'ancienne image et on affiche la suivante)
