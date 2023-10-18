@@ -14,7 +14,7 @@
 	<meta property="og:title" content="Titre de la page">
 	<meta property="og:description" content="Description de la page">
 	<meta property="og:url" content="URL_de_la_page">
-	<meta property="og:image" content="URL_de_l'image">	
+	<meta property="og:image" content="URL_de_l'image">
 </head>
 
 <body id="body">
@@ -42,12 +42,12 @@
 			</a>
 		</div>
 	</div>
-	
+
 	<button class="menu" onclick="toggleDropdownMenu()">
-		<img id="menu-lines" src="static/img/menu1.png" alt="menu" draggable="false"/>
-		<img id="menu-cross" src="static/img/cross.png" alt="menu" draggable="false"/>
+		<img id="menu-lines" src="static/img/menu1.png" alt="menu" draggable="false" />
+		<img id="menu-cross" src="static/img/cross1.png" alt="menu" draggable="false" />
 	</button>
-	
+
 	<div class="logo-description">
 		<div class="canvas-img">
 			<img src="static/charte/radis.png" alt="logo" id="logo" />
@@ -56,19 +56,18 @@
 		<div class="description" id="description">
 			<h1 class="title" id="title">Archie</h1>
 			<div id="text">
-				<h3>Nous sommes un restaurant végétarien</h3>
-				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et
-					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip
-					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</h3>
+				<h3>Nous sommes un restaurant végétarien.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum</h3>
 			</div>
 		</div>
 	</div>
-	
+
 	<button class="arrow-bottom">
 		<a class="anchor-arrow-bottom" href="#schedule-anchor">
-			<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false"/>
+			<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false" />
 		</a>
 	</button>
 
@@ -76,7 +75,7 @@
 		<img class="ig" src="static/img/1.PNG" alt="1" />
 		<img src="static/img/2.PNG" alt="2" />
 	</div>
-	
+
 	<div class="schedule" id="schedule">
 		<div>
 
@@ -86,29 +85,38 @@
 			<span class="anchor" id="schedule-anchor">
 		</div>
 	</div>
-	
+
 	<div class="carousel">
 		<button class="arrow">
-			<img src="static/img/arrow.png" id="arrow-left" alt="arrow-left" draggable="false"/>
+			<img src="static/img/arrow.png" id="arrow-left" alt="arrow-left" draggable="false" />
 		</button>
 		<div class="carousel-imgs">
 			<img class="carousel-img" id="carousel-1" src="static/img/3.PNG" alt="carousel-1" />
 			<img class="carousel-img" id="carousel-2" src="static/img/4.PNG" alt="carousel-2" />
-				<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
-			</div>
-			<button class="arrow">
-				<img src="static/img/arrow.png" id="arrow-right" alt="arrow-right" draggable="false"/>
-			</button>
+			<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
 		</div>
+		<button class="arrow">
+			<img src="static/img/arrow.png" id="arrow-right" alt="arrow-right" draggable="false" />
+		</button>
+	</div>
 
 	<div class="schedule" id="contact">
 		<div>
-
 			<h3>Contactez-nous pour un évènement,</h3>
-			<h3>une réservation ou une question</h3>
-			<h2>par mail</h2>
-			<h2>sur Instagram</h2>
-			<h2>par téléphone</h2>
+			<h3>une réservation ou une question !</h3>
+			<div>
+
+				<div class="contact-images">
+					<img src="static/img/email.png"/>
+					<a href="https://www.instagram.com/archie_brussels/"><img src="static/img/instaa.png"/></a>
+					<img src="static/img/phone.png"/>
+				</div>
+				<div class="contact-text">
+					<h2>email@email.com</h2>
+					<h2><a href="https://www.instagram.com/archie_brussels/">@archie_brussels</a></h2>
+					<h2>+32 492/78.96.85</h2>
+				</div>
+			</div>
 			<span class="anchor" id="contact-anchor">
 		</div>
 	</div>
@@ -118,9 +126,19 @@
 
 			<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
 				Nous vous recontacterons !</h3>
-				<img src="static/img/calendar.jpg" alt="calendar" class="calendar" />
-				<span class="anchor" id="catering-anchor">
+			<div class="container">
+				<h2>Formulaire d'envoi de message</h2>
+				<form id="contactForm">
+					<textarea id="message" name="message" rows="5" required></textarea>
+					<button type="submit">Envoyer</button>
+				</form>
+			</div>
+			<span class="anchor" id="catering-anchor">
 		</div>
+	</div>
+
+	<div class="dessin">
+		<img src="static/img/dessin.png"/>
 	</div>
 
 

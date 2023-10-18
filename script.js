@@ -56,11 +56,11 @@ const menuCross = document.getElementById('menu-cross');
 
 function toggleDropdownMenu() {
 	menuContent.style.left =
-		(menuContent.style.left === '0px') ? '-500px' : '0px';
+	(menuContent.style.left === '0px') ? '-500px' : '0px';
 	menuLines.style.display =
-		(menuLines.style.display === 'none') ? 'flex' : 'none';
+	(menuLines.style.display === 'none') ? 'flex' : 'none';
 	menuCross.style.display =
-		(menuCross.style.display === 'block') ? 'none' : 'block';
+	(menuCross.style.display === 'block') ? 'none' : 'block';
 }
 
 menuContent.addEventListener('click', () => (toggleDropdownMenu()));
@@ -73,16 +73,33 @@ let carouselIndex = 0;
 let arrowLeft = document.getElementById('arrow-left');
 let arrowRight = document.getElementById('arrow-right');
 
-arrowLeft.addEventListener('click', () => { 
+arrowLeft.addEventListener('click', () => {
 	document.getElementById(carousel[carouselIndex]).style.display = 'none';
 	carouselIndex = (carouselIndex === 0) ? carousel.length - 1 : carouselIndex - 1;
 	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
 });
 
-arrowRight.addEventListener('click', () => { 
+arrowRight.addEventListener('click', () => {
 	document.getElementById(carousel[carouselIndex]).style.display = 'none';
 	carouselIndex = (carouselIndex === carousel.length - 1) ? 0 : carouselIndex + 1;
 	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
 });
 
+
+// Envoi d'un email avec le formulaire pour le catering
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+	event.preventDefault(); // Prevents the default form submission behavior  
+	const message = document.getElementById('message').value;
+  
+	sendEmail(message);
+	document.getElementById('message').value = '';
+  });
+  
+  function sendEmail(message) {
+ 	// You'll need to handle sending an email using your own backend or a third-party service like EmailJS or similar.
+	console.log('Email sent with message:', message);
+  }
+
+  
 

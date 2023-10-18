@@ -8,7 +8,7 @@ body,
 html {
 	margin: 0;
 	padding: 0;
-	cursor: url("../static/img/carre.png"), wait;
+	cursor: url("../static/charte/mouse1.png"), wait;
 	scroll-behavior: smooth;
 	background-color: $light;
 }
@@ -18,16 +18,24 @@ a {
 	color: $blue;
 }
 
-h2,
-h3 {
-	font-family: "futura-pt-medium";
-	color: $blue;
-}
-
 h1 {
 	font-family: "petale-bold";
 	letter-spacing: 0.1rem;
 	color: $blue;
+}
+
+h2 {
+	font-family: "futura-medium";
+	color: $blue;
+}
+
+h3 {
+	font-family: "futura-light";
+	color: $blue;
+}
+
+button:hover {
+	cursor:url('/static/charte/mouse-light.png'), pointer;
 }
 
 // ---------------------
@@ -69,8 +77,15 @@ h1 {
 }
 
 @font-face {
-	font-family: "futura-pt-medium";
-	src: url("../static/font/futura-pt-medium.woff2") format("woff2");
+	font-family: "futura-medium";
+	src: url("../static/font/futura-medium.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "futura-light";
+	src: url("../static/font/futura-light.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -112,7 +127,7 @@ h1 {
 
 	.canvas-img {
 		display: flex;
-		height: clamp(300px, 85vh, 85vh);
+		height: clamp(300px, 75vh, 75vh);
 		img {
 			height: 0;
 		}
@@ -148,11 +163,12 @@ h1 {
 	}
 	#menu-lines {
 		border: 2px solid black;
+		background-color: $light;
 	}
 }
 
 // ---------------------
-// 	  MENU DEROULANT
+// 		FLECHE BAS
 // ---------------------
 
 .arrow-bottom {
@@ -180,21 +196,16 @@ h1 {
 	top: 2rem;
 	left: 2rem;
 	border: none;
-	background-color: inherit;
+	background-color: transparent;
 	padding: 0;
 	z-index: 2000;
-	
 	img {
-		// position: fixed;
-		// top: 2rem;
-		// left: 2rem;
 		cursor: pointer;
 		height: 2rem;
 		width: auto;
 	}
 	
 	#menu-cross {
-		background-color: rgba($color: $blue, $alpha: 0.9);
 		display: none;
 		padding: 0.2rem 0.4rem;
 		background-color: none;
@@ -203,7 +214,6 @@ h1 {
 	#menu-lines {
 		display: block;
 		padding: 0.2rem 0.4rem;
-		background-color: transparent;
 	}
 }
 
@@ -283,22 +293,51 @@ h1 {
 		margin: 2rem 1rem;
 		padding: 2rem;
 		border: 0.1rem solid $blue;
-
 		h3 {
 			margin: 0;
-			// width: 50vw;
-		}
-
-		.calendar {
-			width: 50%;
 		}
 	}
 }
 
 .anchor {
 	position: absolute;
-	transform: translateY(-40vh);
+	transform: translateY(-50vh);
 }
+
+// ---------------------
+// 		 CONTACT
+// ---------------------
+
+#contact div {
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		gap: 1rem;
+		margin-top: 0.5rem;
+		.contact-images {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			img {
+				height: 2.3rem;
+			}
+		}
+		.contact-text {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			justify-content: flex-start;
+			h2 {
+				padding-top: 0.3rem;
+				margin: 0 auto 0 0;
+				height: 2rem;
+			}
+		}
+	}
+}
+
 
 // ---------------------
 // 		 CAROUSEL
@@ -368,19 +407,37 @@ h1 {
 }
 
 // ---------------------
+//		 DESSIN
+// ---------------------
+
+.dessin {
+	display: flex;
+	justify-content: center;
+	img {
+		width: 90vw;
+		max-width: 800px;
+	}
+}
+
+// ---------------------
 // 		WHITE BOX
 // ---------------------
 
 .box {
 	width: 1rem;
-	height: 15rem;
+	height: 5rem;
 }
 
 // NOTES
 
-// border autour des trois barres de menu pour le voir quand on est sur petit écran
 // fleches dans les images pour changer quand on est sur tel
 // faire que sur téléphone on doit pas attendre 2 sec et sur ordi oui
 
-// faire monter le logo un peu plus haut (translation)
-// faire descendre le texte
+// remettre tout bien placé sur écran d'accueil
+
+// FICHIERS LEGERS, SITE RAPIDE !
+//réduire taille logo radis ou passer en svg, voir le plus rapide
+
+// CHANGER LES IMG CROIX ET LIGNES EN SPAN
+
+//passer toutes les icones en svg ?
