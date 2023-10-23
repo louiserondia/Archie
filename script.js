@@ -2,7 +2,7 @@ const menuContent = document.getElementById('menu-content');
 const menuLines = document.getElementById('menu-lines');
 const menuCross = document.getElementById('menu-cross');
 
-// Quand on hover la première fois le logo, le texte descriptif apparaît
+// Quand on hover la première   fois le logo, le texte descriptif apparaît
 // Apparaît aussi après 2 secondes d'inactivité
 
 {
@@ -88,18 +88,43 @@ arrowRight.addEventListener('click', () => {
 
 // Envoi d'un email avec le formulaire pour le catering
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-	event.preventDefault(); // Prevents the default form submission behavior  
+// document.getElementById('contactForm').addEventListener('submit', function(event) {
+// 	event.preventDefault(); // Prevents the default form submission behavior  
+// 	const message = document.getElementById('message').value;
+  
+// 	sendEmail(message);
+// 	document.getElementById('message').value = '';
+//   });
+  
+//   function sendEmail(message) {
+//  	// You'll need to handle sending an email using your own backend or a third-party service like EmailJS or similar.
+// 	console.log('Email sent with message:', message);
+//   }
+
+  
+
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+	event.preventDefault(); // Empêche le comportement par défaut du formulaire
+  
 	const message = document.getElementById('message').value;
   
+	// Envoi du message au serveur
 	sendEmail(message);
-	document.getElementById('message').value = '';
   });
   
   function sendEmail(message) {
- 	// You'll need to handle sending an email using your own backend or a third-party service like EmailJS or similar.
-	console.log('Email sent with message:', message);
+	fetch('http://127.0.0.1:5500/envoyer-email', {
+	  method: 'POST',
+	  headers: {
+		'Content-Type': 'application/json'
+	  },
+	  body: JSON.stringify({ message })
+	})
+	.then(response => response.json())
+	.then(data => {
+	  console.log('Réponse du serveur:', data);
+	  alert('Email envoyé avec succès');
+	})
+	.catch(error => console.error('Erreur:', error));
   }
-
   
-

@@ -205,16 +205,6 @@ button:hover {
   /* Couleur du texte lorsque rien n'est survolé */
 }
 
-.images {
-  display: none;
-  overflow: hidden;
-  justify-content: center;
-}
-.images img {
-  margin: 1rem;
-  height: 90vh;
-}
-
 .schedule {
   display: flex;
   justify-content: center;
@@ -225,7 +215,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   width: 90%;
-  max-width: calc(600px - 2rem);
+  max-width: calc(500px - 2rem);
   margin: 2rem 1rem;
   padding: 2rem;
   border: 0.1rem solid #00333b;
@@ -277,8 +267,8 @@ button:hover {
 .carousel .carousel-imgs {
   display: flex;
   justify-content: center;
-  width: clamp(200px, 90vw, 600px + 2rem);
-  height: clamp(300px, 112.5vw, (600px + 2rem) * 1.25);
+  width: clamp(200px, 90vw, 500px + 2rem);
+  height: clamp(300px, 112.5vw, (500px + 2rem) * 1.25);
   overflow: hidden;
 }
 .carousel .carousel-imgs .carousel-img {
@@ -326,8 +316,14 @@ button:hover {
   justify-content: center;
 }
 .dessin img {
-  width: 90vw;
+  height: 75vh;
+  width: auto;
   max-width: 800px;
+}
+
+.terrasse img {
+  height: 70vh;
+  width: auto !important;
 }
 
 .box {

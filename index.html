@@ -20,19 +20,24 @@
 <body id="body">
 	<div class="menu-content" id="menu-content">
 		<div>
-			<a href="#schedule-anchor">
+			<a href="#home-anchor">
 				<h2>
-					HORAIRES
-				</h2>
-			</a>
-			<a href="#contact-anchor">
-				<h2>
-					CONTACT
+					À PROPOS
 				</h2>
 			</a>
 			<a href="#catering-anchor">
 				<h2>
 					CATERING
+				</h2>
+			</a>
+			<a href="#about-us-anchor">
+				<h2>
+					QUI NOUS SOMMES
+				</h2>
+			</a>
+			<a href="#contact-anchor">
+				<h2>
+					CONTACT
 				</h2>
 			</a>
 			<a target="_blank" href="https://www.instagram.com/archie_brussels/">
@@ -63,6 +68,7 @@
 					cillum</h3>
 			</div>
 		</div>
+		<span class="anchor" id="home-anchor">
 	</div>
 
 	<button class="arrow-bottom">
@@ -70,21 +76,26 @@
 			<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false" />
 		</a>
 	</button>
-
-	<div class="images">
-		<img class="ig" src="static/img/1.PNG" alt="1" />
-		<img src="static/img/2.PNG" alt="2" />
+	
+	<div class="dessin terrasse">
+		<img src="static/img/magasin3.png" />
 	</div>
-
-	<div class="schedule" id="schedule">
-		<div>
-
-			<h3>Le restaurant est ouvert</h3>
-			<h2>du LUNDI au SAMEDI</h2>
-			<h2>de 9h à 17h</h2>
-			<span class="anchor" id="schedule-anchor">
+	
+		<div class="schedule" id="catering">
+			<div>
+	
+				<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
+					Nous vous recontacterons !</h3>
+				<div class="container">
+					<h2>Formulaire d'envoi de message</h2>
+					<form id="contactForm">
+						<textarea id="message" name="message" rows="5" required></textarea>
+						<button type="submit">Envoyer</button>
+					</form>
+				</div>
+				<span class="anchor" id="catering-anchor">
+			</div>
 		</div>
-	</div>
 
 	<div class="carousel">
 		<button class="arrow">
@@ -100,6 +111,20 @@
 		</button>
 	</div>
 
+	<div class="dessin" id="about-us-anchor">
+		<img src="static/img/dessin.png" />
+	</div>
+	
+	<div class="schedule" id="schedule">
+		<div>
+
+			<h3>Le restaurant est ouvert</h3>
+			<h2>du LUNDI au SAMEDI</h2>
+			<h2>de 9h à 17h</h2>
+			<span class="anchor" id="schedule-anchor">
+		</div>
+	</div>
+	
 	<div class="schedule" id="contact">
 		<div>
 			<h3>Contactez-nous pour un évènement,</h3>
@@ -107,9 +132,9 @@
 			<div>
 
 				<div class="contact-images">
-					<img src="static/img/email.png"/>
-					<a href="https://www.instagram.com/archie_brussels/"><img src="static/img/instaa.png"/></a>
-					<img src="static/img/phone.png"/>
+					<img src="static/img/email.png" />
+					<a href="https://www.instagram.com/archie_brussels/"><img src="static/img/instaa.png" /></a>
+					<img src="static/img/phone.png" />
 				</div>
 				<div class="contact-text">
 					<h2>email@email.com</h2>
@@ -119,26 +144,6 @@
 			</div>
 			<span class="anchor" id="contact-anchor">
 		</div>
-	</div>
-
-	<div class="schedule" id="catering">
-		<div>
-
-			<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
-				Nous vous recontacterons !</h3>
-			<div class="container">
-				<h2>Formulaire d'envoi de message</h2>
-				<form id="contactForm">
-					<textarea id="message" name="message" rows="5" required></textarea>
-					<button type="submit">Envoyer</button>
-				</form>
-			</div>
-			<span class="anchor" id="catering-anchor">
-		</div>
-	</div>
-
-	<div class="dessin">
-		<img src="static/img/dessin.png"/>
 	</div>
 
 

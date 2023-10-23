@@ -262,21 +262,6 @@ button:hover {
 // tous deviennent une couleur a part celui qui est selectionné
 
 // ---------------------
-// 		   IMAGES
-// ---------------------
-
-.images {
-	display: none;
-	overflow: hidden;
-	justify-content: center;
-
-	img {
-		margin: 1rem;
-		height: 90vh;
-	}
-}
-
-// ---------------------
 // 		  HORAIRES
 // ---------------------
 
@@ -289,7 +274,7 @@ button:hover {
 		justify-content: center;
 		align-items: center;
 		width: 90%;
-		max-width: calc(600px - 2rem);
+		max-width: calc(500px - 2rem);
 		margin: 2rem 1rem;
 		padding: 2rem;
 		border: 0.1rem solid $blue;
@@ -353,8 +338,8 @@ button:hover {
 	.carousel-imgs {
 		display: flex;
 		justify-content: center;
-		width: clamp(200px, 90vw, calc(600px + 2rem));
-		height: clamp(300px, calc(90vw * 1.25), calc((600px + 2rem) * 1.25)); // changer la taille !!!
+		width: clamp(200px, 90vw, calc(500px + 2rem));
+		height: clamp(300px, calc(90vw * 1.25), calc((500px + 2rem) * 1.25)); // changer la taille !!!
 		overflow: hidden;
 
 		.carousel-img {
@@ -414,8 +399,16 @@ button:hover {
 	display: flex;
 	justify-content: center;
 	img {
-		width: 90vw;
+		height: 75vh;
+		width: auto;
 		max-width: 800px;
+	}
+}
+
+.terrasse {
+	img {
+		height: 70vh;
+		width: auto !important;
 	}
 }
 
