@@ -18,6 +18,23 @@
 </head>
 
 <body id="body">
+	<div class="custom-dropdown" id="languageSelector">
+		<button class="language-button" id="languageButton">FR</button>
+		<ul class="dropdown-list" id="dropdownList">
+			<li class="dropdown-value" value="fr">FR</li>
+			<li class="dropdown-value" value="en">EN</li>
+			<li class="dropdown-value" value="nl">NL</li>
+		</ul>
+	</div>
+
+	<!-- <select id="languageSelector">
+		<div class="options-select">
+			<option value="fr">FR</option>
+			<option value="en">EN</option>
+			<option value="nl">NL</option>
+		</div>
+	  </select> -->
+
 	<div class="menu-content" id="menu-content">
 		<div>
 			<a href="#home-anchor">
@@ -61,41 +78,35 @@
 		<div class="description" id="description">
 			<h1 class="title" id="title">Archie</h1>
 			<div id="text">
-				<h3>Nous sommes un restaurant végétarien.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum</h3>
+				<h3 id="homeDescriptionText"></h3>
 			</div>
 		</div>
 		<span class="anchor" id="home-anchor">
+		</div>
+		
+		<button class="arrow-bottom">
+			<a class="anchor-arrow-bottom" href="#catering-anchor">
+				<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false" />
+			</a>
+		</button>
+		
+		<div class="dessin terrasse" id="terrasse-anchor">
+			<img src="static/img/magasin3.png" />
 	</div>
 
-	<button class="arrow-bottom">
-		<a class="anchor-arrow-bottom" href="#schedule-anchor">
-			<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false" />
-		</a>
-	</button>
-	
-	<div class="dessin terrasse">
-		<img src="static/img/magasin3.png" />
-	</div>
-	
-		<div class="schedule" id="catering">
-			<div>
-	
-				<h3>Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering.
-					Nous vous recontacterons !</h3>
-				<div class="container">
-					<h2>Formulaire d'envoi de message</h2>
-					<form id="contactForm">
-						<textarea id="message" name="message" rows="5" required></textarea>
-						<button type="submit">Envoyer</button>
-					</form>
-				</div>
-				<span class="anchor" id="catering-anchor">
+	<div class="schedule" id="catering">
+		<div>
+			<h3 id="cateringText"></h3>
+			<div class="container">
+				<h2>Formulaire d'envoi de message</h2>
+				<form id="contactForm">
+					<textarea id="message" name="message" rows="5" required></textarea>
+					<button type="submit">Envoyer</button>
+				</form>
 			</div>
+			<span class="anchor" id="catering-anchor">
 		</div>
+	</div>
 
 	<div class="carousel">
 		<button class="arrow">
@@ -114,7 +125,7 @@
 	<div class="dessin" id="about-us-anchor">
 		<img src="static/img/dessin.png" />
 	</div>
-	
+
 	<div class="schedule" id="schedule">
 		<div>
 
@@ -124,7 +135,7 @@
 			<span class="anchor" id="schedule-anchor">
 		</div>
 	</div>
-	
+
 	<div class="schedule" id="contact">
 		<div>
 			<h3>Contactez-nous pour un évènement,</h3>

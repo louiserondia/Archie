@@ -35,7 +35,8 @@ h3 {
 }
 
 button:hover {
-	cursor:url('/static/charte/mouse-light.png'), pointer;
+	cursor: pointer;
+	// cursor: url("/static/charte/mouse-light.png"), pointer;
 }
 
 // ---------------------
@@ -135,8 +136,8 @@ button:hover {
 			height: 85%;
 			margin-top: 12vh;
 			transition:
-			height 1s ease-in-out,
-			transform 1s ease-in-out;
+				height 1s ease-in-out,
+				transform 1s ease-in-out;
 		}
 	}
 }
@@ -186,7 +187,6 @@ button:hover {
 	}
 }
 
-
 // ---------------------
 // 	  MENU DEROULANT
 // ---------------------
@@ -204,7 +204,7 @@ button:hover {
 		height: 2rem;
 		width: auto;
 	}
-	
+
 	#menu-cross {
 		display: none;
 		padding: 0.2rem 0.4rem;
@@ -323,7 +323,6 @@ button:hover {
 	}
 }
 
-
 // ---------------------
 // 		 CAROUSEL
 // ---------------------
@@ -379,8 +378,6 @@ button:hover {
 			padding: 0;
 			display: flex;
 			justify-content: space-around;
-			// position: absolute;
-			// top: ;
 		}
 		#arrow-left {
 			left: 0;
@@ -410,6 +407,57 @@ button:hover {
 		height: 70vh;
 		width: auto !important;
 	}
+}
+
+// ---------------------
+// 		  LANGUES
+// ---------------------
+
+.custom-dropdown {
+	width: fit-content;
+    padding: 0.5rem;
+	color: $blue;
+    font-family: "futura-medium";
+	font-size: x-large;
+	display: flex;
+	position: fixed;
+	right: 2rem;
+	top: 2rem;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: +1;
+	button {
+		width: fit-content;
+		border: none;
+		padding: 0;
+		background-color: inherit;
+		color: $blue;
+		font-family: "futura-medium";
+		font-size: x-large;
+	}
+	button:hover {
+		color: $rust;
+	}
+    .dropdown-list {
+		display: none;
+		list-style: none;
+		margin: 0;
+		li {
+			cursor: pointer;
+		}
+    }
+	.active {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+    }
+	.active li:hover {
+		color: $rust;
+	}
+  }
+
+#languageSelector:focus {
+	outline: none;
 }
 
 // ---------------------

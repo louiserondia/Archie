@@ -30,7 +30,7 @@ h3 {
 }
 
 button:hover {
-  cursor: url("/static/charte/mouse-light.png"), pointer;
+  cursor: pointer;
 }
 
 @font-face {
@@ -324,6 +324,55 @@ button:hover {
 .terrasse img {
   height: 70vh;
   width: auto !important;
+}
+
+.custom-dropdown {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  color: #00333b;
+  font-family: "futura-medium";
+  font-size: x-large;
+  display: flex;
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+}
+.custom-dropdown button {
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  padding: 0;
+  background-color: inherit;
+  color: #00333b;
+  font-family: "futura-medium";
+  font-size: x-large;
+}
+.custom-dropdown button:hover {
+  color: #a73c00;
+}
+.custom-dropdown .dropdown-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+}
+.custom-dropdown .dropdown-list li {
+  cursor: pointer;
+}
+.custom-dropdown .active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.custom-dropdown .active li:hover {
+  color: #a73c00;
+}
+
+#languageSelector:focus {
+  outline: none;
 }
 
 .box {

@@ -4,6 +4,8 @@ const menuCross = document.getElementById('menu-cross');
 
 // Quand on hover la première   fois le logo, le texte descriptif apparaît
 // Apparaît aussi après 2 secondes d'inactivité
+//changer sur tel
+//fix petit bug quand l'animatione st en cours automatiquement et qu'on passe dessus
 
 {
 	timeoutId = setTimeout(() => {
@@ -56,11 +58,11 @@ const menuCross = document.getElementById('menu-cross');
 
 function toggleDropdownMenu() {
 	menuContent.style.left =
-	(menuContent.style.left === '0px') ? '-500px' : '0px';
+		(menuContent.style.left === '0px') ? '-500px' : '0px';
 	menuLines.style.display =
-	(menuLines.style.display === 'none') ? 'flex' : 'none';
+		(menuLines.style.display === 'none') ? 'flex' : 'none';
 	menuCross.style.display =
-	(menuCross.style.display === 'block') ? 'none' : 'block';
+		(menuCross.style.display === 'block') ? 'none' : 'block';
 }
 
 menuContent.addEventListener('click', () => (toggleDropdownMenu()));
@@ -91,40 +93,90 @@ arrowRight.addEventListener('click', () => {
 // document.getElementById('contactForm').addEventListener('submit', function(event) {
 // 	event.preventDefault(); // Prevents the default form submission behavior  
 // 	const message = document.getElementById('message').value;
-  
+
 // 	sendEmail(message);
 // 	document.getElementById('message').value = '';
 //   });
-  
+
 //   function sendEmail(message) {
 //  	// You'll need to handle sending an email using your own backend or a third-party service like EmailJS or similar.
 // 	console.log('Email sent with message:', message);
 //   }
 
-  
 
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
 	event.preventDefault(); // Empêche le comportement par défaut du formulaire
-  
+
 	const message = document.getElementById('message').value;
-  
+
 	// Envoi du message au serveur
 	sendEmail(message);
-  });
-  
-  function sendEmail(message) {
+});
+
+function sendEmail(message) {
 	fetch('http://127.0.0.1:5500/envoyer-email', {
-	  method: 'POST',
-	  headers: {
-		'Content-Type': 'application/json'
-	  },
-	  body: JSON.stringify({ message })
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ message })
 	})
-	.then(response => response.json())
-	.then(data => {
-	  console.log('Réponse du serveur:', data);
-	  alert('Email envoyé avec succès');
-	})
-	.catch(error => console.error('Erreur:', error));
-  }
-  
+		.then(response => response.json())
+		.then(data => {
+			console.log('Réponse du serveur:', data);
+			alert('Email envoyé avec succès');
+		})
+		.catch(error => console.error('Erreur:', error));
+}
+
+// ----------------------
+//  MULTILANGUAGE SYSTEM
+// ----------------------
+
+// ----- Afficher le menu déroulant
+
+const languageButton = document.getElementById("languageButton");
+const dropdownList = document.getElementById("dropdownList");
+const dropdownItems = dropdownList.querySelectorAll(".dropdown-value");
+
+languageButton.addEventListener("click", function () {
+	dropdownList.classList.toggle("active");
+});
+
+dropdownItems.forEach((item) => {
+	item.addEventListener("click", function () {
+		languageButton.textContent = item.textContent;
+		dropdownList.classList.remove("active");
+
+		const selectedValue = item.getAttribute("value");
+
+		fetchLanguageFile(selectedValue);
+	});
+	// item.style.display = (item.getAttribute("value") === currentLanguage) ? 'none' : 'block';
+});
+
+// ----- CHANGER DE LANGUE 
+
+let currentLanguage = "fr";
+fetchLanguageFile(currentLanguage);
+
+function fetchLanguageFile(language) {
+	// Chargez le fichier de langue approprié (fr.json, en.json, es.json)
+	fetch(`${language}.json`)
+		.then((response) => response.json())
+		.then((data) => {
+			// Mettez à jour le contenu de la page avec les traductions
+			document.getElementById("homeDescriptionText").textContent = data.homeDescriptionText;
+			document.getElementById("cateringText").textContent = data.cateringText;
+
+		});
+
+	dropdownItems.forEach((item) => {
+		item.style.display = (item.getAttribute("value") === language) ? 'none' : 'block';
+	});
+}
+
+
+
+
