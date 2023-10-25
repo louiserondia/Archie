@@ -8,14 +8,26 @@ const menuCross = document.getElementById('menu-cross');
 //fix petit bug quand l'animatione st en cours automatiquement et qu'on passe dessus
 
 {
-	timeoutId = setTimeout(() => {
-		canvas.style.height = 'clamp(150px, 30%, 30%)';
-		canvas.style.transform = 'rotate(-35deg)';
-		title.style.opacity = '1';
-		setTimeout(() => {
-			text.style.opacity = '1';
-		}, 200);
-	}, 2000); // Affiche le texte après 2 secondes d'inactivité
+	if ('ontouchstart' in window || navigator.maxTouchPoints) {
+		timeoutId = setTimeout(() => {
+			canvas.style.height = 'clamp(150px, 30%, 30%)';
+			canvas.style.transform = 'rotate(-35deg)';
+			title.style.opacity = '1';
+			setTimeout(() => {
+				text.style.opacity = '1';
+			}, 200);
+		}, 1); // Affiche le texte direct sur téléphone
+	}
+	else {
+		timeoutId = setTimeout(() => {
+			canvas.style.height = 'clamp(150px, 30%, 30%)';
+			canvas.style.transform = 'rotate(-35deg)';
+			title.style.opacity = '1';
+			setTimeout(() => {
+				text.style.opacity = '1';
+			}, 200);
+		}, 2000); // Affiche le texte après 2 secondes d'inactivité
+	}
 
 	const logoRadis = document.getElementById('logo');
 	const canvas = document.getElementById('canvas');
@@ -44,7 +56,7 @@ const menuCross = document.getElementById('menu-cross');
 		const isTransparent = pixelData[3] === 0
 
 		if (!isTransparent) {
-			canvas.style.height = 'clamp(150px, 30%, 30%)';
+			canvas.style.height = 'clamp(150px, 27%, 27%)';
 			canvas.style.transform = 'rotate(-35deg)';
 			title.style.opacity = '1';
 			setTimeout(() => {
@@ -213,19 +225,19 @@ const svgElements = svgDoc.getElementsByTagName('path'); // Or any other element
 
 // Check if a specific point is within a shape
 const pointIsInsideShape = (x, y) => {
-  for (const path of svgElements) {
-    if (svgDoc.elementFromPoint(x, y) === path) {
-      return true;
-    }
-  }
-  return false;
+	for (const path of svgElements) {
+		if (svgDoc.elementFromPoint(x, y) === path) {
+			return true;
+		}
+	}
+	return false;
 }
 
 // Example usage
 const x = 100; // X coordinate
 const y = 100; // Y coordinate
 const isInside = pointIsInsideShape(x, y);
-console.log(`Is point (${x}, ${y}) inside a shape: ${isInside}`);
+// console.log(`Is point (${x}, ${y}) inside a shape: ${isInside}`);
 
 
 svgObject.addEventListener('mousemove', (e) => {

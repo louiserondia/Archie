@@ -92,7 +92,7 @@ object {
 }
 .logo-description .canvas-img .canvas {
   height: 70%;
-  margin-top: 5rem;
+  margin-top: 4rem;
   transition: height 1s ease-in-out, transform 1s ease-in-out;
 }
 .logo-description .description {
@@ -121,16 +121,15 @@ object {
 }
 .logo-description .arrow-bottom {
   justify-self: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
   border: none;
   background-color: transparent;
   margin-bottom: 2rem;
   overflow: visible;
+  z-index: 1;
 }
 .logo-description .arrow-bottom .anchor-arrow-bottom #arrow-bottom {
-  height: 6rem;
   width: 3rem;
-  transform: rotate(90deg);
 }
 
 @media (max-width: 600px) {
@@ -224,6 +223,7 @@ object {
   gap: 1rem;
 }
 .menu-content .social-media-menu img {
+  filter: invert(1);
   height: 2.5rem;
 }
 

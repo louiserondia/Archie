@@ -116,7 +116,7 @@ object {
 		}
 		.canvas {
 			height: 70%;
-			margin-top: 5rem;
+			margin-top: 4rem;
 			transition:
 				height 1s ease-in-out,
 				transform 1s ease-in-out;
@@ -149,16 +149,14 @@ object {
 
 	.arrow-bottom {
 		justify-self: flex-end;
-		justify-content: center;
+		justify-content: flex-end;
 		border: none;
 		background-color: transparent;
-		// padding-bottom: 0.9rem;
 		margin-bottom: 2rem;
 		overflow: visible;
+		z-index: +1;
 		.anchor-arrow-bottom #arrow-bottom {
-			height: 6rem;
 			width: 3rem;
-			transform: rotate(90deg);
 		}
 	}
 }
@@ -273,6 +271,7 @@ object {
 	justify-content: flex-start;
 	gap: 1rem;
 	img {
+		filter: invert(1);
 		height: 2.5rem;
 	}
 }
