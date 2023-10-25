@@ -1,5 +1,7 @@
 {
 	"homeDescriptionText": "Nous sommes un restaurant végétarien. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
-	"cateringText": "Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering. Nous vous recontacterons !"
+	"cateringText": "Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering. Nous vous recontacterons !",
+	"cateringForm": "Formulaire"
+
 }
 

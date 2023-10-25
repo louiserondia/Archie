@@ -87,6 +87,28 @@ arrowRight.addEventListener('click', () => {
 	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
 });
 
+// Afficher les bulles de discussion quand on passe sur les persos
+
+const charlotte = document.getElementById('charlotte');
+const charles = document.getElementById('charles');
+
+const charlotteBubble = document.getElementById('charlotteBubble');
+
+// charlotte.addEventListener('click', () => {
+// 	charlotteBubble.style.display = (charlotteBubble.style.display === 'flex') ? 'none' : 'flex';
+// });
+charlotte.addEventListener('mouseenter', () => {
+	charlotteBubble.style.opacity = '1';
+});
+charlotte.addEventListener('mouseleave', () => {
+	charlotteBubble.style.opacity = '0';
+});
+
+
+// -------------------
+//		  EMAIL
+// -------------------
+
 
 // Envoi d'un email avec le formulaire pour le catering
 
@@ -169,6 +191,7 @@ function fetchLanguageFile(language) {
 			// Mettez à jour le contenu de la page avec les traductions
 			document.getElementById("homeDescriptionText").textContent = data.homeDescriptionText;
 			document.getElementById("cateringText").textContent = data.cateringText;
+			document.getElementById("cateringForm").textContent = data.cateringForm;
 
 		});
 
@@ -178,5 +201,36 @@ function fetchLanguageFile(language) {
 }
 
 
+
+// SVG TEST
+
+// Get a reference to the SVG document
+const svgObject = document.getElementById('svg-object');
+const svgDoc = svgObject.contentDocument;
+
+// Access SVG elements
+const svgElements = svgDoc.getElementsByTagName('path'); // Or any other element type
+
+// Check if a specific point is within a shape
+const pointIsInsideShape = (x, y) => {
+  for (const path of svgElements) {
+    if (svgDoc.elementFromPoint(x, y) === path) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Example usage
+const x = 100; // X coordinate
+const y = 100; // Y coordinate
+const isInside = pointIsInsideShape(x, y);
+console.log(`Is point (${x}, ${y}) inside a shape: ${isInside}`);
+
+
+svgObject.addEventListener('mousemove', (e) => {
+	console.log(e.clientX, e.clientY);
+	console.log(pointIsInsideShape(e.clientX, e.clientY));
+})
 
 

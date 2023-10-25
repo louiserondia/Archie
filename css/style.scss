@@ -39,6 +39,11 @@ button:hover {
 	// cursor: url("/static/charte/mouse-light.png"), pointer;
 }
 
+img,
+object {
+	overflow: hidden;
+}
+
 // ---------------------
 //  	   FONTS
 // ---------------------
@@ -97,14 +102,30 @@ button:hover {
 
 .logo-description {
 	height: 100vh;
-	width: auto;
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+	.canvas-img {
+		display: flex;
+		height: clamp(300px, 40rem, 40rem);
+		img {
+			height: 0;
+		}
+		.canvas {
+			height: 70%;
+			margin-top: 5rem;
+			transition:
+				height 1s ease-in-out,
+				transform 1s ease-in-out;
+		}
+	}
+
 	.description {
 		position: absolute;
 		text-align: center;
-		justify-content: center;
 		flex-direction: column;
 		width: fit-content;
 		display: flex;
@@ -126,18 +147,18 @@ button:hover {
 		}
 	}
 
-	.canvas-img {
-		display: flex;
-		height: clamp(300px, 75vh, 75vh);
-		img {
-			height: 0;
-		}
-		.canvas {
-			height: 85%;
-			margin-top: 12vh;
-			transition:
-				height 1s ease-in-out,
-				transform 1s ease-in-out;
+	.arrow-bottom {
+		justify-self: flex-end;
+		justify-content: center;
+		border: none;
+		background-color: transparent;
+		// padding-bottom: 0.9rem;
+		margin-bottom: 2rem;
+		overflow: visible;
+		.anchor-arrow-bottom #arrow-bottom {
+			height: 6rem;
+			width: 3rem;
+			transform: rotate(90deg);
 		}
 	}
 }
@@ -151,12 +172,16 @@ button:hover {
 		.description {
 			.title {
 				font-size: 4rem;
-				margin: 13rem 0 3.5rem 0;
+			}
+			#text {
+				transform: translateY(-5rem);
 			}
 		}
 		.canvas-img {
-			height: clamp(300px, 60%, 60%);
-			margin-top: 0;
+			height: clamp(300px, 30rem, 30rem);
+		}
+		.arrow-bottom {
+			margin-top: auto;
 		}
 	}
 	#menu-cross {
@@ -165,25 +190,6 @@ button:hover {
 	#menu-lines {
 		border: 2px solid black;
 		background-color: $light;
-	}
-}
-
-// ---------------------
-// 		FLECHE BAS
-// ---------------------
-
-.arrow-bottom {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	border: none;
-	background-color: $light;
-	.anchor-arrow-bottom {
-		#arrow-bottom {
-			height: 6rem;
-			width: 3rem;
-			transform: rotate(90deg);
-		}
 	}
 }
 
@@ -228,16 +234,15 @@ button:hover {
 	height: 100vh;
 	transition: left 0.2s ease-out;
 	z-index: 200;
+	justify-content: space-between;
 
 	div {
 		margin: 6rem 0 0 2rem;
-
 		h2 {
 			font-family: "Lato-Regular";
 			font-size: x-large;
 			padding: 1rem 0;
 			margin: 0;
-			// color: $light;
 		}
 	}
 }
@@ -260,6 +265,17 @@ button:hover {
 
 // p-e changer les couleurs pour avoir que
 // tous deviennent une couleur a part celui qui est selectionné
+
+.menu-content .social-media-menu {
+	justify-self: flex-end;
+	display: flex;
+	margin: 0 0 2rem 2rem;
+	justify-content: flex-start;
+	gap: 1rem;
+	img {
+		height: 2.5rem;
+	}
+}
 
 // ---------------------
 // 		  HORAIRES
@@ -392,20 +408,40 @@ button:hover {
 //		 DESSIN
 // ---------------------
 
-.dessin {
-	display: flex;
-	justify-content: center;
-	img {
-		height: 75vh;
-		width: auto;
-		max-width: 800px;
+.dessin-perso {
+	.characters {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+
+		img {
+			max-width: 250px;
+			height: auto;
+		}
+	}
+	.bubble {
+		display: flex;
+		justify-content: center;
+		margin-right: 40%;
+		background-color: transparent;
+		margin-bottom: -3rem;
+		img {
+			opacity: 0;
+			max-width: 250px;
+			height: auto;
+		}
 	}
 }
 
 .terrasse {
+	display: flex;
+	justify-content: center;
+	margin: 2rem auto;
+	background-color: transparent;
 	img {
-		height: 70vh;
-		width: auto !important;
+		height: auto;
+		max-width: 550px;
+		// width: auto !important;
 	}
 }
 
@@ -415,9 +451,8 @@ button:hover {
 
 .custom-dropdown {
 	width: fit-content;
-    padding: 0.5rem;
 	color: $blue;
-    font-family: "futura-medium";
+	font-family: "futura-medium";
 	font-size: x-large;
 	display: flex;
 	position: fixed;
@@ -438,26 +473,58 @@ button:hover {
 	button:hover {
 		color: $rust;
 	}
-    .dropdown-list {
+	.dropdown-list {
 		display: none;
 		list-style: none;
 		margin: 0;
+		padding: 0;
 		li {
 			cursor: pointer;
 		}
-    }
+	}
 	.active {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-    }
+	}
 	.active li:hover {
 		color: $rust;
 	}
-  }
+}
 
 #languageSelector:focus {
 	outline: none;
+}
+
+@media (max-width: 600px) {
+	.custom-dropdown {
+		align-items: center;
+		button {
+			width: 3rem;
+			padding: 0.25rem 0;
+			border: 2px solid black;
+			background-color: $light;
+		}
+	}
+}
+
+// SVG TEST
+
+.svg {
+	display: flex;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+@media (max-width: 600px) {
+	.terrasse{
+		width: 90vw;
+		height: auto;
+	}
+
+	.svg {
+		max-width: 200px;
+	}
 }
 
 // ---------------------
@@ -482,3 +549,8 @@ button:hover {
 // CHANGER LES IMG CROIX ET LIGNES EN SPAN
 
 //passer toutes les icones en svg ?
+
+// faire que la fleche du bas disparaisse quand on clique dessus
+// et elle se remet quand on remonte tout en haut (voir code navbar)
+
+//

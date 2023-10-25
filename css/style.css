@@ -33,6 +33,11 @@ button:hover {
   cursor: pointer;
 }
 
+img,
+object {
+  overflow: hidden;
+}
+
 @font-face {
   font-family: "YoungSerif-Regular";
   src: url("../static/font/YoungSerif-Regular.woff2") format("woff2"), url("../static/font/YoungSerif-Regular.ttf") format("ttf");
@@ -71,15 +76,28 @@ button:hover {
 }
 .logo-description {
   height: 100vh;
-  width: auto;
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.logo-description .canvas-img {
+  display: flex;
+  height: clamp(300px, 40rem, 40rem);
+}
+.logo-description .canvas-img img {
+  height: 0;
+}
+.logo-description .canvas-img .canvas {
+  height: 70%;
+  margin-top: 5rem;
+  transition: height 1s ease-in-out, transform 1s ease-in-out;
 }
 .logo-description .description {
   position: absolute;
   text-align: center;
-  justify-content: center;
   flex-direction: column;
   width: -moz-fit-content;
   width: fit-content;
@@ -101,27 +119,32 @@ button:hover {
   transition: opacity 1s ease-in-out;
   transform: translateY(-8rem);
 }
-.logo-description .canvas-img {
-  display: flex;
-  height: clamp(300px, 75vh, 75vh);
+.logo-description .arrow-bottom {
+  justify-self: flex-end;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 2rem;
+  overflow: visible;
 }
-.logo-description .canvas-img img {
-  height: 0;
-}
-.logo-description .canvas-img .canvas {
-  height: 85%;
-  margin-top: 12vh;
-  transition: height 1s ease-in-out, transform 1s ease-in-out;
+.logo-description .arrow-bottom .anchor-arrow-bottom #arrow-bottom {
+  height: 6rem;
+  width: 3rem;
+  transform: rotate(90deg);
 }
 
 @media (max-width: 600px) {
   .logo-description .description .title {
     font-size: 4rem;
-    margin: 13rem 0 3.5rem 0;
+  }
+  .logo-description .description #text {
+    transform: translateY(-5rem);
   }
   .logo-description .canvas-img {
-    height: clamp(300px, 60%, 60%);
-    margin-top: 0;
+    height: clamp(300px, 30rem, 30rem);
+  }
+  .logo-description .arrow-bottom {
+    margin-top: auto;
   }
   #menu-cross {
     border: 2px solid #dbe3e1;
@@ -131,19 +154,6 @@ button:hover {
     background-color: #dbe3e1;
   }
 }
-.arrow-bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border: none;
-  background-color: #dbe3e1;
-}
-.arrow-bottom .anchor-arrow-bottom #arrow-bottom {
-  height: 6rem;
-  width: 3rem;
-  transform: rotate(90deg);
-}
-
 .menu {
   position: fixed;
   top: 2rem;
@@ -179,6 +189,7 @@ button:hover {
   height: 100vh;
   transition: left 0.2s ease-out;
   z-index: 200;
+  justify-content: space-between;
 }
 .menu-content div {
   margin: 6rem 0 0 2rem;
@@ -203,6 +214,17 @@ button:hover {
 .menu-content div:not(:hover) a h2 {
   color: #dbe3e1;
   /* Couleur du texte lorsque rien n'est survolé */
+}
+
+.menu-content .social-media-menu {
+  justify-self: flex-end;
+  display: flex;
+  margin: 0 0 2rem 2rem;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.menu-content .social-media-menu img {
+  height: 2.5rem;
 }
 
 .schedule {
@@ -311,25 +333,42 @@ button:hover {
   }
 }
 
-.dessin {
+.dessin-perso .characters {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
-.dessin img {
-  height: 75vh;
-  width: auto;
-  max-width: 800px;
+.dessin-perso .characters img {
+  max-width: 250px;
+  height: auto;
+}
+.dessin-perso .bubble {
+  display: flex;
+  justify-content: center;
+  margin-right: 40%;
+  background-color: transparent;
+  margin-bottom: -3rem;
+}
+.dessin-perso .bubble img {
+  opacity: 0;
+  max-width: 250px;
+  height: auto;
 }
 
+.terrasse {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  background-color: transparent;
+}
 .terrasse img {
-  height: 70vh;
-  width: auto !important;
+  height: auto;
+  max-width: 550px;
 }
 
 .custom-dropdown {
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.5rem;
   color: #00333b;
   font-family: "futura-medium";
   font-size: x-large;
@@ -358,6 +397,7 @@ button:hover {
   display: none;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 .custom-dropdown .dropdown-list li {
   cursor: pointer;
@@ -375,6 +415,32 @@ button:hover {
   outline: none;
 }
 
+@media (max-width: 600px) {
+  .custom-dropdown {
+    align-items: center;
+  }
+  .custom-dropdown button {
+    width: 3rem;
+    padding: 0.25rem 0;
+    border: 2px solid black;
+    background-color: #dbe3e1;
+  }
+}
+.svg {
+  display: flex;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+@media (max-width: 600px) {
+  .terrasse {
+    width: 90vw;
+    height: auto;
+  }
+  .svg {
+    max-width: 200px;
+  }
+}
 .box {
   width: 1rem;
   height: 5rem;

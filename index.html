@@ -57,10 +57,13 @@
 					CONTACT
 				</h2>
 			</a>
+		</div>
+		<div class="social-media-menu">
 			<a target="_blank" href="https://www.instagram.com/archie_brussels/">
-				<h2>
-					INSTAGRAM
-				</h2>
+				<img src="static/img/insta_white.png" />
+			</a>
+			<a target="_blank" href="https://www.facebook.com/archiebrussels">
+				<img src="static/img/fb_white.png" />
 			</a>
 		</div>
 	</div>
@@ -81,24 +84,23 @@
 				<h3 id="homeDescriptionText"></h3>
 			</div>
 		</div>
+			<button class="arrow-bottom">
+				<a class="anchor-arrow-bottom" href="#catering-anchor">
+					<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false" />
+				</a>
+			</button>
 		<span class="anchor" id="home-anchor">
-		</div>
-		
-		<button class="arrow-bottom">
-			<a class="anchor-arrow-bottom" href="#catering-anchor">
-				<img src="static/img/arrow.png" id="arrow-bottom" alt="arrow-right" draggable="false" />
-			</a>
-		</button>
-		
-		<div class="dessin terrasse" id="terrasse-anchor">
-			<img src="static/img/magasin3.png" />
+	</div>
+
+	<div class="dessin terrasse" id="terrasse-anchor">
+		<img src="static/img/magasin3.png" />
 	</div>
 
 	<div class="schedule" id="catering">
 		<div>
 			<h3 id="cateringText"></h3>
 			<div class="container">
-				<h2>Formulaire d'envoi de message</h2>
+				<h2 id="cateringForm"></h2>
 				<form id="contactForm">
 					<textarea id="message" name="message" rows="5" required></textarea>
 					<button type="submit">Envoyer</button>
@@ -122,8 +124,14 @@
 		</button>
 	</div>
 
-	<div class="dessin" id="about-us-anchor">
-		<img src="static/img/dessin.png" />
+	<div class="dessin-perso" id="about-us-anchor">
+		<div class="bubble">
+			<img id="charlotteBubble" src="static/img/yo.png" />
+		</div>
+		<div class="characters">
+			<img id="charlotte" src="static/img/charlotte.png" />
+			<img id="charles" src="static/img/charles.png" />
+		</div>
 	</div>
 
 	<div class="schedule" id="schedule">
@@ -149,7 +157,7 @@
 				</div>
 				<div class="contact-text">
 					<h2>email@email.com</h2>
-					<h2><a href="https://www.instagram.com/archie_brussels/">@archie_brussels</a></h2>
+					<h2><a target="_blank" href="https://www.instagram.com/archie_brussels/">@archie_brussels</a></h2>
 					<h2>+32 492/78.96.85</h2>
 				</div>
 			</div>
@@ -157,6 +165,10 @@
 		</div>
 	</div>
 
+
+	<div class="svg">
+		<object data="static/img/charlotte.svg" type="image/svg+xml" id="svg-object"></object>
+	</div>
 
 	<div class="box"></div>
 	<script src="script.js"></script>
