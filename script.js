@@ -164,6 +164,13 @@ function sendEmail(message) {
 		.catch(error => console.error('Erreur:', error));
 }
 
+// agrandir la case de description si besoin
+
+$('#descriptionForm').on('input', function () {
+	this.style.height = 'auto'; // Réinitialiser la hauteur
+	this.style.height = (this.scrollHeight) + 'px'; // Ajuster la hauteur en fonction de la hauteur du contenu
+  });
+
 // ----------------------
 //  MULTILANGUAGE SYSTEM
 // ----------------------

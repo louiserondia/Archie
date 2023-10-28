@@ -34,6 +34,14 @@ h3 {
 	color: $blue;
 }
 
+button {
+	color: $blue;
+	border: 2px solid $blue;
+	font-family: "futura-medium";
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
 button:hover {
 	cursor: pointer;
 	// cursor: url("/static/charte/mouse-light.png"), pointer;
@@ -186,7 +194,7 @@ object {
 		border: 2px solid $light;
 	}
 	#menu-lines {
-		border: 2px solid black;
+		border: 2px solid $blue;
 		background-color: $light;
 	}
 }
@@ -339,6 +347,57 @@ object {
 }
 
 // ---------------------
+// 	   CATERING FORM
+// ---------------------
+
+#catering div {
+	width: 100%;
+	form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		textarea {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			width: 50%;
+			padding: 0.5rem;
+			resize: none;
+			border: 2px solid $blue;
+			font-family: "futura-medium";
+			font-size: 1em;
+			color: $blue;
+		}
+		textarea::placeholder {
+			color: rgba($color: $blue, $alpha: 0.5);
+		}
+		textarea:focus,
+		textarea:active {
+			outline: none;
+		}
+		#emailForm {
+			width: 100%;
+		}
+		#descriptionForm {
+			width: 100%;
+			max-height: 10em;
+		}
+		button {
+			height: 2.5rem;
+			background-color: white;
+			width: 50%;
+			margin-left: auto;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	textarea {
+		width: 100% !important;
+	}
+}
+// ---------------------
 // 		 CAROUSEL
 // ---------------------
 
@@ -407,28 +466,62 @@ object {
 //		 DESSIN
 // ---------------------
 
+// .dessin-perso {
+// 	.characters {
+// 		display: flex;
+// 		justify-content: center;
+// 		margin: 0 auto;
+
+// 		img {
+// 			max-width: 250px;
+// 			height: auto;
+// 		}
+// 	}
+// 	.bubble {
+// 		display: flex;
+// 		justify-content: center;
+// 		margin-right: 40%;
+// 		background-color: transparent;
+// 		margin-bottom: -3rem;
+// 		img {
+// 			opacity: 0;
+// 			max-width: 250px;
+// 			height: auto;
+// 		}
+// 	}
+// }
+
 .dessin-perso {
+	overflow-x: clip;
 	.characters {
 		display: flex;
 		justify-content: center;
 		margin: 0 auto;
-
+		margin-top: 6rem;
 		img {
 			max-width: 250px;
 			height: auto;
+		}
+		.charlotte {
+			#charlotteBubble {
+				position: absolute;
+				transform: translate(-5rem, -3rem);
+			}
 		}
 	}
-	.bubble {
-		display: flex;
-		justify-content: center;
-		margin-right: 40%;
-		background-color: transparent;
-		margin-bottom: -3rem;
-		img {
-			opacity: 0;
-			max-width: 250px;
+}
+
+@media (max-width: 600px) {
+	.charlotte {
+		transform: translate(60vw, 8rem) rotate(-40deg);
+		#charlotteBubble {
+			width: 80%;
 			height: auto;
+			margin: 2rem 0 0 2rem;
 		}
+	}
+	.charles {
+		transform: translate(-60vw, -4rem) rotate(45deg);
 	}
 }
 
@@ -440,7 +533,6 @@ object {
 	img {
 		height: auto;
 		max-width: 550px;
-		// width: auto !important;
 	}
 }
 
@@ -501,7 +593,7 @@ object {
 		button {
 			width: 3rem;
 			padding: 0.25rem 0;
-			border: 2px solid black;
+			border: 2px solid $blue;
 			background-color: $light;
 		}
 	}
@@ -516,7 +608,7 @@ object {
 }
 
 @media (max-width: 600px) {
-	.terrasse{
+	.terrasse {
 		width: 90vw;
 		height: auto;
 	}

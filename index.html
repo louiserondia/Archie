@@ -15,6 +15,7 @@
 	<meta property="og:description" content="Description de la page">
 	<meta property="og:url" content="URL_de_la_page">
 	<meta property="og:image" content="URL_de_l'image">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body id="body">
@@ -26,14 +27,6 @@
 			<li class="dropdown-value" value="nl">NL</li>
 		</ul>
 	</div>
-
-	<!-- <select id="languageSelector">
-		<div class="options-select">
-			<option value="fr">FR</option>
-			<option value="en">EN</option>
-			<option value="nl">NL</option>
-		</div>
-	  </select> -->
 
 	<div class="menu-content" id="menu-content">
 		<div>
@@ -98,16 +91,20 @@
 	</div>
 
 	<div class="schedule" id="catering">
-		<div>
+		<div id="catering-anchor">
 			<h3 id="cateringText"></h3>
 			<div class="container">
 				<h2 id="cateringForm"></h2>
 				<form id="contactForm">
-					<textarea id="message" name="message" rows="5" required></textarea>
+					<textarea id="firstnameForm" name="lastname" rows="1" placeholder="Prénom" required></textarea>
+					<textarea id="lastnameForm" name="lastname" rows="1" placeholder="Nom de famille" required></textarea>
+					<textarea id="phoneNumberForm" name="phoneNumber" rows="1" placeholder="Numéro de téléphone" required></textarea>
+					<textarea id="emailForm" name="email" rows="1" placeholder="Email" required></textarea>
+					<textarea id="descriptionForm" name="description" rows="5" placeholder="Description de l'évènement et toutes infos importantes liées à votre demande" required></textarea>
 					<button type="submit">Envoyer</button>
 				</form>
 			</div>
-			<span class="anchor" id="catering-anchor">
+			<!-- <span class="anchor" id="catering-anchor"> -->
 		</div>
 	</div>
 
@@ -126,12 +123,14 @@
 	</div>
 
 	<div class="dessin-perso" id="about-us-anchor">
-		<div class="bubble">
-			<img id="charlotteBubble" src="static/img/yo.png" />
-		</div>
 		<div class="characters">
-			<img id="charlotte" src="static/img/charlotte.png" />
-			<img id="charles" src="static/img/charles.png" />
+			<div class="charlotte">
+				<img id="charlotteBubble" src="static/img/yo.png" />
+				<img id="charlotte" src="static/img/charlotte.png" />
+			</div>
+			<div class="charles">
+				<img id="charles" src="static/img/charles.png" />
+			</div>
 		</div>
 	</div>
 
