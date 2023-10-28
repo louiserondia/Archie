@@ -28,6 +28,10 @@
 		</ul>
 	</div>
 
+	<!-- --------------- -->
+	<!-- 	MENU CÔTÉ    -->
+	<!-- --------------- -->
+
 	<div class="menu-content" id="menu-content">
 		<div>
 			<a href="#home-anchor">
@@ -35,7 +39,7 @@
 					À PROPOS
 				</h2>
 			</a>
-			<a href="#catering-anchor">
+			<a href="#catering" id="cateringTriggerFace">
 				<h2>
 					CATERING
 				</h2>
@@ -66,6 +70,11 @@
 		<img id="menu-cross" src="static/img/cross1.svg" alt="menu" draggable="false" />
 	</button>
 
+
+	<!-- --------------- -->
+	<!--     ACCUEIL     -->
+	<!-- --------------- -->
+
 	<div class="logo-description">
 		<div class="canvas-img">
 			<img src="static/charte/radis.png" alt="logo" id="logo" />
@@ -77,36 +86,55 @@
 				<h3 id="homeDescriptionText"></h3>
 			</div>
 		</div>
-			<button class="arrow-bottom">
-				<a class="anchor-arrow-bottom" href="#contact-anchor">
-					<!-- <img src="static/img/bottom-arrow.svg" id="arrow-bottom" alt="arrow-right" draggable="false" /> -->
-					<object type="image/svg+xml" data="static/img/bottom-arrow.svg" id="arrow-bottom"></object>
-				</a>
-			</button>
+		<button class="arrow-bottom">
+			<a class="anchor-arrow-bottom" href="#contact-anchor">
+				<img src="static/img/bottom-arrow.png" id="arrow-bottom" alt="arrow-bottom" draggable="false" />
+			</a>
+		</button>
 		<span class="anchor" id="home-anchor">
 	</div>
+	
+	<!-- --------------- -->
+	<!-- 	TERRASSE     -->
+	<!-- --------------- -->
 
 	<div class="dessin terrasse" id="terrasse-anchor">
 		<img src="static/img/magasin3.png" />
 	</div>
 
+	
+	<!-- --------------- -->
+	<!-- 	CATERING     -->
+	<!-- --------------- -->
+
 	<div class="schedule" id="catering">
-		<div id="catering-anchor">
+		<div>
 			<h3 id="cateringText"></h3>
 			<div class="container">
 				<h2 id="cateringForm"></h2>
 				<form id="contactForm">
 					<textarea id="firstnameForm" name="lastname" rows="1" placeholder="Prénom" required></textarea>
-					<textarea id="lastnameForm" name="lastname" rows="1" placeholder="Nom de famille" required></textarea>
-					<textarea id="phoneNumberForm" name="phoneNumber" rows="1" placeholder="Numéro de téléphone" required></textarea>
+					<textarea id="lastnameForm" name="lastname" rows="1" placeholder="Nom de famille"
+						required></textarea>
+					<textarea id="phoneNumberForm" name="phoneNumber" rows="1" placeholder="Numéro de téléphone"
+						required></textarea>
 					<textarea id="emailForm" name="email" rows="1" placeholder="Email" required></textarea>
-					<textarea id="descriptionForm" name="description" rows="5" placeholder="Description de l'évènement et toutes infos importantes liées à votre demande" required></textarea>
+					<textarea id="descriptionForm" name="description" rows="5"
+						placeholder="Description de l'évènement et toutes infos importantes liées à votre demande"
+						required></textarea>
 					<button type="submit">Envoyer</button>
 				</form>
 			</div>
-			<!-- <span class="anchor" id="catering-anchor"> -->
 		</div>
 	</div>
+
+	<div id="face1">
+		<img src="static/img/face3.PNG" alt="face1"/>
+	</div>
+
+	<!-- --------------- -->
+	<!-- 	CAROUSEL    -->
+	<!-- --------------- -->
 
 	<div class="carousel">
 		<button class="arrow">
@@ -122,6 +150,10 @@
 		</button>
 	</div>
 
+	<!-- --------------- -->
+	<!-- 	DESSIN C&C   -->
+	<!-- --------------- -->
+
 	<div class="dessin-perso" id="about-us-anchor">
 		<div class="characters">
 			<div class="charlotte">
@@ -134,6 +166,10 @@
 		</div>
 	</div>
 
+	<!-- --------------- -->
+	<!-- 	 HORAIRES    -->
+	<!-- --------------- -->
+
 	<div class="schedule" id="schedule">
 		<div>
 
@@ -143,6 +179,10 @@
 			<span class="anchor" id="schedule-anchor">
 		</div>
 	</div>
+
+	<!-- --------------- -->
+	<!-- 	CONTACT    -->
+	<!-- --------------- -->
 
 	<div class="schedule" id="contact">
 		<div>
@@ -165,10 +205,10 @@
 		</div>
 	</div>
 
-
+	<!-- 
 	<div class="svg">
 		<object data="static/img/charlotte.svg" type="image/svg+xml" id="svg-object"></object>
-	</div>
+	</div> -->
 
 	<div class="box"></div>
 	<script src="script.js"></script>

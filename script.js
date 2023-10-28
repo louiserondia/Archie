@@ -99,22 +99,75 @@ arrowRight.addEventListener('click', () => {
 	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
 });
 
+// -----------------------
+// 			DESSIN
+// -----------------------
+
 // Afficher les bulles de discussion quand on passe sur les persos
 
 const charlotte = document.getElementById('charlotte');
 const charles = document.getElementById('charles');
-
 const charlotteBubble = document.getElementById('charlotteBubble');
 
-// charlotte.addEventListener('click', () => {
-// 	charlotteBubble.style.display = (charlotteBubble.style.display === 'flex') ? 'none' : 'flex';
-// });
 charlotte.addEventListener('mouseenter', () => {
 	charlotteBubble.style.opacity = '1';
 });
 charlotte.addEventListener('mouseleave', () => {
 	charlotteBubble.style.opacity = '0';
 });
+
+// faire que sur gsm l'image apparaisse quand on passe en scrollant
+
+if ('ontouchstart' in window || navigator.maxTouchPoints) {
+	document.addEventListener("DOMContentLoaded", function () {
+		window.addEventListener("scroll", function () {
+			const image = charlotte;
+			const imageTop = image.getBoundingClientRect().top;
+			const windowHeight = window.innerHeight;
+
+			if (imageTop >= windowHeight / 8 && imageTop <= windowHeight / 2) {
+				charlotteBubble.style.opacity = '1';
+			} else {
+				charlotteBubble.style.opacity = '0';
+			}
+		});
+	});
+}
+
+// Quand on clique sur un élément du menu, ça fait apparaître un perso
+// si on scroll il part
+
+const face1 = document.getElementById('face1');
+const triggerFace1 = document.getElementById('cateringTriggerFace');
+
+triggerFace1.addEventListener("click", function () {
+	window.addEventListener("scroll", function () {
+		if (isScrolledToDestination()) {
+			face1.style.left = "1px";
+			setTimeout(() => {
+				window.addEventListener("scroll", function () {
+					face1.style.left = "-100px";
+				});
+			}, 200);
+		}
+	});
+	face1.addEventListener("mouseenter", function () {
+		face1.style.left = "-100px";
+		setTimeout(() => {
+			face1.style.left = "1px";
+		}, 250);
+	});
+});
+
+function isScrolledToDestination() {
+	const destinationElement = document.querySelector('#catering'); // L'élément de destination
+	if (!destinationElement) return false; // Vérifiez s'il existe
+
+	const elementRect = destinationElement.getBoundingClientRect();
+	return elementRect.top <= 50 && elementRect.top >= -50; // Vous pouvez ajuster la condition selon vos besoins
+}
+
+// cateringTriggerFace
 
 
 // -------------------
@@ -169,7 +222,7 @@ function sendEmail(message) {
 $('#descriptionForm').on('input', function () {
 	this.style.height = 'auto'; // Réinitialiser la hauteur
 	this.style.height = (this.scrollHeight) + 'px'; // Ajuster la hauteur en fonction de la hauteur du contenu
-  });
+});
 
 // ----------------------
 //  MULTILANGUAGE SYSTEM
@@ -218,38 +271,3 @@ function fetchLanguageFile(language) {
 		item.style.display = (item.getAttribute("value") === language) ? 'none' : 'block';
 	});
 }
-
-
-
-// SVG TEST
-
-// Get a reference to the SVG document
-const svgObject = document.getElementById('svg-object');
-const svgDoc = svgObject.contentDocument;
-
-// Access SVG elements
-const svgElements = svgDoc.getElementsByTagName('path'); // Or any other element type
-
-// Check if a specific point is within a shape
-const pointIsInsideShape = (x, y) => {
-	for (const path of svgElements) {
-		if (svgDoc.elementFromPoint(x, y) === path) {
-			return true;
-		}
-	}
-	return false;
-}
-
-// Example usage
-const x = 100; // X coordinate
-const y = 100; // Y coordinate
-const isInside = pointIsInsideShape(x, y);
-// console.log(`Is point (${x}, ${y}) inside a shape: ${isInside}`);
-
-
-svgObject.addEventListener('mousemove', (e) => {
-	console.log(e.clientX, e.clientY);
-	console.log(pointIsInsideShape(e.clientX, e.clientY));
-})
-
-

@@ -134,7 +134,7 @@ object {
   background-color: transparent;
   margin-bottom: 2rem;
   overflow: visible;
-  z-index: 1;
+  z-index: 3000;
 }
 .logo-description .arrow-bottom .anchor-arrow-bottom #arrow-bottom {
   width: 3rem;
@@ -335,6 +335,15 @@ object {
     width: 100% !important;
   }
 }
+#face1 {
+  display: flex;
+  width: 6rem;
+  transform: rotate(90deg) translate(-15rem, 0.3rem);
+  position: absolute;
+  left: -100px;
+  transition: left 0.2s ease-in-out;
+}
+
 .carousel {
   display: flex;
   justify-content: center;
@@ -390,21 +399,24 @@ object {
 }
 
 .dessin-perso {
+  padding: 2rem;
   overflow-x: clip;
 }
 .dessin-perso .characters {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 .dessin-perso .characters img {
   max-width: 250px;
   height: auto;
 }
 .dessin-perso .characters .charlotte #charlotteBubble {
+  opacity: 0;
   position: absolute;
   transform: translate(-5rem, -3rem);
+  transition: opacity 0.1s linear;
 }
 
 @media (max-width: 600px) {
