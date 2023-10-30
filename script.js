@@ -13,67 +13,83 @@ const menuCross = document.getElementById('menu-cross');
 
 // Quand on hover la première   fois le logo, le texte descriptif apparaît
 // Apparaît aussi après 2 secondes d'inactivité
-//changer sur tel
-//fix petit bug quand l'animatione st en cours automatiquement et qu'on passe dessus
 
-{
-	if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
-		timeoutId = setTimeout(() => {
-			canvas.style.height = 'clamp(150px, 30%, 30%)';
-			canvas.style.transform = 'rotate(-35deg)';
-			title.style.opacity = '1';
+// fix petit bug quand l'animatione est en cours automatiquement et qu'on passe dessus
+
+const logoRadis = document.getElementById('logo');
+const canvas = document.getElementById('canvas');
+const title = document.getElementById('title');
+const text = document.getElementById('text');
+const ctx = canvas.getContext('2d');
+
+// Load the image
+const img = new Image();
+img.src = logoRadis.src;
+img.onload = () => {
+	canvas.width = img.width;
+	canvas.height = img.height;
+	ctx.drawImage(img, 0, 0, img.width, img.height);
+};
+
+
+if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
+	timeoutId = setTimeout(() => {
+		canvas.style.height = 'clamp(150px, 30%, 30%)';
+		canvas.style.transform = 'rotate(-35deg)';
+		title.style.opacity = '1';
+		setTimeout(() => {
+			text.style.opacity = '1';
+		}, 200);
+	}, 1); // Affiche le texte direct sur téléphone
+}
+else {
+	timeoutId = setTimeout(() => {
+		canvas.style.height = 'clamp(150px, 30%, 30%)';
+		canvas.style.transform = 'rotate(-35deg)';
+		title.style.opacity = '1';
+		setTimeout(() => {
+			text.style.opacity = '1';
+		}, 200);
+	}, 2000); // Affiche le texte après 2 secondes d'inactivité
+}
+
+
+document.addEventListener('mousemove', (e) => { handleMouseMove(e); });
+
+let transformInProgress = true;
+
+canvas.addEventListener('transitionend', function(event) {
+    if (event.propertyName === 'height' || event.propertyName === 'transform')
+        transformInProgress = false;
+});
+
+function handleMouseMove(event) {
+	const rect = canvas.getBoundingClientRect();
+	const x = Math.floor((event.clientX - rect.left) * (canvas.width / rect.width));
+	const y = Math.floor((event.clientY - rect.top) * (canvas.height / rect.height));
+
+	const pixelData = ctx.getImageData(x, y, 1, 1).data;
+	const isTransparent = pixelData[3] === 0
+
+	if (!isTransparent) {
+		canvas.style.height = 'clamp(150px, 27%, 27%)';
+		canvas.style.transform = 'rotate(-35deg)';
+		title.style.opacity = '1';
+		setTimeout(() => {
+			text.style.opacity = '1';
+		}, 200);
+
+		// Animation quand on passe sur le radis (il se secoue)
+		if (!transformInProgress) {
+			canvas.style.animation = 'shake 0.5s ease infinite';
+			canvas.style.animationPlayState = 'running';
 			setTimeout(() => {
-				text.style.opacity = '1';
-			}, 200);
-		}, 1); // Affiche le texte direct sur téléphone
-	}
-	else {
-		timeoutId = setTimeout(() => {
-			canvas.style.height = 'clamp(150px, 30%, 30%)';
-			canvas.style.transform = 'rotate(-35deg)';
-			title.style.opacity = '1';
-			setTimeout(() => {
-				text.style.opacity = '1';
-			}, 200);
-		}, 2000); // Affiche le texte après 2 secondes d'inactivité
-	}
-
-	const logoRadis = document.getElementById('logo');
-	const canvas = document.getElementById('canvas');
-	const title = document.getElementById('title');
-	const text = document.getElementById('text');
-	const ctx = canvas.getContext('2d');
-
-	// Load the image
-	const img = new Image();
-	img.src = logoRadis.src;
-	img.onload = () => {
-		canvas.width = img.width;
-		canvas.height = img.height;
-		ctx.drawImage(img, 0, 0, img.width, img.height);
-	};
-
-	document.addEventListener('mousemove', (e) => { handleMouseMove(e); });
-
-
-	function handleMouseMove(event) {
-		const rect = canvas.getBoundingClientRect();
-		const x = Math.floor((event.clientX - rect.left) * (canvas.width / rect.width));
-		const y = Math.floor((event.clientY - rect.top) * (canvas.height / rect.height));
-
-		const pixelData = ctx.getImageData(x, y, 1, 1).data;
-		const isTransparent = pixelData[3] === 0
-
-		if (!isTransparent) {
-			canvas.style.height = 'clamp(150px, 27%, 27%)';
-			canvas.style.transform = 'rotate(-35deg)';
-			title.style.opacity = '1';
-			setTimeout(() => {
-				text.style.opacity = '1';
-			}, 200);
+				canvas.style.animationPlayState = 'paused';
+			}, 1000);
 		}
 	}
 }
+
 
 // Ouvre et ferme le menu déroulant des options quand on clique sur les trois petites lignes
 

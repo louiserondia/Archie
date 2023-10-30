@@ -173,6 +173,16 @@ object {
 	}
 }
 
+// SHAKING THE RADIS WHEN HOVER
+
+@keyframes shake {
+    0% { transform: rotate(-35deg); }
+    25% { transform: rotate(-40deg); }
+    50% { transform: rotate(-30deg); }
+    75% { transform: rotate(-40deg); }
+    100% { transform: rotate(-35deg); }
+}
+
 // ---------------------
 // 	   SMALL SCREEN
 // ---------------------
@@ -526,7 +536,7 @@ object {
 	background-color: transparent;
 	img {
 		height: auto;
-		max-width: 550px;
+		max-width: 600px;
 	}
 }
 
@@ -603,7 +613,7 @@ object {
 
 @media (max-width: 600px) {
 	.terrasse {
-		width: 90vw;
+		width: 99vw;
 		height: auto;
 	}
 

@@ -140,6 +140,23 @@ object {
   width: 3rem;
 }
 
+@keyframes shake {
+  0% {
+    transform: rotate(-35deg);
+  }
+  25% {
+    transform: rotate(-40deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(-35deg);
+  }
+}
 @media (max-width: 600px) {
   .logo-description .description .title {
     font-size: 4rem;
@@ -440,7 +457,7 @@ object {
 }
 .terrasse img {
   height: auto;
-  max-width: 550px;
+  max-width: 600px;
 }
 
 .custom-dropdown {
@@ -511,7 +528,7 @@ object {
 
 @media (max-width: 600px) {
   .terrasse {
-    width: 90vw;
+    width: 99vw;
     height: auto;
   }
   .svg {
