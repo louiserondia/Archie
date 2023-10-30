@@ -401,17 +401,21 @@ object {
   transform: scaleX(-1);
 }
 @media (max-width: 600px) {
+  .carousel .carousel-imgs {
+    width: 95vw;
+  }
   .carousel .arrow {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+    z-index: 1;
+    position: absolute;
+    width: auto;
+    height: auto;
+    filter: invert(1);
   }
   .carousel #arrow-left {
-    left: 0;
+    margin-right: auto;
   }
   .carousel #arrow-right {
-    right: 0;
+    margin-left: auto;
   }
 }
 

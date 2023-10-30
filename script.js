@@ -58,9 +58,9 @@ document.addEventListener('mousemove', (e) => { handleMouseMove(e); });
 
 let transformInProgress = true;
 
-canvas.addEventListener('transitionend', function(event) {
-    if (event.propertyName === 'height' || event.propertyName === 'transform')
-        transformInProgress = false;
+canvas.addEventListener('transitionend', function (event) {
+	if (event.propertyName === 'height' || event.propertyName === 'transform')
+		transformInProgress = false;
 });
 
 function handleMouseMove(event) {
@@ -123,6 +123,35 @@ arrowRight.addEventListener('click', () => {
 	carouselIndex = (carouselIndex === carousel.length - 1) ? 0 : carouselIndex + 1;
 	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
 });
+
+
+// SWIPE POUR GSM
+
+let carouselContainer = document.getElementById('carousel-container');
+let touchStartX = null;
+
+carouselContainer.addEventListener('touchstart', (e) => {
+	touchStartX = e.touches[0].clientX;
+	console.log(touchStartX, carouselContainer.offsetWidth);
+	if (touchStartX < carouselContainer.offsetWidth / 3) {
+		showPreviousImage();
+	} else if (touchStartX > (carouselContainer.offsetWidth / 3) * 2) {
+		showNextImage();
+	}
+});
+
+function showNextImage() {
+	document.getElementById(carousel[carouselIndex]).style.display = 'none';
+	carouselIndex = (carouselIndex === carousel.length - 1) ? 0 : carouselIndex + 1;
+	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
+}
+
+function showPreviousImage() {
+	document.getElementById(carousel[carouselIndex]).style.display = 'none';
+	carouselIndex = (carouselIndex === 0) ? carousel.length - 1 : carouselIndex - 1;
+	document.getElementById(carousel[carouselIndex]).style.display = 'inline';
+}
+
 
 // -----------------------
 // 			DESSIN

@@ -473,17 +473,21 @@ object {
 	}
 
 	@media (max-width: 600px) {
+		.carousel-imgs {
+			width: 95vw;
+		}
 		.arrow {
-			margin: 0;
-			padding: 0;
-			display: flex;
-			justify-content: space-around;
+			z-index: +1;
+			position: absolute;
+			width: auto;
+			height: auto;
+			filter: invert(1);
 		}
 		#arrow-left {
-			left: 0;
+			margin-right: auto;
 		}
 		#arrow-right {
-			right: 0;
+			margin-left: auto;
 		}
 	}
 }
