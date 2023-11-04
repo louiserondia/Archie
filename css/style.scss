@@ -164,7 +164,6 @@ object {
 		overflow: visible;
 		z-index: 3000;
 		.anchor-arrow-bottom {
-
 			// z-index: 40;
 			#arrow-bottom {
 				width: 3rem;
@@ -176,11 +175,21 @@ object {
 // SHAKING THE RADIS WHEN HOVER
 
 @keyframes shake {
-    0% { transform: rotate(-35deg); }
-    25% { transform: rotate(-40deg); }
-    50% { transform: rotate(-30deg); }
-    75% { transform: rotate(-40deg); }
-    100% { transform: rotate(-35deg); }
+	0% {
+		transform: rotate(-35deg);
+	}
+	25% {
+		transform: rotate(-40deg);
+	}
+	50% {
+		transform: rotate(-30deg);
+	}
+	75% {
+		transform: rotate(-40deg);
+	}
+	100% {
+		transform: rotate(-35deg);
+	}
 }
 
 // ---------------------
@@ -422,7 +431,6 @@ object {
 	transition: left 0.2s ease-in-out;
 }
 
-
 // ---------------------
 // 		 CAROUSEL
 // ---------------------
@@ -536,11 +544,52 @@ object {
 .terrasse {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 2rem auto;
 	background-color: transparent;
-	img {
-		height: auto;
-		max-width: 600px;
+	flex-direction: column;
+	width: 100%;
+	background-color: transparent;
+	height: fit-content;
+	.top-layer {
+		z-index: +1;
+		margin-top: -37.5rem;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		.front {
+			height: auto;
+			max-width: 600px;
+		}
+		.terrasse-tables {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: transparent;
+			img {
+				max-height: 300px;
+				width: auto;
+			}
+			.table2 {
+				transform: translate(6rem, -4rem);
+			}
+		}
+	}
+
+	.terrasse-shadow {
+		margin-top: 24rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.sol1 {
+			max-width: 825px;
+			transform: translate(1rem, 1rem);
+			margin-top: -10rem;
+		}
+		.sol2 {
+			transform: translate(2rem, 0);
+			max-width: 610px;
+		}
 	}
 }
 
