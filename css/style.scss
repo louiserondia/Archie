@@ -486,16 +486,21 @@ object {
 		}
 		.arrow {
 			z-index: +1;
-			position: absolute;
 			width: auto;
 			height: auto;
 			filter: invert(1);
 		}
 		#arrow-left {
+			position: absolute;
 			margin-right: auto;
+			margin-left: 1.5rem;
+			left: 0;
 		}
 		#arrow-right {
+			position: absolute;
+			right: 0;
 			margin-left: auto;
+			margin-right: 1.5rem;
 		}
 	}
 }
@@ -545,12 +550,13 @@ object {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 2rem auto;
+	margin: 2rem 0;
 	background-color: transparent;
 	flex-direction: column;
 	width: 100%;
 	background-color: transparent;
 	height: fit-content;
+	overflow-x: clip;
 	.top-layer {
 		z-index: +1;
 		margin-top: -37.5rem;
@@ -559,6 +565,7 @@ object {
 		flex-direction: column;
 		.front {
 			height: auto;
+			width: 100vw;
 			max-width: 600px;
 		}
 		.terrasse-tables {
@@ -566,12 +573,15 @@ object {
 			justify-content: space-between;
 			align-items: center;
 			background-color: transparent;
-			img {
-				max-height: 300px;
-				width: auto;
+			.table1 {
+				width: 75vw;
+				max-width: 500px;
 			}
 			.table2 {
+				width: 60vw;
+				max-width: 350px;
 				transform: translate(6rem, -4rem);
+				// margin-left: -20rem;
 			}
 		}
 	}
@@ -590,6 +600,12 @@ object {
 			transform: translate(2rem, 0);
 			max-width: 610px;
 		}
+	}
+}
+
+@media (max-width: 600px) {
+	.terrasse {
+		// width: ;
 	}
 }
 

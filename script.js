@@ -132,7 +132,7 @@ let touchStartX = null;
 
 carouselContainer.addEventListener('touchstart', (e) => {
 	touchStartX = e.touches[0].clientX;
-	console.log(touchStartX, carouselContainer.offsetWidth);
+	// console.log(touchStartX, carouselContainer.offsetWidth);
 	if (touchStartX < carouselContainer.offsetWidth / 3) {
 		showPreviousImage();
 	} else if (touchStartX > (carouselContainer.offsetWidth / 3) * 2) {
