@@ -326,6 +326,7 @@ function fetchLanguageFile(language) {
 		.then((data) => {
 			// Mettez à jour le contenu de la page avec les traductions
 			document.getElementById("homeDescriptionText").textContent = data.homeDescriptionText;
+			
 			document.getElementById("cateringText").textContent = data.cateringText;
 			document.getElementById("cateringForm").textContent = data.cateringForm;
 			document.getElementById("firstnameForm").placeholder = data.firstnameForm;
@@ -334,19 +335,18 @@ function fetchLanguageFile(language) {
 			document.getElementById("emailForm").placeholder = data.emailForm;
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
+			
 			document.getElementById("scheduleText1").textContent = data.scheduleText1;
 			document.getElementById("scheduleText2").textContent = data.scheduleText2;
-			document.getElementById("scheduleText3").textContent = data.scheduleText3;
-			// document.getElementById("special-word").textContent = data.special-word;
+			// document.getElementById("scheduleText3").textContent = data.scheduleText3;
+			// document.getElementById("scheduleText4").textContent = data.scheduleText4;
+			
+			document.getElementById("menuHome").textContent = data.menuHome;
+			document.getElementById("menuCatering").textContent = data.menuCatering;
+			document.getElementById("menuAboutUs").textContent = data.menuAboutUs;
+			document.getElementById("menuContact").textContent = data.menuContact;
+			document.getElementById("menuGalery").textContent = data.menuGalery;
 
-			const specialWordElement = document.getElementById("special-word");
-
-			if (specialWordElement) {
-			  specialWordElement.innerHTML = `<span id="special-word">${data["special-word"]}</span>`;
-			} else {
-			  console.error("L'élément avec l'ID 'special-word' n'a pas été trouvé.");
-			}
-			// document.getElementById("special-word").innerHTML = `<span id="special-word">${data["special-word"]}</span>`;
 		});
 
 	dropdownItems.forEach((item) => {

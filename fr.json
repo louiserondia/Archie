@@ -1,8 +1,6 @@
 {
 	"homeDescriptionText": "Nous sommes un restaurant végétarien. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
 	
-	
-	
 	"cateringText": "Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering. \n Nous vous recontacterons dès que possible !",
 	"cateringForm": "Formulaire",
 	"firstnameForm": "Prénom",
@@ -12,11 +10,14 @@
 	"descriptionForm": "Description, remarques et autres informations liées à l'évènement",
 	"submitForm": "Envoyer",
 
-
 	"scheduleText1": "Contactez-nous pour un évènement,",
 	"scheduleText2": "une réservation ou une question !",
 	"scheduleText3": "Nous proposons également des services de traiteur",
-	"special-word": "ici"
+	"scheduleText4": "➜ Formulaire de réservation",
 
-
+	"menuHome": "À PROPOS",
+	"menuCatering": "CATERING",
+	"menuAboutUs": "QUI NOUS SOMMES",
+	"menuContact": "CONTACT",
+	"menuGalery": "GALERIE"
 }

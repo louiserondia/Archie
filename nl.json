@@ -1,5 +1,6 @@
 {
 	"homeDescriptionText": "we zijn een vegetarische restaurant",
+	
 	"cateringText": "Stuur ons per e-mail uw evenement, de datum en alle benodigde informatie voor catering. We nemen contact met u op!",
 	"cateringForm": "formulier",
 	"firstnameForm": "Voornaam",
@@ -8,9 +9,15 @@
 	"emailForm": "Email",
 	"descriptionForm": "Beschrijving van het evenement, opmerkingen en aanvullende informatie",
 	"submitForm": "Verzenden",
+	
 	"scheduleText1": "Neem contact met ons op voor een evenement,",
 	"scheduleText2": "reservering of vraag!",
 	"scheduleText3": "We verzorgen ook catering",
-	"scheduleText4": "hier",
-	"special-word": "hier"
+	"scheduleText4": "➜ Reservatie formulier",
+
+	"menuHome": "HOME",
+	"menuCatering": "CATERING",
+	"menuAboutUs": "OVER ONS",
+	"menuContact": "CONTACT",
+	"menuGallery": "GALERIJ"
 }

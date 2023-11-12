@@ -35,23 +35,28 @@
 	<div class="menu-content" id="menu-content">
 		<div>
 			<a href="#home-anchor">
-				<h2>
+				<h2 id="menuHome">
 					À PROPOS
 				</h2>
 			</a>
 			<a href="#catering" id="cateringTriggerFace">
-				<h2>
+				<h2 id="menuCatering">
 					CATERING
 				</h2>
 			</a>
 			<a href="#about-us-anchor">
-				<h2>
+				<h2 id="menuAboutUs">
 					QUI NOUS SOMMES
 				</h2>
 			</a>
 			<a href="#contact-anchor">
-				<h2>
+				<h2 id="menuContact">
 					CONTACT
+				</h2>
+			</a>
+			<a href="#carousel">
+				<h2 id="menuGalery">
+					GALERIE
 				</h2>
 			</a>
 		</div>
@@ -99,12 +104,8 @@
 	<!-- --------------- -->
 
 	<div class="dessin terrasse" id="terrasse-anchor">
-		<div class="terrasse-shadow">
-			<img class="sol2" src="static/img/sol2.PNG" />
-			<img class="sol1" src="static/img/sol1.PNG" />
-		</div>
 		<div class="top-layer">
-			<img class="front" src="static/img/front.PNG" />
+			<img class="front" src="static/img/terrasse.png" />
 			<div class="terrasse-tables">
 				<img class="table1" src="static/img/table1.PNG" />
 				<img class="table2" src="static/img/table2.gif" />
@@ -140,24 +141,6 @@
 
 	<div id="face1">
 		<img src="static/img/face3.PNG" alt="face1" />
-	</div>
-
-	<!-- --------------- -->
-	<!-- 	CAROUSEL    -->
-	<!-- --------------- -->
-
-	<div class="carousel">
-		<button class="arrow">
-			<img src="static/img/arrow.svg" id="arrow-left" alt="arrow-left" draggable="false" />
-		</button>
-		<div class="carousel-imgs" id="carousel-container">
-			<img class="carousel-img" id="carousel-1" src="static/img/3.PNG" alt="carousel-1" />
-			<img class="carousel-img" id="carousel-2" src="static/img/4.PNG" alt="carousel-2" />
-			<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
-		</div>
-		<button class="arrow">
-			<img src="static/img/arrow.svg" id="arrow-right" alt="arrow-right" draggable="false" />
-		</button>
 	</div>
 
 	<!-- --------------- -->
@@ -210,12 +193,33 @@
 					<h2>+32 492/78.96.85</h2>
 				</div>
 			</div>
-			<div class="scheduleText3-4">
-				<h3 id="scheduleText3">Nous proposons également des services de traiteur <span id="special-word"></span> !</h3>
-				<!-- <h3 id="scheduleText4">ici</h3> -->
-			</div>
+			<!-- <div class="scheduleText3-4">
+				<h3 id="scheduleText3">Nous proposons également des services de traiteur</h3>
+				<a href="#catering" id="scheduleText4">Formulaire de réservation</a> -->
+			<!-- </div> -->
+			<!-- <div class="panneau">
+				<img src="static/img/panneau.png"/>
+			</div> -->
 			<span class="anchor" id="contact-anchor">
 		</div>
+	</div>
+
+	<!-- --------------- -->
+	<!-- 	CAROUSEL    -->
+	<!-- --------------- -->
+
+	<div id="carousel" class="carousel">
+		<button class="arrow">
+			<img src="static/img/arrow.svg" id="arrow-left" alt="arrow-left" draggable="false" />
+		</button>
+		<div class="carousel-imgs" id="carousel-container">
+			<img class="carousel-img" id="carousel-1" src="static/img/3.PNG" alt="carousel-1" />
+			<img class="carousel-img" id="carousel-2" src="static/img/4.PNG" alt="carousel-2" />
+			<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
+		</div>
+		<button class="arrow">
+			<img src="static/img/arrow.svg" id="arrow-right" alt="arrow-right" draggable="false" />
+		</button>
 	</div>
 
 	<!-- 
