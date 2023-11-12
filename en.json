@@ -1,6 +1,16 @@
 {
 	"homeDescriptionText": "we be vegies",
 	"cateringText": " Send us all your event informations for a catering and we'll get back to you asap !",
-	"cateringForm": "form"
-
+	"cateringForm": "form",
+	"firstnameForm": "First name",
+	"lastnameForm": "Last name",
+	"phoneNumberForm": "Phone number",
+	"emailForm": "Email",
+	"descriptionForm": "Description of the event, remarks and additional informations",
+	"submitForm": "Submit",
+	"scheduleText1": "Contact us for an event,",
+	"scheduleText2": "reservation, or question!",
+	"scheduleText3": "We also provide catering services",
+	"scheduleText4": "here",
+	"special-word": "here"
 }

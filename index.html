@@ -93,26 +93,26 @@
 		</button>
 		<span class="anchor" id="home-anchor">
 	</div>
-	
+
 	<!-- --------------- -->
 	<!-- 	TERRASSE     -->
 	<!-- --------------- -->
 
 	<div class="dessin terrasse" id="terrasse-anchor">
 		<div class="terrasse-shadow">
-			<img class="sol2" src="static/img/sol2.PNG"/>
-			<img class="sol1" src="static/img/sol1.PNG"/>
+			<img class="sol2" src="static/img/sol2.PNG" />
+			<img class="sol1" src="static/img/sol1.PNG" />
 		</div>
 		<div class="top-layer">
 			<img class="front" src="static/img/front.PNG" />
 			<div class="terrasse-tables">
-				<img class="table1" src="static/img/table1.PNG"/>
-				<img class="table2" src="static/img/table2.gif"/>
+				<img class="table1" src="static/img/table1.PNG" />
+				<img class="table2" src="static/img/table2.gif" />
 			</div>
 		</div>
 	</div>
 
-	
+
 	<!-- --------------- -->
 	<!-- 	CATERING     -->
 	<!-- --------------- -->
@@ -132,14 +132,14 @@
 					<textarea id="descriptionForm" name="description" rows="5"
 						placeholder="Description de l'évènement et toutes infos importantes liées à votre demande"
 						required></textarea>
-					<button type="submit">Envoyer</button>
+					<button id="submitForm" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
 	</div>
 
 	<div id="face1">
-		<img src="static/img/face3.PNG" alt="face1"/>
+		<img src="static/img/face3.PNG" alt="face1" />
 	</div>
 
 	<!-- --------------- -->
@@ -179,7 +179,7 @@
 	<!-- --------------- -->
 	<!-- 	 HORAIRES    -->
 	<!-- --------------- -->
-
+	<!-- 
 	<div class="schedule" id="schedule">
 		<div>
 
@@ -188,7 +188,7 @@
 			<h2>de 9h à 17h</h2>
 			<span class="anchor" id="schedule-anchor">
 		</div>
-	</div>
+	</div> -->
 
 	<!-- --------------- -->
 	<!-- 	CONTACT    -->
@@ -196,10 +196,9 @@
 
 	<div class="schedule" id="contact">
 		<div>
-			<h3>Contactez-nous pour un évènement,</h3>
-			<h3>une réservation ou une question !</h3>
+			<h3 id="scheduleText1">Contactez-nous pour un évènement,</h3>
+			<h3 id="scheduleText2">une réservation ou une question !</h3>
 			<div>
-
 				<div class="contact-images">
 					<img src="static/img/email.svg" />
 					<a href="https://www.instagram.com/archie_brussels/"><img src="static/img/insta.svg" /></a>
@@ -211,6 +210,10 @@
 					<h2>+32 492/78.96.85</h2>
 				</div>
 			</div>
+			<div class="scheduleText3-4">
+				<h3 id="scheduleText3">Nous proposons également des services de traiteur <span id="special-word"></span> !</h3>
+				<!-- <h3 id="scheduleText4">ici</h3> -->
+			</div>
 			<span class="anchor" id="contact-anchor">
 		</div>
 	</div>
@@ -221,7 +224,7 @@
 	</div> -->
 
 	<div class="box"></div>
-	<script src="script.js"></script>
+	<script defer src="script.js"></script>
 </body>
 
 </html>

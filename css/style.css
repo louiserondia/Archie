@@ -270,6 +270,22 @@ object {
 .schedule > div h3 {
   margin: 0;
 }
+.schedule .scheduleText3-4 {
+  padding-top: 1.5rem;
+}
+.schedule .scheduleText3-4 #scheduleText3 {
+  width: 50%;
+}
+.schedule .scheduleText3-4 #special-word {
+  border: 0.1rem solid #00333b;
+  padding: 0.25rem 0.5rem;
+  font-family: "futura-medium";
+}
+.schedule .scheduleText3-4 #scheduleText4 {
+  border: 0.1rem solid #00333b;
+  padding: 0.25rem 0.5rem;
+  font-family: "futura-medium";
+}
 
 .anchor {
   position: absolute;
