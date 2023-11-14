@@ -80,89 +80,99 @@
 	<!--     ACCUEIL     -->
 	<!-- --------------- -->
 
-	<div class="logo-description">
-		<div class="canvas-img">
-			<img src="static/charte/radis.png" alt="logo" id="logo" />
-			<canvas class="canvas" id="canvas"></canvas>
+	<div class="whole-page">
+
+		<div class="logo-description">
+			<div class="canvas-img">
+				<img src="static/charte/radis.png" alt="logo" id="logo" />
+				<canvas class="canvas" id="canvas"></canvas>
+			</div>
+			<div class="description" id="description">
+				<h1 class="title" id="title">Archie</h1>
+				<div id="text">
+					<h3 id="homeDescriptionText1"></h3>
+					<h3 id="homeDescriptionText2"></h3>
+					<h3 id="homeDescriptionText3"></h3>
+					<h3 id="homeDescriptionText4"></h3>
+					<h3 id="homeDescriptionText5"></h3>
+				</div>
+				<button class="arrow-bottom">
+					<a class="anchor-arrow-bottom" href="#terrasse-anchor">
+						<img src="static/img/bottom-arrow.png" id="arrow-bottom" alt="arrow-bottom" draggable="false" />
+					</a>
+				</button>
+			</div>
+			<span class="anchor" id="home-anchor">
 		</div>
-		<div class="description" id="description">
-			<h1 class="title" id="title">Archie</h1>
-			<div id="text">
-				<h3 id="homeDescriptionText"></h3>
+
+		<!-- --------------- -->
+		<!-- 	TERRASSE     -->
+		<!-- --------------- -->
+
+		<div class="dessin terrasse" id="terrasse-anchor">
+			<div class="top-layer">
+				<img class="front" src="static/img/terrasse.png" />
+				<div class="terrasse-tables">
+					<img class="table1" src="static/img/table1.PNG" />
+					<img class="table2" src="static/img/table2.gif" />
+				</div>
 			</div>
 		</div>
-		<button class="arrow-bottom">
-			<a class="anchor-arrow-bottom" href="#terrasse-anchor">
-				<img src="static/img/bottom-arrow.png" id="arrow-bottom" alt="arrow-bottom" draggable="false" />
-			</a>
-		</button>
-		<span class="anchor" id="home-anchor">
-	</div>
 
-	<!-- --------------- -->
-	<!-- 	TERRASSE     -->
-	<!-- --------------- -->
 
-	<div class="dessin terrasse" id="terrasse-anchor">
-		<div class="top-layer">
-			<img class="front" src="static/img/terrasse.png" />
-			<div class="terrasse-tables">
-				<img class="table1" src="static/img/table1.PNG" />
-				<img class="table2" src="static/img/table2.gif" />
+		<!-- --------------- -->
+		<!-- 	CATERING     -->
+		<!-- --------------- -->
+
+		<div class="schedule" id="catering">
+			<div>
+				<h3 id="cateringText"></h3>
+				<div class="container">
+					<h2 id="cateringForm"></h2>
+					<form id="contactForm">
+						<textarea id="firstnameForm" name="lastname" rows="1" placeholder="Prénom" required></textarea>
+						<textarea id="lastnameForm" name="lastname" rows="1" placeholder="Nom de famille"
+							required></textarea>
+						<textarea id="phoneNumberForm" name="phoneNumber" rows="1" placeholder="Numéro de téléphone"
+							required></textarea>
+						<textarea id="emailForm" name="email" rows="1" placeholder="Email" required></textarea>
+
+						<label for="dateForm">Date de l'événement :</label>
+						<input type="date" id="dateForm" name="dateForm" required>
+
+						<textarea id="descriptionForm" name="description" rows="5"
+							placeholder="Description de l'évènement et toutes infos importantes liées à votre demande"
+							required></textarea>
+						<button id="submitForm" type="submit">Envoyer</button>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 
+		<div id="face1">
+			<img src="static/img/face3.PNG" alt="face1" />
+		</div>
 
-	<!-- --------------- -->
-	<!-- 	CATERING     -->
-	<!-- --------------- -->
+		<!-- --------------- -->
+		<!-- 	DESSIN C&C   -->
+		<!-- --------------- -->
 
-	<div class="schedule" id="catering">
-		<div>
-			<h3 id="cateringText"></h3>
-			<div class="container">
-				<h2 id="cateringForm"></h2>
-				<form id="contactForm">
-					<textarea id="firstnameForm" name="lastname" rows="1" placeholder="Prénom" required></textarea>
-					<textarea id="lastnameForm" name="lastname" rows="1" placeholder="Nom de famille"
-						required></textarea>
-					<textarea id="phoneNumberForm" name="phoneNumber" rows="1" placeholder="Numéro de téléphone"
-						required></textarea>
-					<textarea id="emailForm" name="email" rows="1" placeholder="Email" required></textarea>
-					<textarea id="descriptionForm" name="description" rows="5"
-						placeholder="Description de l'évènement et toutes infos importantes liées à votre demande"
-						required></textarea>
-					<button id="submitForm" type="submit">Envoyer</button>
-				</form>
+		<div class="dessin-perso" id="about-us-anchor">
+			<div class="characters">
+				<div class="charlotte">
+					<img id="charlotteBubble" src="static/img/yo.png" />
+					<img id="charlotte" src="static/img/charlotte.png" />
+				</div>
+				<div class="charles">
+					<img id="charles" src="static/img/charles.png" />
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="face1">
-		<img src="static/img/face3.PNG" alt="face1" />
-	</div>
-
-	<!-- --------------- -->
-	<!-- 	DESSIN C&C   -->
-	<!-- --------------- -->
-
-	<div class="dessin-perso" id="about-us-anchor">
-		<div class="characters">
-			<div class="charlotte">
-				<img id="charlotteBubble" src="static/img/yo.png" />
-				<img id="charlotte" src="static/img/charlotte.png" />
-			</div>
-			<div class="charles">
-				<img id="charles" src="static/img/charles.png" />
-			</div>
-		</div>
-	</div>
-
-	<!-- --------------- -->
-	<!-- 	 HORAIRES    -->
-	<!-- --------------- -->
-	<!-- 
+		<!-- --------------- -->
+		<!-- 	 HORAIRES    -->
+		<!-- --------------- -->
+		<!-- 
 	<div class="schedule" id="schedule">
 		<div>
 
@@ -173,55 +183,57 @@
 		</div>
 	</div> -->
 
-	<!-- --------------- -->
-	<!-- 	CONTACT    -->
-	<!-- --------------- -->
+		<!-- --------------- -->
+		<!-- 	CONTACT    -->
+		<!-- --------------- -->
 
-	<div class="schedule" id="contact">
-		<div>
-			<h3 id="scheduleText1">Contactez-nous pour un évènement,</h3>
-			<h3 id="scheduleText2">une réservation ou une question !</h3>
+		<div class="schedule" id="contact">
 			<div>
-				<div class="contact-images">
-					<img src="static/img/email.svg" />
-					<a href="https://www.instagram.com/archie_brussels/"><img src="static/img/insta.svg" /></a>
-					<img src="static/img/phone.svg" />
+				<h3 id="scheduleText1">Contactez-nous pour un évènement,</h3>
+				<h3 id="scheduleText2">une réservation ou une question !</h3>
+				<div>
+					<div class="contact-images">
+						<img src="static/img/email.svg" />
+						<a href="https://www.instagram.com/archie_brussels/"><img src="static/img/insta.svg" /></a>
+						<img src="static/img/phone.svg" />
+					</div>
+					<div class="contact-text">
+						<h2>email@email.com</h2>
+						<h2><a target="_blank" href="https://www.instagram.com/archie_brussels/">@archie_brussels</a>
+						</h2>
+						<h2>+32 492/78.96.85</h2>
+					</div>
 				</div>
-				<div class="contact-text">
-					<h2>email@email.com</h2>
-					<h2><a target="_blank" href="https://www.instagram.com/archie_brussels/">@archie_brussels</a></h2>
-					<h2>+32 492/78.96.85</h2>
-				</div>
-			</div>
-			<!-- <div class="scheduleText3-4">
+				<!-- <div class="scheduleText3-4">
 				<h3 id="scheduleText3">Nous proposons également des services de traiteur</h3>
 				<a href="#catering" id="scheduleText4">Formulaire de réservation</a> -->
-			<!-- </div> -->
-			<!-- <div class="panneau">
+				<!-- </div> -->
+				<!-- <div class="panneau">
 				<img src="static/img/panneau.png"/>
 			</div> -->
-			<span class="anchor" id="contact-anchor">
+				<span class="anchor" id="contact-anchor">
+			</div>
 		</div>
-	</div>
 
-	<!-- --------------- -->
-	<!-- 	CAROUSEL    -->
-	<!-- --------------- -->
+		<!-- --------------- -->
+		<!-- 	CAROUSEL    -->
+		<!-- --------------- -->
 
-	<div id="carousel" class="carousel">
-		<button class="arrow">
-			<img src="static/img/arrow.svg" id="arrow-left" alt="arrow-left" draggable="false" />
-		</button>
-		<div class="carousel-imgs" id="carousel-container">
-			<img class="carousel-img" id="carousel-1" src="static/img/3.PNG" alt="carousel-1" />
-			<img class="carousel-img" id="carousel-2" src="static/img/4.PNG" alt="carousel-2" />
-			<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
+		<div id="carousel" class="carousel">
+			<button class="arrow">
+				<img src="static/img/arrow.svg" id="arrow-left" alt="arrow-left" draggable="false" />
+			</button>
+			<div class="carousel-imgs" id="carousel-container">
+				<img class="carousel-img" id="carousel-1" src="static/img/3.PNG" alt="carousel-1" />
+				<img class="carousel-img" id="carousel-2" src="static/img/4.PNG" alt="carousel-2" />
+				<img class="carousel-img" id="carousel-3" src="static/img/5.PNG" alt="carousel-3" />
+			</div>
+			<button class="arrow">
+				<img src="static/img/arrow.svg" id="arrow-right" alt="arrow-right" draggable="false" />
+			</button>
 		</div>
-		<button class="arrow">
-			<img src="static/img/arrow.svg" id="arrow-right" alt="arrow-right" draggable="false" />
-		</button>
-	</div>
 
+	</div>
 	<!-- 
 	<div class="svg">
 		<object data="static/img/charlotte.svg" type="image/svg+xml" id="svg-object"></object>

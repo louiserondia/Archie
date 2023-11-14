@@ -32,24 +32,27 @@ img.onload = () => {
 };
 
 
+function setCanvasTextValuesForTransition() {
+	canvas.style.height = 'clamp(150px, 27%, 27%)';
+	canvas.style.transform = 'rotate(-35deg)';
+	title.style.transform = 'translateY(0)';
+	setTimeout(() => {
+		text.style.opacity = '1';
+	}, 200);
+
+}
+setTimeout(() => {
+	title.style.opacity = '1';
+}, 20);
+
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	timeoutId = setTimeout(() => {
-		canvas.style.height = 'clamp(150px, 30%, 30%)';
-		canvas.style.transform = 'rotate(-35deg)';
-		title.style.opacity = '1';
-		setTimeout(() => {
-			text.style.opacity = '1';
-		}, 200);
+		setCanvasTextValuesForTransition();
 	}, 1); // Affiche le texte direct sur téléphone
 }
 else {
 	timeoutId = setTimeout(() => {
-		canvas.style.height = 'clamp(150px, 30%, 30%)';
-		canvas.style.transform = 'rotate(-35deg)';
-		title.style.opacity = '1';
-		setTimeout(() => {
-			text.style.opacity = '1';
-		}, 200);
+		setCanvasTextValuesForTransition();
 	}, 2000); // Affiche le texte après 2 secondes d'inactivité
 }
 
@@ -72,13 +75,7 @@ function handleMouseMove(event) {
 	const isTransparent = pixelData[3] === 0
 
 	if (!isTransparent) {
-		canvas.style.height = 'clamp(150px, 27%, 27%)';
-		canvas.style.transform = 'rotate(-35deg)';
-		title.style.opacity = '1';
-		setTimeout(() => {
-			text.style.opacity = '1';
-		}, 200);
-
+		setCanvasTextValuesForTransition();
 		// Animation quand on passe sur le radis (il se secoue)
 		if (!transformInProgress) {
 			canvas.style.animation = 'shake 0.5s ease infinite';
@@ -325,8 +322,12 @@ function fetchLanguageFile(language) {
 		.then((response) => response.json())
 		.then((data) => {
 			// Mettez à jour le contenu de la page avec les traductions
-			document.getElementById("homeDescriptionText").textContent = data.homeDescriptionText;
-			
+			document.getElementById("homeDescriptionText1").textContent = data.homeDescriptionText1;
+			document.getElementById("homeDescriptionText2").textContent = data.homeDescriptionText2;
+			document.getElementById("homeDescriptionText3").textContent = data.homeDescriptionText3;
+			document.getElementById("homeDescriptionText4").textContent = data.homeDescriptionText4;
+			document.getElementById("homeDescriptionText5").textContent = data.homeDescriptionText5;
+
 			document.getElementById("cateringText").textContent = data.cateringText;
 			document.getElementById("cateringForm").textContent = data.cateringForm;
 			document.getElementById("firstnameForm").placeholder = data.firstnameForm;
@@ -335,12 +336,12 @@ function fetchLanguageFile(language) {
 			document.getElementById("emailForm").placeholder = data.emailForm;
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
-			
+
 			document.getElementById("scheduleText1").textContent = data.scheduleText1;
 			document.getElementById("scheduleText2").textContent = data.scheduleText2;
 			// document.getElementById("scheduleText3").textContent = data.scheduleText3;
 			// document.getElementById("scheduleText4").textContent = data.scheduleText4;
-			
+
 			document.getElementById("menuHome").textContent = data.menuHome;
 			document.getElementById("menuCatering").textContent = data.menuCatering;
 			document.getElementById("menuAboutUs").textContent = data.menuAboutUs;

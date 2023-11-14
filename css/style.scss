@@ -11,6 +11,25 @@ html {
 	cursor: url("../static/charte/mouse1.png"), wait;
 	scroll-behavior: smooth;
 	background-color: $light;
+	overflow-x: clip;
+	::-webkit-scrollbar{
+		width: 10px;
+	}
+	
+	::-webkit-scrollbar-track-piece{
+		background-color: transparent;
+	}
+	
+	::-webkit-scrollbar-thumb{
+		background-color: #bebebe;
+		border: 0.1px solid #bebebe;
+		border-radius: 10px;
+		margin: 0 1px;
+	}
+	
+	::-webkit-scrollbar-thumb:hover{
+		background-color: #909090;
+	}
 }
 
 a {
@@ -52,6 +71,11 @@ object {
 	overflow: hidden;
 }
 
+label {
+	font-family: 'futura-medium';
+	font-size: 1em;
+	color: $blue;
+}
 // ---------------------
 //  	   FONTS
 // ---------------------
@@ -108,15 +132,21 @@ object {
 // LOGO AND DESCRIPTION
 // ---------------------
 
+.whole-page {
+	display: flex;
+	flex-direction: column;
+	// gap: 2rem;
+}
+
 .logo-description {
-	height: 100vh;
+	height: max-content;
 	display: flex;
 	justify-content: center;
-	margin: 0 auto;
 	align-items: center;
 	flex-direction: column;
 	overflow: hidden;
 	.canvas-img {
+		margin: 3rem;
 		display: flex;
 		height: clamp(300px, 40rem, 40rem);
 		img {
@@ -124,7 +154,6 @@ object {
 		}
 		.canvas {
 			height: 70%;
-			margin-top: 4rem;
 			transition:
 				height 1s ease-in-out,
 				transform 1s ease-in-out;
@@ -141,32 +170,40 @@ object {
 		align-items: center;
 		.title {
 			opacity: 0;
-			font-size: 7rem;
-			margin: 12rem 0 0 0;
-			transition: opacity 0.75s ease-in-out;
+			font-size: 6em;
+			line-height: 0;
+			margin: 17rem 0 0 0;
+			padding: 3rem;
+			transform: translateY(17rem);
+			transition:
+				opacity 1s ease-in-out,
+				transform 1s ease-in-out;
 		}
 		#text {
 			opacity: 0;
-			max-width: 28rem;
+			max-width: 35rem;
 			margin: 0 1rem;
 			font-family: "Lato-Light";
 			transition: opacity 1s ease-in-out;
-			transform: translateY(-8rem);
+			h3 {
+				margin: 0.5rem 0;
+			}
+			#homeDescriptionText3 {
+				font-family: 'futura-medium';
+			}
 		}
-	}
-
-	.arrow-bottom {
-		justify-self: flex-end;
-		justify-content: flex-end;
-		border: none;
-		background-color: transparent;
-		margin-bottom: 2rem;
-		overflow: visible;
-		z-index: 3000;
-		.anchor-arrow-bottom {
-			// z-index: 40;
-			#arrow-bottom {
-				width: 3rem;
+		.arrow-bottom {
+			justify-self: flex-end;
+			justify-content: flex-end;
+			border: none;
+			background-color: transparent;
+			overflow: visible;
+			z-index: 3000;
+			margin: 1.5rem 0;
+			.anchor-arrow-bottom {
+				#arrow-bottom {
+					width: 3rem;
+				}
 			}
 		}
 	}
@@ -200,17 +237,19 @@ object {
 	.logo-description {
 		.description {
 			.title {
+				padding: 2rem;
+				margin-top: 28rem;
 				font-size: 4rem;
 			}
 			#text {
-				transform: translateY(-5rem);
+				margin: 0;
+				h3 {
+					margin: 0.5rem 1.2rem;
+				}
 			}
 		}
 		.canvas-img {
 			height: clamp(300px, 30rem, 30rem);
-		}
-		.arrow-bottom {
-			margin-top: auto;
 		}
 	}
 	#menu-cross {
@@ -432,6 +471,13 @@ object {
 			width: 100%;
 			max-height: 10em;
 		}
+		input {
+			width: 50%;
+			border: 2px solid $blue;
+			font-family: 'futura-medium';
+			padding: 0.5rem;
+			font-size: 1em;
+		}
 		button {
 			height: 2.5rem;
 			background-color: white;
@@ -571,6 +617,10 @@ object {
 	}
 }
 
+// ---------------------
+//		 TERRASSE
+// ---------------------
+
 .terrasse {
 	display: flex;
 	justify-content: center;
@@ -583,13 +633,12 @@ object {
 	height: fit-content;
 	overflow-x: clip;
 	.top-layer {
-		// z-index: +1;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		.front {
 			height: auto;
-			width: 130vw;
+			width: 145vw;
 			max-width: 850px;
 		}
 		.terrasse-tables {
@@ -613,6 +662,7 @@ object {
 
 @media (max-width: 600px) {
 	.terrasse {
+		margin-top: 14rem;
 		.top-layer {
 			.terrasse-tables {
 				margin-top: -8rem;

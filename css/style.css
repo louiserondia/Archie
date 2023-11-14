@@ -6,6 +6,26 @@ html {
   cursor: url("../static/charte/mouse1.png"), wait;
   scroll-behavior: smooth;
   background-color: #dbe3e1;
+  overflow-x: clip;
+}
+body ::-webkit-scrollbar,
+html ::-webkit-scrollbar {
+  width: 10px;
+}
+body ::-webkit-scrollbar-track-piece,
+html ::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+body ::-webkit-scrollbar-thumb,
+html ::-webkit-scrollbar-thumb {
+  background-color: #bebebe;
+  border: 0.1px solid #bebebe;
+  border-radius: 10px;
+  margin: 0 1px;
+}
+body ::-webkit-scrollbar-thumb:hover,
+html ::-webkit-scrollbar-thumb:hover {
+  background-color: #909090;
 }
 
 a {
@@ -46,6 +66,12 @@ object {
   overflow: hidden;
 }
 
+label {
+  font-family: "futura-medium";
+  font-size: 1em;
+  color: #00333b;
+}
+
 @font-face {
   font-family: "YoungSerif-Regular";
   src: url("../static/font/YoungSerif-Regular.woff2") format("woff2"), url("../static/font/YoungSerif-Regular.ttf") format("ttf");
@@ -82,16 +108,22 @@ object {
   font-weight: normal;
   font-style: normal;
 }
+.whole-page {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo-description {
-  height: 100vh;
+  height: -moz-max-content;
+  height: max-content;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
 }
 .logo-description .canvas-img {
+  margin: 3rem;
   display: flex;
   height: clamp(300px, 40rem, 40rem);
 }
@@ -100,7 +132,6 @@ object {
 }
 .logo-description .canvas-img .canvas {
   height: 70%;
-  margin-top: 4rem;
   transition: height 1s ease-in-out, transform 1s ease-in-out;
 }
 .logo-description .description {
@@ -115,28 +146,36 @@ object {
 }
 .logo-description .description .title {
   opacity: 0;
-  font-size: 7rem;
-  margin: 12rem 0 0 0;
-  transition: opacity 0.75s ease-in-out;
+  font-size: 6em;
+  line-height: 0;
+  margin: 17rem 0 0 0;
+  padding: 3rem;
+  transform: translateY(17rem);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 .logo-description .description #text {
   opacity: 0;
-  max-width: 28rem;
+  max-width: 35rem;
   margin: 0 1rem;
   font-family: "Lato-Light";
   transition: opacity 1s ease-in-out;
-  transform: translateY(-8rem);
 }
-.logo-description .arrow-bottom {
+.logo-description .description #text h3 {
+  margin: 0.5rem 0;
+}
+.logo-description .description #text #homeDescriptionText3 {
+  font-family: "futura-medium";
+}
+.logo-description .description .arrow-bottom {
   justify-self: flex-end;
   justify-content: flex-end;
   border: none;
   background-color: transparent;
-  margin-bottom: 2rem;
   overflow: visible;
   z-index: 3000;
+  margin: 1.5rem 0;
 }
-.logo-description .arrow-bottom .anchor-arrow-bottom #arrow-bottom {
+.logo-description .description .arrow-bottom .anchor-arrow-bottom #arrow-bottom {
   width: 3rem;
 }
 
@@ -159,16 +198,18 @@ object {
 }
 @media (max-width: 600px) {
   .logo-description .description .title {
+    padding: 2rem;
+    margin-top: 28rem;
     font-size: 4rem;
   }
   .logo-description .description #text {
-    transform: translateY(-5rem);
+    margin: 0;
+  }
+  .logo-description .description #text h3 {
+    margin: 0.5rem 1.2rem;
   }
   .logo-description .canvas-img {
     height: clamp(300px, 30rem, 30rem);
-  }
-  .logo-description .arrow-bottom {
-    margin-top: auto;
   }
   #menu-cross {
     border: 2px solid #dbe3e1;
@@ -340,6 +381,13 @@ object {
   width: 100%;
   max-height: 10em;
 }
+#catering div form input {
+  width: 50%;
+  border: 2px solid #00333b;
+  font-family: "futura-medium";
+  padding: 0.5rem;
+  font-size: 1em;
+}
 #catering div form button {
   height: 2.5rem;
   background-color: white;
@@ -478,7 +526,7 @@ object {
 }
 .terrasse .top-layer .front {
   height: auto;
-  width: 130vw;
+  width: 145vw;
   max-width: 850px;
 }
 .terrasse .top-layer .terrasse-tables {
@@ -499,6 +547,9 @@ object {
 }
 
 @media (max-width: 600px) {
+  .terrasse {
+    margin-top: 14rem;
+  }
   .terrasse .top-layer .terrasse-tables {
     margin-top: -8rem;
   }
