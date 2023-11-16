@@ -1,16 +1,15 @@
 {
 	"homeDescriptionText1": "Welkom bij Archie, uw gastronomisch toevluchtsoord in het hart van de vegetarische eenvoud. Hier geloven we in de magie van smaken die rechtstreeks uit de natuur komen. Onze keuken viert het eenvoudige plezier van lekker eten, in harmonie met de seizoenen.",
 	"homeDescriptionText2": "Bij Archie is vegetarisme niet alleen een voedselkeuze; het is een levenswijze. We bieden u een gastronomische en gebalanceerde keuken, toegewijd om u een authentieke culinaire ervaring te bieden. Elk gerecht wordt met zorg bereid, met nadruk op de eenvoud en de ware aard van de ingrediënten, zorgvuldig geselecteerd bij onze lokale leveranciers.",
-	"homeDescriptionText3": "We zijn geopend van maandag tot zaterdag van 09:00 tot 17:00 uur, en verwelkomen u graag voor ontbijt, lunch, afternoon tea, of gewoon een koffie/theepauze.",
 	"homeDescriptionText4": "Als u plannen heeft voor evenementen, aarzel dan niet om contact met ons op te nemen. Of het nu bij ons is of elders, onze cateringdienst brengt de eenvoud en smaak van Archie naar uw speciale gelegenheden. We zijn er om elk moment onvergetelijk te maken, met zelfgemaakte gerechten recht uit het hart.",
-	"homeDescriptionText5": "Sluit u aan bij ons bij Archie, waar vegetarisme een eenvoudige en heerlijke ervaring wordt, vrij van opsmuk, en waar de natuurlijke schoonheid van smaken wordt omarmd!",
 	
-	"cateringText": "Stuur ons per e-mail uw evenement, de datum en alle benodigde informatie voor catering. We nemen contact met u op!",
-	"cateringForm": "formulier",
+	"cateringText": "Stuur ons uw aanvraag hieronder met zoveel mogelijk informatie, en we zullen zo snel mogelijk bij u terugkomen.",
+	"cateringForm": "Catering",
 	"firstnameForm": "Voornaam",
 	"lastnameForm": "Achternaam",
 	"phoneNumberForm": "Telefoonnummer",
 	"emailForm": "Email",
+	"dateForm": "Datum van het evenement",
 	"descriptionForm": "Beschrijving van het evenement, opmerkingen en aanvullende informatie",
 	"submitForm": "Verzenden",
 	

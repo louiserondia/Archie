@@ -19,7 +19,7 @@ const menuCross = document.getElementById('menu-cross');
 const logoRadis = document.getElementById('logo');
 const canvas = document.getElementById('canvas');
 const title = document.getElementById('title');
-const text = document.getElementById('text');
+const description = document.getElementById('description');
 const ctx = canvas.getContext('2d');
 
 // Load the image
@@ -35,15 +35,18 @@ img.onload = () => {
 function setCanvasTextValuesForTransition() {
 	canvas.style.height = 'clamp(150px, 27%, 27%)';
 	canvas.style.transform = 'rotate(-35deg)';
-	title.style.transform = 'translateY(0)';
+	canvas.style.marginTop = '0';
 	setTimeout(() => {
-		text.style.opacity = '1';
+		title.style.opacity = '1';
 	}, 200);
+	setTimeout(() => {
+		description.style.opacity = '1';
+	}, 400);
 
 }
-setTimeout(() => {
-	title.style.opacity = '1';
-}, 20);
+// setTimeout(() => {
+// 	title.style.opacity = '1';
+// }, 20);
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	timeoutId = setTimeout(() => {
@@ -53,7 +56,7 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 else {
 	timeoutId = setTimeout(() => {
 		setCanvasTextValuesForTransition();
-	}, 2000); // Affiche le texte après 2 secondes d'inactivité
+	}, 1000); // Affiche le texte après 2 secondes d'inactivité
 }
 
 
@@ -324,9 +327,7 @@ function fetchLanguageFile(language) {
 			// Mettez à jour le contenu de la page avec les traductions
 			document.getElementById("homeDescriptionText1").textContent = data.homeDescriptionText1;
 			document.getElementById("homeDescriptionText2").textContent = data.homeDescriptionText2;
-			document.getElementById("homeDescriptionText3").textContent = data.homeDescriptionText3;
 			document.getElementById("homeDescriptionText4").textContent = data.homeDescriptionText4;
-			document.getElementById("homeDescriptionText5").textContent = data.homeDescriptionText5;
 
 			document.getElementById("cateringText").textContent = data.cateringText;
 			document.getElementById("cateringForm").textContent = data.cateringForm;
@@ -334,6 +335,7 @@ function fetchLanguageFile(language) {
 			document.getElementById("lastnameForm").placeholder = data.lastnameForm;
 			document.getElementById("phoneNumberForm").placeholder = data.phoneNumberForm;
 			document.getElementById("emailForm").placeholder = data.emailForm;
+			document.getElementById("dateForm").textContent = data.dateForm;
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
 

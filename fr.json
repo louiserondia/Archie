@@ -1,15 +1,15 @@
 {
-	"homeDescriptionText1": "Bienvenue chez Archie, votre refuge gourmand végétarien. Notre cuisine célèbre le plaisir authentique de bien manger en harmonie avec les saisons, mettant en avant la simplicité des ingrédients soigneusement sélectionnés.",
-	"homeDescriptionText2": "Le végétarisme chez Archie va au-delà du choix alimentaire, c'est un art de vivre.",
-	"homeDescriptionText3": "Ouverts du lundi au samedi de 09h à 17h, nous vous accueillons pour le petit déjeuner, le lunch, le goûter, ou une pause café/thé.",
-	"homeDescriptionText4": "Pour vos événements, notre service traiteur apporte la simplicité et la saveur d'Archie. Rejoignez-nous pour une expérience végétarienne délicieuse, sans artifice, révélant la beauté naturelle des saveurs !",
-
-	"cateringText": "Envoyez-nous par mail votre évènement, la date et toutes les infos nécessaires pour un catering. \n Nous vous recontacterons dès que possible !",
-	"cateringForm": "Formulaire",
+	"homeDescriptionText1": "Bienvenue chez Archie, où Charlotte & Charles vous concoctent une cuisine végétarienne et vegan familiale. Notre cuisine généreuse célèbre le plaisir simple de bien manger et ce en harmonie avec les saisons.",
+	"homeDescriptionText2": "Ouverts du lundi au samedi de 09h à 17h, nous vous accueillons pour le petit déjeuner, le lunch, le goûter, ou simplement une pause café/thé.",
+	"homeDescriptionText4": "Si vous avez des projets d'événements, n'hésitez pas à faire appel à nous! Que ce soit chez nous ou ailleurs, notre service traiteur apporte la simplicité et la saveur d'Archie à vos occasions spéciales.",
+	
+	"cateringText": "Envoyez-nous votre demande ci-dessous avec un maximum d'information & nous reviendrons vers-vous dans les plus brefs délais.",
+	"cateringForm": "Service Traiteur",
 	"firstnameForm": "Prénom",
 	"lastnameForm": "Nom de famille",
 	"phoneNumberForm": "Numéro de téléphone",
 	"emailForm": "Email",
+	"dateForm": "Date de l'évènement",
 	"descriptionForm": "Description, remarques et autres informations liées à l'évènement",
 	"submitForm": "Envoyer",
 
