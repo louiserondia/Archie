@@ -327,7 +327,7 @@ function fetchLanguageFile(language) {
 			// Mettez à jour le contenu de la page avec les traductions
 			document.getElementById("homeDescriptionText1").textContent = data.homeDescriptionText1;
 			document.getElementById("homeDescriptionText2").textContent = data.homeDescriptionText2;
-			document.getElementById("homeDescriptionText4").textContent = data.homeDescriptionText4;
+			document.getElementById("homeDescriptionText3").textContent = data.homeDescriptionText3;
 
 			document.getElementById("cateringText").textContent = data.cateringText;
 			document.getElementById("cateringForm").textContent = data.cateringForm;
@@ -356,3 +356,4 @@ function fetchLanguageFile(language) {
 		item.style.display = (item.getAttribute("value") === language) ? 'none' : 'block';
 	});
 }
+ 
