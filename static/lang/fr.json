@@ -1,0 +1,32 @@
+{
+	"homeDescriptionText1": "Bienvenue chez Archie, où Charlotte & Charles vous concoctent une cuisine végétarienne et vegan familiale. Notre cuisine généreuse célèbre le plaisir simple de bien manger et ce, en harmonie avec les saisons.",
+	"homeDescriptionText2": "Ouverts du lundi au samedi de 09h à 17h, nous vous accueillons pour le petit déjeuner, le lunch, le goûter, ou simplement une pause café/thé.",
+	"homeDescriptionText3": "Si vous avez des projets d'événements, n'hésitez pas à faire appel à nous ! Que ce soit chez nous ou ailleurs, notre service traiteur apporte la simplicité et la saveur d'Archie à vos occasions spéciales.",
+	
+	"cateringText": "Envoyez-nous votre demande ci-dessous avec un maximum d'information & nous reviendrons vers vous dans les plus brefs délais.",
+	"cateringForm": "Service Traiteur",
+	"firstnameForm": "Prénom",
+	"lastnameForm": "Nom de famille",
+	"phoneNumberForm": "Numéro de téléphone",
+	"emailForm": "Email",
+	"dateForm": "Date de l'évènement",
+	"descriptionForm": "Description, remarques et autres informations liées à l'évènement",
+	"submitForm": "Envoyer",
+
+	"scheduleText1": "Contactez-nous pour un évènement,",
+	"scheduleText2": "une réservation ou une question !",
+	"scheduleText3": "Nous proposons également des services de traiteur",
+	"scheduleText4": "➜ Formulaire de réservation",
+
+	"menuHome": "À PROPOS",
+	"menuCatering": "CATERING",
+	"menuAboutUs": "QUI NOUS SOMMES",
+	"menuContact": "CONTACT",
+	"menuGalery": "GALERIE",
+
+	"dialogue1": "Coucou, c'est Charlotte, et voici  mon acolyte dans cette aventure !",
+	"dialogue2": "Salut tout le monde ! On dirige ce joyeux projet ensemble. Moi, c'est Charles.",
+	"dialogue3": "Archie, c'est le petit garçon espiègle de Charlotte et je suis accessoirement son oncle préféré !",
+	"dialogue4": "Venez nous rendre visite et restez connecté·e·s pour suivre nos aventures !"
+
+}

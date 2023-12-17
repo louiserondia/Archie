@@ -11,7 +11,7 @@ const menuContent = document.getElementById('menu-content');
 const menuLines = document.getElementById('menu-lines');
 const menuCross = document.getElementById('menu-cross');
 
-// Quand on hover la première   fois le logo, le texte descriptif apparaît
+// Quand on hover la première fois le logo, le texte descriptif apparaît
 // Apparaît aussi après 2 secondes d'inactivité
 
 // fix petit bug quand l'animatione est en cours automatiquement et qu'on passe dessus
@@ -31,22 +31,22 @@ img.onload = () => {
 	ctx.drawImage(img, 0, 0, img.width, img.height);
 };
 
+let canvasTransitioning = false;
 
 function setCanvasTextValuesForTransition() {
+	canvasTransitioning = true;
 	canvas.style.height = 'clamp(150px, 27%, 27%)';
 	canvas.style.transform = 'rotate(-35deg)';
 	canvas.style.marginTop = '0';
 	setTimeout(() => {
 		title.style.opacity = '1';
-	}, 200);
+	}, 400);
 	setTimeout(() => {
 		description.style.opacity = '1';
-	}, 400);
+	}, 600);
+	canvasTransitioning = false;
 
 }
-// setTimeout(() => {
-// 	title.style.opacity = '1';
-// }, 20);
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	timeoutId = setTimeout(() => {
@@ -55,8 +55,9 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 }
 else {
 	timeoutId = setTimeout(() => {
-		setCanvasTextValuesForTransition();
-	}, 1000); // Affiche le texte après 2 secondes d'inactivité
+		if (!canvasTransitioning)
+			setCanvasTextValuesForTransition();
+	}, 1000); // Affiche le texte après 1 secondes d'inactivité
 }
 
 
@@ -78,14 +79,16 @@ function handleMouseMove(event) {
 	const isTransparent = pixelData[3] === 0
 
 	if (!isTransparent) {
-		setCanvasTextValuesForTransition();
-		// Animation quand on passe sur le radis (il se secoue)
-		if (!transformInProgress) {
-			canvas.style.animation = 'shake 0.5s ease infinite';
-			canvas.style.animationPlayState = 'running';
-			setTimeout(() => {
-				canvas.style.animationPlayState = 'paused';
-			}, 1000);
+		if (!canvasTransitioning) {
+			setCanvasTextValuesForTransition();
+			if (!transformInProgress) {
+				// Animation quand on passe sur le radis (il se secoue)
+				canvas.style.animation = 'shake 0.5s ease infinite';
+				canvas.style.animationPlayState = 'running';
+				setTimeout(() => {
+					canvas.style.animationPlayState = 'paused';
+				}, 1000);
+			}
 		}
 	}
 }
@@ -107,7 +110,7 @@ menuContent.addEventListener('click', () => (toggleDropdownMenu()));
 // Carousel images
 // (on cache l'ancienne image et on affiche la suivante)
 
-let carousel = ['carousel-1', 'carousel-2', 'carousel-3'];
+let carousel = ['carousel-1', 'carousel-2', 'carousel-3', 'carousel-4', 'carousel-5', 'carousel-6'];
 let carouselIndex = 0;
 let arrowLeft = document.getElementById('arrow-left');
 let arrowRight = document.getElementById('arrow-right');
@@ -161,14 +164,28 @@ function showPreviousImage() {
 
 const charlotte = document.getElementById('charlotte');
 const charles = document.getElementById('charles');
-const charlotteBubble = document.getElementById('charlotteBubble');
 
-charlotte.addEventListener('mouseenter', () => {
-	charlotteBubble.style.opacity = '1';
-});
-charlotte.addEventListener('mouseleave', () => {
-	charlotteBubble.style.opacity = '0';
-});
+const charlotteDialogue1 = document.getElementById('charlotteDialogue1');
+const charlotteDialogue2 = document.getElementById('charlotteDialogue2');
+const charlesDialogue = document.getElementById('charlesDialogue');
+
+function displayDialogue() {
+	charlotteDialogue1.style.opacity = '1';
+	setTimeout(() => {
+		charlesDialogue.style.opacity = '1';
+		setTimeout(() => {
+			charlotteDialogue2.style.opacity = '1';
+		}, 400);
+	}, 400);
+}
+
+charlotte.addEventListener('mouseenter', () => displayDialogue());
+charles.addEventListener('mouseenter', () => displayDialogue());
+
+// charlotte.addEventListener('mouseleave', () => {
+// 	// charlotteBubble.style.opacity = '0';
+// 	dialogue1.style.opacity = '0';
+// });
 
 // faire que sur gsm l'image apparaisse quand on passe en scrollant
 
@@ -181,9 +198,9 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 			const windowHeight = window.innerHeight;
 
 			if (imageTop >= windowHeight / 8 && imageTop <= windowHeight / 2) {
-				charlotteBubble.style.opacity = '1';
+				// charlotteBubble.style.opacity = '1';
 			} else {
-				charlotteBubble.style.opacity = '0';
+				// charlotteBubble.style.opacity = '0';
 			}
 		});
 	});
@@ -321,7 +338,7 @@ fetchLanguageFile(currentLanguage);
 
 function fetchLanguageFile(language) {
 	// Chargez le fichier de langue approprié (fr.json, en.json, es.json)
-	fetch(`${language}.json`)
+	fetch(`static/lang/${language}.json`)
 		.then((response) => response.json())
 		.then((data) => {
 			// Mettez à jour le contenu de la page avec les traductions
@@ -350,10 +367,13 @@ function fetchLanguageFile(language) {
 			document.getElementById("menuContact").textContent = data.menuContact;
 			document.getElementById("menuGalery").textContent = data.menuGalery;
 
+			document.getElementById("dialogue1").textContent = data.dialogue1;
+			document.getElementById("dialogue2").textContent = data.dialogue2;
+			document.getElementById("dialogue3").textContent = data.dialogue3;
+			document.getElementById("dialogue4").textContent = data.dialogue4;
 		});
 
 	dropdownItems.forEach((item) => {
 		item.style.display = (item.getAttribute("value") === language) ? 'none' : 'block';
 	});
 }
- 

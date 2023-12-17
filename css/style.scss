@@ -151,7 +151,7 @@ label {
 	gap: 1rem;
 	align-items: center;
 	justify-content: center;
-	margin-top: 5rem;
+	margin-top: 3rem;
 	.canvas-img {
 		height: 9rem;
 		img {
@@ -171,16 +171,15 @@ label {
 		font-size: 6em;
 		line-height: 1;
 		margin: 2rem 0 0 0;
-		transition: opacity 0.75s ease-in-out;
+		transition: opacity 1s ease-in-out;
 	}
 	.description {
 		opacity: 0;
 		max-width: 33rem;
 		text-align: center;
 		min-height: 17.7rem;
-		transition:
-			opacity 1s ease-in-out;
-			// transform 1s ease-in-out;
+		transition: opacity 1s ease-in-out;
+		// transform 1s ease-in-out;
 		p {
 			margin: 0.75rem 0;
 		}
@@ -551,7 +550,7 @@ label {
 
 	@media (max-width: 600px) {
 		.carousel-imgs {
-			width: 95vw;
+			width: 97vw;
 		}
 		.arrow {
 			z-index: +1;
@@ -584,27 +583,80 @@ label {
 	.characters {
 		display: flex;
 		justify-content: center;
-		margin: 0 auto;
-		margin-top: 4rem;
+		align-items: center;
+		margin: 3rem 0 1rem 0;
 		img {
 			max-width: 250px;
-			height: auto;
+			align-self: center;
 		}
 		.charlotte {
-			#charlotteBubble {
-				opacity: 0;
-				position: absolute;
-				transform: translate(-5rem, -3rem);
-				transition: opacity 0.1s linear;
+			display: flex;
+			margin-right: -2rem;
+
+			.charlotte-dialogue-div {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				transform: translateX(7rem);
+				#charlotteDialogue1 {
+					img {
+						max-width: 265px;
+						position: absolute;
+						transform: translate(-1rem, -0.75rem);
+					}
+				}
+				#charlotteDialogue2 {
+					img {
+
+						max-width: 270px;
+						// position: absolute;
+						transform: translate(-1rem, -0.5rem)
+						rotate(187deg);
+					}
+				}
+			}
+		}
+		.charles {
+			display: flex;
+			height: fit-content;
+			width: 50%;
+			margin-left: -1rem;
+			#charlesDialogue {
+				transform: translate(-4rem, 12rem);
+				#dialogue2 {
+					top: -0.4rem;
+				}
+				#dialogue3 {
+					top: 5.5rem;
+					left: 1rem;
+				}
+				img {
+					max-width: 325px !important;
+					position: absolute;
+					top: 0;
+					transform: translate(-2.5rem, -1rem);
+				}
 			}
 		}
 	}
 }
 
+.dialogue {
+	width: 15rem;
+	z-index: +1;
+	text-align: center;
+	position: absolute;
+}
+
+.dialogue-div {
+	transition: opacity 0.5s linear;
+	opacity: 0;
+}
+
 @media (max-width: 600px) {
 	.charlotte {
 		transform: translate(60vw, 8rem) rotate(-40deg);
-		#charlotteBubble {
+		#charlotteBubble1 {
 			width: 80%;
 			height: auto;
 			margin: 2rem 0 0 2rem;

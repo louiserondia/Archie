@@ -22,5 +22,11 @@
 	"menuCatering": "CATERING",
 	"menuAboutUs": "ABOUT US",
 	"menuContact": "CONTACT",
-	"menuGalery": "GALERY"
+	"menuGalery": "GALERY",
+
+	"dialogue1": "Hello, it's Charlotte, and here is my sidekick in this adventure.",
+	"dialogue2": "Hi everyone! We're leading this cheerful project together. I'm Charles!",
+	"dialogue3": "Archie is Charlotte's mischievous little boy, and I happen to be his favorite uncle!",
+	"dialogue4": "Come visit us and stay connected to follow our adventures!"
+	  
 }
