@@ -345,6 +345,7 @@ function fetchLanguageFile(language) {
 			document.getElementById("homeDescriptionText1").textContent = data.homeDescriptionText1;
 			document.getElementById("homeDescriptionText2").textContent = data.homeDescriptionText2;
 			document.getElementById("homeDescriptionText3").textContent = data.homeDescriptionText3;
+			document.getElementById("homeDescriptionText4").textContent = data.homeDescriptionText4;
 
 			document.getElementById("cateringText").textContent = data.cateringText;
 			document.getElementById("cateringForm").textContent = data.cateringForm;
@@ -358,9 +359,7 @@ function fetchLanguageFile(language) {
 
 			document.getElementById("scheduleText1").textContent = data.scheduleText1;
 			document.getElementById("scheduleText2").textContent = data.scheduleText2;
-			// document.getElementById("scheduleText3").textContent = data.scheduleText3;
-			// document.getElementById("scheduleText4").textContent = data.scheduleText4;
-
+			
 			document.getElementById("menuHome").textContent = data.menuHome;
 			document.getElementById("menuCatering").textContent = data.menuCatering;
 			document.getElementById("menuAboutUs").textContent = data.menuAboutUs;
