@@ -12,6 +12,7 @@ html {
 	scroll-behavior: smooth;
 	background-color: $light;
 	overflow-x: clip;
+
 	::-webkit-scrollbar {
 		width: 10px;
 	}
@@ -83,6 +84,7 @@ label {
 	font-size: 1em;
 	color: $blue;
 }
+
 // ---------------------
 //  	   FONTS
 // ---------------------
@@ -151,11 +153,14 @@ label {
 	align-items: center;
 	justify-content: center;
 	margin-top: 3rem;
+
 	.canvas-img {
 		height: 9rem;
+
 		img {
 			height: 0;
 		}
+
 		canvas {
 			margin-top: 5rem;
 			height: 20rem;
@@ -165,6 +170,7 @@ label {
 				margin-top 0.75s ease-in-out;
 		}
 	}
+
 	.title {
 		opacity: 0;
 		font-size: 6em;
@@ -172,16 +178,19 @@ label {
 		margin: 2rem 0 0 0;
 		transition: opacity 1s ease-in-out;
 	}
+
 	.description {
 		opacity: 0;
 		max-width: 33rem;
 		text-align: center;
 		min-height: 17.7rem;
 		transition: opacity 1s ease-in-out;
+
 		// transform 1s ease-in-out;
 		p {
 			margin: 0.75rem 0;
 		}
+
 		#homeDescriptionText2,
 		#homeDescriptionText4 {
 			font-family: "futura-medium";
@@ -190,10 +199,12 @@ label {
 			// font-weight: 600;
 		}
 	}
+
 	.arrow-bottom {
 		border: none;
 		background-color: transparent;
 		padding: 1rem 0;
+
 		img {
 			height: 1rem;
 		}
@@ -206,15 +217,19 @@ label {
 	0% {
 		transform: rotate(-35deg);
 	}
+
 	25% {
 		transform: rotate(-40deg);
 	}
+
 	50% {
 		transform: rotate(-30deg);
 	}
+
 	75% {
 		transform: rotate(-40deg);
 	}
+
 	100% {
 		transform: rotate(-35deg);
 	}
@@ -227,25 +242,34 @@ label {
 @media (max-width: 600px) {
 	.home {
 		margin-top: 2.5rem;
+		
 		.title {
 			font-size: 4em;
 		}
+		
 		.description {
 			margin: 0;
+			
 			p {
 				margin: 0.5rem 1.2rem;
 			}
 		}
-		.canvas-img {
-			// height: clamp(300px, 30rem, 30rem);
-		}
+
 	}
+	
 	#menu-cross {
 		border: 2px solid $light;
 	}
+	
 	#menu-lines {
 		border: 2px solid $blue;
 		background-color: $light;
+	}
+}
+@media (min-height: 800px) {
+	.home {
+		margin-top: 10vh;
+		
 	}
 }
 
@@ -261,6 +285,7 @@ label {
 	background-color: transparent;
 	padding: 0;
 	z-index: 2000;
+
 	img {
 		cursor: pointer;
 		height: 2rem;
@@ -294,6 +319,7 @@ label {
 
 	div {
 		margin: 6rem 0 0 2rem;
+
 		h2 {
 			font-family: "Lato-Regular";
 			font-size: x-large;
@@ -328,6 +354,7 @@ label {
 	margin: 0 0 2rem 2rem;
 	justify-content: flex-start;
 	gap: 1rem;
+
 	img {
 		filter: invert(1);
 		height: 2.5rem;
@@ -341,7 +368,8 @@ label {
 .schedule {
 	display: flex;
 	justify-content: center;
-	> div {
+
+	>div {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -351,6 +379,7 @@ label {
 		margin: 2rem 1rem;
 		padding: 2rem;
 		border: 2px solid $blue;
+
 		h3 {
 			margin: 0;
 		}
@@ -374,19 +403,23 @@ label {
 		flex-direction: row;
 		gap: 1rem;
 		margin-top: 0.5rem;
+
 		.contact-images {
 			display: flex;
 			flex-direction: column;
 			gap: 1.5rem;
+
 			img {
 				height: 2.3rem;
 			}
 		}
+
 		.contact-text {
 			display: flex;
 			flex-direction: column;
 			gap: 1.5rem;
 			justify-content: flex-start;
+
 			h2 {
 				padding-top: 0.3rem;
 				margin: 0 auto 0 0;
@@ -402,16 +435,20 @@ label {
 
 #catering div {
 	width: 100%;
+
 	form {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		gap: 0.75rem;
+
 		textarea {
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			width: 50%;
+			height: 2.6rem;
+			overflow: hidden;
 			padding: 0.5rem;
 			resize: none;
 			border: 2px solid $blue;
@@ -419,27 +456,36 @@ label {
 			font-size: 1em;
 			color: $blue;
 		}
+
 		textarea::placeholder {
 			color: rgba($color: $blue, $alpha: 0.5);
 		}
+
 		textarea:focus,
 		textarea:active {
 			outline: none;
 		}
+
 		#emailForm {
 			width: 100%;
 		}
+
 		#descriptionForm {
 			width: 100%;
 			max-height: 10em;
+			height: 6rem;
 		}
+
 		.date-div {
 			display: flex;
 			flex-direction: column;
+
 			#dateForm {
 				padding-bottom: 0.5rem;
 			}
+
 			input {
+				outline: none;
 				width: 45.5%;
 				border: 2px solid $blue;
 				font-family: "futura-medium";
@@ -447,6 +493,7 @@ label {
 				font-size: 1em;
 			}
 		}
+
 		button {
 			height: 2.5rem;
 			background-color: white;
@@ -460,6 +507,7 @@ label {
 	textarea {
 		width: 100% !important;
 	}
+
 	input {
 		width: 93.25% !important;
 	}
@@ -527,18 +575,21 @@ label {
 		.carousel-imgs {
 			width: 97vw;
 		}
+
 		.arrow {
 			z-index: +1;
 			width: auto;
 			height: auto;
 			filter: invert(1);
 		}
+
 		#arrow-left {
 			position: absolute;
 			margin-right: auto;
 			margin-left: 1.5rem;
 			left: 0;
 		}
+
 		#arrow-right {
 			position: absolute;
 			right: 0;
@@ -557,15 +608,18 @@ label {
 	justify-content: center;
 	padding: 2rem;
 	overflow-x: clip;
+
 	.characters {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 3rem 4rem 1rem 0;
+
 		img {
 			max-width: 250px;
 			align-self: center;
 		}
+
 		.charlotte {
 			display: flex;
 			margin-right: -1rem;
@@ -576,37 +630,41 @@ label {
 				justify-content: space-between;
 				transform: translateX(-8rem);
 				width: 0;
-				#charlotteDialogue1 {
-					img {
-						max-width: 265px;
-						position: absolute;
-						transform: translate(-1.75rem, -0.75rem);
-					}
+
+				#charlotteDialogue1 img {
+					max-width: 265px;
+					position: absolute;
+					transform: translate(-1.75rem, -0.75rem);
 				}
-				#charlotteDialogue2 {
-					img {
-						max-width: 270px;
-						transform: translate(-1rem, -0.25rem) rotate(187deg);
-					}
+
+				#charlotteDialogue2 img {
+					max-width: 270px;
+					transform: translate(-1rem, -0.25rem) rotate(187deg);
 				}
 			}
 		}
+
 		.charles {
 			display: flex;
 			height: fit-content;
 			width: 50%;
 			margin-left: -1rem;
+
 			#charlesDialogue {
 				transform: translate(-4rem, 12rem);
 				display: flex;
+
 				#dialogue2 {
-					top: -0.4rem;
+					top: -.7rem;
+					left: -0.5rem;
 					width: 15rem !important;
 				}
+
 				#dialogue3 {
 					top: 5.5rem;
 					left: 1rem;
 				}
+
 				img {
 					max-width: 325px;
 					position: absolute;
@@ -630,27 +688,30 @@ label {
 	opacity: 0;
 }
 
+// MEDIUM SCREEN DESSIN
+
 @media (max-width: 850px) {
 	.characters {
 		font-size: smaller;
+
 		.charlotte {
 			margin-right: -1.5rem !important;
+
 			.charlotte-dialogue-div {
 				margin: 2rem 0;
-				// margin-right: 28vw;
+
 				p {
 					margin-left: 5rem;
 					width: 10.5rem !important;
 				}
 
-				#charlotteDialogue1 {
-				}
 				img {
 					opacity: 0.9;
 					margin-top: 0.5rem;
 					margin-left: 4rem;
 					width: 215px !important;
 				}
+
 				#charlotteBubble2 {
 					margin-top: 0.7rem;
 					margin-left: 4.5rem;
@@ -662,13 +723,16 @@ label {
 			#charlesDialogue {
 				position: absolute;
 				margin-left: 28vw;
+
 				#dialogue2 {
 					margin-top: 1.5rem;
 					width: 12rem !important;
 				}
+
 				#dialogue3 {
 					width: 12rem !important;
 				}
+
 				img {
 					opacity: 0.9;
 					max-width: 275px !important;
@@ -678,17 +742,37 @@ label {
 		}
 	}
 }
+
+// SMALL SCREEN DESSIN
+
 @media (max-width: 600px) {
-	.charlotte {
-		transform: translate(60vw, 8rem) rotate(-40deg);
-		#charlotteBubble1 {
-			width: 80%;
-			height: auto;
-			margin: 2rem 0 0 2rem;
+	.characters {
+		// margin-bottom: 12rem !important;
+		.charlotte {
+			transform: translate(55vw, 8rem) rotate(-40deg);
+			
+			#charlotteBubble1, #charlotteBubble2, #dialogue1, #dialogue4 {
+				display: none;
+			}
+		}
+		
+		.charles {
+			transform: translate(-50vw, -4rem) rotate(45deg);
+			#charlesBubble, #dialogue2, #dialogue3 {
+				display: none;
+			}
 		}
 	}
-	.charles {
-		transform: translate(-60vw, -4rem) rotate(45deg);
+	#dialoguesPhone {
+		// height: 10rem;
+		width: 80vw;
+		margin: 0 auto;
+		opacity: 1 !important;
+		text-align: center;
+		padding: 1.5rem;
+		border: 2px solid black;
+		border-radius: 50px;
+		background-color: white;
 	}
 }
 
@@ -707,25 +791,30 @@ label {
 	background-color: transparent;
 	height: fit-content;
 	overflow-x: clip;
+
 	.top-layer {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+
 		.front {
 			height: auto;
 			width: 145vw;
 			max-width: 850px;
 		}
+
 		.terrasse-tables {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			background-color: transparent;
 			margin-top: -10em;
+
 			.table1 {
 				width: 75vw;
 				max-width: 500px;
 			}
+
 			.table2 {
 				width: 60vw;
 				max-width: 350px;
@@ -740,9 +829,11 @@ label {
 		.top-layer {
 			.terrasse-tables {
 				margin-top: -8rem;
+
 				.table1 {
 					transform: translate(5rem, 1rem);
 				}
+
 				.table2 {
 					width: 50vw;
 					transform: translate(-3rem, -4rem);
@@ -768,6 +859,7 @@ label {
 	flex-direction: column;
 	align-items: flex-end;
 	z-index: +1;
+
 	button {
 		width: fit-content;
 		border: none;
@@ -777,23 +869,28 @@ label {
 		font-family: "futura-medium";
 		font-size: x-large;
 	}
+
 	button:hover {
 		color: $rust;
 	}
+
 	.dropdown-list {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding: 0;
+
 		li {
 			cursor: pointer;
 		}
 	}
+
 	.active {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 	}
+
 	.active li:hover {
 		color: $rust;
 	}
@@ -806,6 +903,7 @@ label {
 @media (max-width: 600px) {
 	.custom-dropdown {
 		align-items: center;
+
 		button {
 			width: 3rem;
 			padding: 0.25rem 0;

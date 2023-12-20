@@ -182,13 +182,8 @@ function displayDialogue() {
 charlotte.addEventListener('mouseenter', () => displayDialogue());
 charles.addEventListener('mouseenter', () => displayDialogue());
 
-// charlotte.addEventListener('mouseleave', () => {
-// 	// charlotteBubble.style.opacity = '0';
-// 	dialogue1.style.opacity = '0';
-// });
-
+document.getElementById('dialoguesPhone').style.opacity = '1';
 // faire que sur gsm l'image apparaisse quand on passe en scrollant
-
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	document.addEventListener("DOMContentLoaded", function () {
@@ -370,6 +365,7 @@ function fetchLanguageFile(language) {
 			document.getElementById("dialogue2").textContent = data.dialogue2;
 			document.getElementById("dialogue3").textContent = data.dialogue3;
 			document.getElementById("dialogue4").textContent = data.dialogue4;
+			document.getElementById("dialoguesPhone").textContent = data.dialoguesPhone;
 		});
 
 	dropdownItems.forEach((item) => {
