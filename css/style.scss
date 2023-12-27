@@ -8,7 +8,7 @@ body,
 html {
 	margin: 0;
 	padding: 0;
-	cursor: url("../static/charte/mouse1.png"), wait;
+	cursor: $mouse;
 	scroll-behavior: smooth;
 	background-color: $light;
 	overflow-x: clip;
@@ -70,8 +70,7 @@ button {
 }
 
 button:hover {
-	cursor: pointer;
-	// cursor: url("/static/charte/mouse-light.png"), pointer;
+	cursor: $mouse;
 }
 
 img,
@@ -83,6 +82,10 @@ label {
 	font-family: "futura-medium";
 	font-size: 1em;
 	color: $blue;
+}
+
+ul, li {
+	cursor: $mouse;
 }
 
 // ---------------------
@@ -133,6 +136,13 @@ label {
 @font-face {
 	font-family: "futura-light";
 	src: url("../static/font/futura-light.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "HomemadeApple-Regular";
+	src: url("../static/font/HomemadeApple-Regular.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -287,7 +297,7 @@ label {
 	z-index: 2000;
 
 	img {
-		cursor: pointer;
+		cursor: $mouse;
 		height: 2rem;
 		width: auto;
 	}
@@ -382,6 +392,7 @@ label {
 
 		h3 {
 			margin: 0;
+			text-align: center;
 		}
 	}
 }
@@ -657,7 +668,7 @@ label {
 				#dialogue2 {
 					top: -.7rem;
 					left: -0.5rem;
-					width: 15rem !important;
+					width: 15rem;
 				}
 
 				#dialogue3 {
@@ -677,6 +688,7 @@ label {
 }
 
 .dialogue {
+	font-family: 'futura-medium';
 	width: 14rem;
 	z-index: +1;
 	text-align: center;
@@ -686,6 +698,11 @@ label {
 .dialogue-div {
 	transition: opacity 0.5s linear;
 	opacity: 0;
+}
+
+#dialoguesPhone {
+	opacity: 0 !important;
+	margin: 0 !important;
 }
 
 // MEDIUM SCREEN DESSIN
@@ -715,6 +732,14 @@ label {
 				#charlotteBubble2 {
 					margin-top: 0.7rem;
 					margin-left: 4.5rem;
+					height: 125px;
+				}
+			
+				#dialogue1 {
+					left: -1rem;
+				}
+				#dialogue4 {
+					margin-top: 2rem;
 				}
 			}
 		}
@@ -727,6 +752,7 @@ label {
 				#dialogue2 {
 					margin-top: 1.5rem;
 					width: 12rem !important;
+					top: 0 !important;
 				}
 
 				#dialogue3 {
@@ -740,6 +766,9 @@ label {
 				}
 			}
 		}
+	}
+	#dialoguesPhone {
+		margin: 0 auto 1.5rem auto !important;
 	}
 }
 
@@ -881,7 +910,7 @@ label {
 		padding: 0;
 
 		li {
-			cursor: pointer;
+			cursor: $mouse;
 		}
 	}
 

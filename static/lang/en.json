@@ -14,10 +14,7 @@
 	"descriptionForm": "Description of the event, remarks and additional informations",
 	"submitForm": "Submit",
 
-	"scheduleText1": "Contact us for an event, reservation,",
-	"scheduleText2": "or question!",
-	"scheduleText3": "We also provide catering services",
-	"scheduleText4": "➜ Take me there !!",
+	"scheduleText": "Contact us for an event, reservation, or question!",
 
 	"menuHome": "HOME",
 	"menuCatering": "CATERING",

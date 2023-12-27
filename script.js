@@ -133,9 +133,8 @@ arrowRight.addEventListener('click', () => {
 let carouselContainer = document.getElementById('carousel-container');
 let touchStartX = null;
 
-carouselContainer.addEventListener('touchstart', (e) => {
+carouselContainer.addEventListener('touchend', (e) => {
 	touchStartX = e.touches[0].clientX;
-	// console.log(touchStartX, carouselContainer.offsetWidth);
 	if (touchStartX < carouselContainer.offsetWidth / 3) {
 		showPreviousImage();
 	} else if (touchStartX > (carouselContainer.offsetWidth / 3) * 2) {
@@ -182,22 +181,22 @@ function displayDialogue() {
 charlotte.addEventListener('mouseenter', () => displayDialogue());
 charles.addEventListener('mouseenter', () => displayDialogue());
 
-document.getElementById('dialoguesPhone').style.opacity = '1';
 // faire que sur gsm l'image apparaisse quand on passe en scrollant
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	document.addEventListener("DOMContentLoaded", function () {
-		window.addEventListener("scroll", function () {
-			const image = charlotte;
-			const imageTop = image.getBoundingClientRect().top;
-			const windowHeight = window.innerHeight;
+		document.getElementById('dialoguesPhone').style.opacity = '1';
 
-			if (imageTop >= windowHeight / 8 && imageTop <= windowHeight / 2) {
-				// charlotteBubble.style.opacity = '1';
-			} else {
-				// charlotteBubble.style.opacity = '0';
-			}
-		});
+		if (window.innerWidth > 600) {
+			window.addEventListener("scroll", function () {
+				const image = charlotte;
+				const imageTop = image.getBoundingClientRect().top;
+				const windowHeight = window.innerHeight;
+	
+				if (imageTop >= windowHeight / 8 && imageTop <= windowHeight / 2)
+					displayDialogue()
+			});
+		}
 	});
 }
 
@@ -352,9 +351,9 @@ function fetchLanguageFile(language) {
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
 
-			document.getElementById("scheduleText1").textContent = data.scheduleText1;
-			document.getElementById("scheduleText2").textContent = data.scheduleText2;
-			
+			document.getElementById("scheduleText").textContent = data.scheduleText;
+			// document.getElementById("scheduleText2").textContent = data.scheduleText2;
+
 			document.getElementById("menuHome").textContent = data.menuHome;
 			document.getElementById("menuCatering").textContent = data.menuCatering;
 			document.getElementById("menuAboutUs").textContent = data.menuAboutUs;
