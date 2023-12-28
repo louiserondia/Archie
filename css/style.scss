@@ -196,7 +196,6 @@ ul, li {
 		min-height: 17.7rem;
 		transition: opacity 1s ease-in-out;
 
-		// transform 1s ease-in-out;
 		p {
 			margin: 0.75rem 0;
 		}
@@ -206,17 +205,6 @@ ul, li {
 			font-family: "futura-medium";
 			font-size: 1.25em;
 			line-height: 1.17em;
-			// font-weight: 600;
-		}
-	}
-
-	.arrow-bottom {
-		border: none;
-		background-color: transparent;
-		padding: 1rem 0;
-
-		img {
-			height: 1rem;
 		}
 	}
 }
@@ -775,7 +763,6 @@ ul, li {
 
 @media (max-width: 600px) {
 	.characters {
-		// margin-bottom: 12rem !important;
 		.charlotte {
 			transform: translate(55vw, 8rem) rotate(-40deg);
 			
@@ -812,7 +799,7 @@ ul, li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 2rem 0;
+	margin: 4rem 0;
 	background-color: transparent;
 	flex-direction: column;
 	width: 100%;

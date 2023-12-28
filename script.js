@@ -200,51 +200,6 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 	});
 }
 
-// Quand on clique sur un élément du menu, ça fait apparaître un perso
-// si on scroll il part
-
-const face1 = document.getElementById('face1');
-const triggerFace1 = document.getElementById('cateringTriggerFace');
-
-triggerFace1.addEventListener("click", function () {
-	if (isScrolledToDestination()) { //si on est déjà bien placé sur la page
-		face1.style.left = "1px";
-		setTimeout(() => {
-			window.addEventListener("scroll", function () {
-				face1.style.left = "-100px";
-			});
-		}, 200);
-	}
-	window.addEventListener("scroll", function () { // si on est loin, on scroll jusqu'au bon endroit, ensuite on fait apparaitre le perso, et ensuite on check si on scroll a nouveau pour l'enlever
-		if (isScrolledToDestination()) {
-			face1.style.left = "1px";
-			setTimeout(() => {
-				window.addEventListener("scroll", function () {
-					face1.style.left = "-100px";
-				});
-			}, 200);
-		}
-	});
-	face1.addEventListener("click", function () { // si on click sur le perso, il se retire
-		face1.style.left = "-100px";
-		return;
-	});
-	// face1.addEventListener("mouseenter", function () {
-	// 	face1.style.left = "-100px";
-	// 	setTimeout(() => {
-	// 		face1.style.left = "1px";
-	// 	}, 250);
-	// });
-});
-
-function isScrolledToDestination() {
-	const destinationElement = document.querySelector('#catering'); // L'élément de destination
-	if (!destinationElement) return false;
-
-	const elementRect = destinationElement.getBoundingClientRect();
-	return elementRect.top <= 50 && elementRect.top >= -50; // Vous pouvez ajuster la condition selon vos besoins
-}
-
 
 // -------------------
 //		  EMAIL
