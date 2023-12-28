@@ -148,7 +148,7 @@ ul, li {
 }
 
 // ---------------------
-// LOGO AND DESCRIPTION
+// 		HOME (LOGO)
 // ---------------------
 
 .whole-page {
@@ -233,10 +233,6 @@ ul, li {
 	}
 }
 
-// ---------------------
-// 	   SMALL SCREEN
-// ---------------------
-
 @media (max-width: 600px) {
 	.home {
 		margin-top: 2.5rem;
@@ -264,10 +260,10 @@ ul, li {
 		background-color: $light;
 	}
 }
+
 @media (min-height: 800px) {
 	.home {
 		margin-top: 10vh;
-		
 	}
 }
 
@@ -328,23 +324,21 @@ ul, li {
 }
 
 .menu-content div a h2 {
-	//Couleur de texte par défaut
+	/* Couleur de texte par défaut */
 	color: $light;
 	transition: color 0.2s ease-out;
 }
 
 .menu-content div a:hover h2 {
-	color: $rust;
 	/* Couleur de texte au survol */
+	color: $rust;
 }
 
 .menu-content div:not(:hover) a h2 {
-	color: $light;
 	/* Couleur du texte lorsque rien n'est survolé */
+	color: $light;
 }
 
-// p-e changer les couleurs pour avoir que
-// tous deviennent une couleur a part celui qui est selectionné
 
 .menu-content .social-media-menu {
 	justify-self: flex-end;
@@ -512,15 +506,6 @@ ul, li {
 	}
 }
 
-#face1 {
-	display: flex;
-	width: 6rem;
-	transform: rotate(90deg) translate(-15rem, 0.3rem);
-	position: absolute;
-	left: -100px;
-	transition: left 0.2s ease-in-out;
-}
-
 // ---------------------
 // 		 CAROUSEL
 // ---------------------
@@ -536,7 +521,7 @@ ul, li {
 		display: flex;
 		justify-content: center;
 		width: clamp(200px, 90vw, calc(500px + 2rem));
-		height: clamp(300px, calc(90vw * 1.25), calc((500px + 2rem) * 1.25)); // changer la taille !!!
+		height: clamp(300px, calc(90vw * 1.25), calc((500px + 2rem) * 1.25));
 		overflow: hidden;
 
 		.carousel-img {
@@ -698,8 +683,8 @@ ul, li {
 }
 
 #dialoguesPhone {
-	opacity: 0 !important;
-	margin: 0 !important;
+	opacity: 0;
+	margin: 0;
 }
 
 // MEDIUM SCREEN DESSIN
@@ -754,9 +739,7 @@ ul, li {
 			}
 		}
 	}
-	#dialoguesPhone {
-		margin: 0 auto 1.5rem auto !important;
-	}
+	
 }
 
 // SMALL SCREEN DESSIN
@@ -779,14 +762,14 @@ ul, li {
 		}
 	}
 	#dialoguesPhone {
-		// height: 10rem;
+		margin: 0 auto 1.5rem auto !important;
 		width: 80vw;
 		margin: 0 auto;
 		opacity: 1 !important;
 		text-align: center;
 		padding: 1.5rem;
 		border: 2px solid black;
-		border-radius: 50px;
+		border-radius: 40px;
 		background-color: white;
 	}
 }
@@ -929,25 +912,6 @@ ul, li {
 	}
 }
 
-// SVG TEST
-
-.svg {
-	display: flex;
-	margin: 0 auto;
-	max-width: 600px;
-}
-
-@media (max-width: 600px) {
-	.terrasse {
-		width: 99vw;
-		height: auto;
-	}
-
-	.svg {
-		max-width: 200px;
-	}
-}
-
 // ---------------------
 // 		WHITE BOX
 // ---------------------
@@ -956,22 +920,3 @@ ul, li {
 	width: 1rem;
 	height: 5rem;
 }
-
-// NOTES
-
-// fleches dans les images pour changer quand on est sur tel
-// faire que sur téléphone on doit pas attendre 2 sec et sur ordi oui
-
-// remettre tout bien placé sur écran d'accueil
-
-// FICHIERS LEGERS, SITE RAPIDE !
-//réduire taille logo radis ou passer en svg, voir le plus rapide
-
-// CHANGER LES IMG CROIX ET LIGNES EN SPAN
-
-//passer toutes les icones en svg ?
-
-// faire que la fleche du bas disparaisse quand on clique dessus
-// et elle se remet quand on remonte tout en haut (voir code navbar)
-
-//
