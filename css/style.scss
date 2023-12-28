@@ -635,6 +635,10 @@ ul, li {
 			display: flex;
 			margin-right: -1rem;
 
+			#charlotte {
+				z-index: 1000;
+			}
+
 			.charlotte-dialogue-div {
 				display: flex;
 				flex-direction: column;
@@ -661,6 +665,10 @@ ul, li {
 			width: 50%;
 			margin-left: -1rem;
 
+			#charles {
+				z-index: 1000;
+			}
+
 			#charlesDialogue {
 				transform: translate(-4rem, 12rem);
 				display: flex;
@@ -680,6 +688,7 @@ ul, li {
 					max-width: 325px;
 					position: absolute;
 					top: 0;
+					opacity: 0.9;
 					transform: translate(-2.5rem, -1rem);
 				}
 			}
@@ -715,31 +724,20 @@ ul, li {
 			margin-right: -1.5rem !important;
 
 			.charlotte-dialogue-div {
-				margin: 2rem 0;
-
+				margin: 1.5rem 0;
+				transform: translate(-3.2rem) !important;
 				p {
-					margin-left: 5rem;
 					width: 10.5rem !important;
+					margin-top: 1.5rem;
 				}
-
+				
 				img {
-					opacity: 0.9;
-					margin-top: 0.5rem;
-					margin-left: 4rem;
 					width: 215px !important;
+					height: 120px;
 				}
-
-				#charlotteBubble2 {
-					margin-top: 0.7rem;
-					margin-left: 4.5rem;
-					height: 125px;
-				}
-			
-				#dialogue1 {
-					left: -1rem;
-				}
+				
 				#dialogue4 {
-					margin-top: 2rem;
+					margin-left: 0.5rem;
 				}
 			}
 		}
@@ -747,12 +745,13 @@ ul, li {
 		.charles {
 			#charlesDialogue {
 				position: absolute;
-				margin-left: 28vw;
-
+				margin-left: 30vw;
+				
 				#dialogue2 {
 					margin-top: 1.5rem;
 					width: 12rem !important;
 					top: 0 !important;
+					left: 0 !important;
 				}
 
 				#dialogue3 {
@@ -918,6 +917,7 @@ ul, li {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		padding-top: 0.2rem;
 	}
 
 	.active li:hover {
