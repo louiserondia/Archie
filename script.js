@@ -11,11 +11,6 @@ const menuContent = document.getElementById('menu-content');
 const menuLines = document.getElementById('menu-lines');
 const menuCross = document.getElementById('menu-cross');
 
-// Quand on hover la première fois le logo, le texte descriptif apparaît
-// Apparaît aussi après 2 secondes d'inactivité
-
-// fix petit bug quand l'animatione est en cours automatiquement et qu'on passe dessus
-
 const logoRadis = document.getElementById('logo');
 const canvas = document.getElementById('canvas');
 const title = document.getElementById('title');
@@ -51,13 +46,13 @@ function setCanvasTextValuesForTransition() {
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	timeoutId = setTimeout(() => {
 		setCanvasTextValuesForTransition();
-	}, 1); // Affiche le texte direct sur téléphone
+	}, 1); // Display the text immediately on the phone
 }
 else {
 	timeoutId = setTimeout(() => {
 		if (!canvasTransitioning)
 			setCanvasTextValuesForTransition();
-	}, 1000); // Affiche le texte après 1 secondes d'inactivité
+	}, 1000); // Displays text after 1s of inactivity on the computer
 }
 
 
@@ -82,7 +77,7 @@ function handleMouseMove(event) {
 		if (!canvasTransitioning) {
 			setCanvasTextValuesForTransition();
 			if (!transformInProgress) {
-				// Animation quand on passe sur le radis (il se secoue)
+				// Animation when hover on the radis (it shakes)
 				canvas.style.animation = 'shake 0.5s ease infinite';
 				canvas.style.animationPlayState = 'running';
 				setTimeout(() => {
@@ -94,7 +89,7 @@ function handleMouseMove(event) {
 }
 
 
-// Ouvre et ferme le menu déroulant des options quand on clique sur les trois petites lignes
+// Opens and closes menu when click on the three small lines on top left corner
 
 function toggleDropdownMenu() {
 	menuContent.style.left =
@@ -107,10 +102,10 @@ function toggleDropdownMenu() {
 
 menuContent.addEventListener('click', () => (toggleDropdownMenu()));
 
-// Carousel images
-// (on cache l'ancienne image et on affiche la suivante)
+// CAROUSEL 
+// Computer
 
-let carousel = ['carousel-1', 'carousel-2', 'carousel-3', 'carousel-4', 'carousel-5', 'carousel-6'];
+let carousel = Array.from({ length: 23 }, (_, index) => "carousel-" + (index + 1));
 let carouselIndex = 0;
 let arrowLeft = document.getElementById('arrow-left');
 let arrowRight = document.getElementById('arrow-right');
@@ -128,7 +123,7 @@ arrowRight.addEventListener('click', () => {
 });
 
 
-// SWIPE POUR GSM
+// Phone
 
 let carouselContainer = document.getElementById('carousel-container');
 let touchStartX = null;
@@ -155,11 +150,11 @@ function showPreviousImage() {
 }
 
 
-// -----------------------
-// 			DESSIN
-// -----------------------
+// --------------------------------
+// 		CHARACTERS DRAWINGS
+// --------------------------------
 
-// Afficher les bulles de discussion quand on passe sur les persos
+// Display chat when hover on characters
 
 const charlotte = document.getElementById('charlotte');
 const charles = document.getElementById('charles');
@@ -181,7 +176,7 @@ function displayDialogue() {
 charlotte.addEventListener('mouseenter', () => displayDialogue());
 charles.addEventListener('mouseenter', () => displayDialogue());
 
-// faire que sur gsm l'image apparaisse quand on passe en scrollant
+// On the phone, images is displayed when scroll
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	document.addEventListener("DOMContentLoaded", function () {
@@ -192,7 +187,7 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 				const image = charlotte;
 				const imageTop = image.getBoundingClientRect().top;
 				const windowHeight = window.innerHeight;
-	
+
 				if (imageTop >= windowHeight / 8 && imageTop <= windowHeight / 2)
 					displayDialogue()
 			});
@@ -205,60 +200,46 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 //		  EMAIL
 // -------------------
 
-// Envoi d'un email avec le formulaire pour le catering
-
-// document.getElementById('contactForm').addEventListener('submit', function(event) {
-// 	event.preventDefault(); // Prevents the default form submission behavior  
-// 	const message = document.getElementById('message').value;
-
-// 	sendEmail(message);
-// 	document.getElementById('message').value = '';
-//   });
-
-//   function sendEmail(message) {
-//  	// You'll need to handle sending an email using your own backend or a third-party service like EmailJS or similar.
-// 	console.log('Email sent with message:', message);
-//   }
-
-
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {
 	event.preventDefault(); // Empêche le comportement par défaut du formulaire
-
-	const message = document.getElementById('message').value;
-
-	// Envoi du message au serveur
-	sendEmail(message);
+	SendEmail();
 });
 
-function sendEmail(message) {
-	fetch('http://127.0.0.1:5500/envoyer-email', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ message })
-	})
-		.then(response => response.json())
-		.then(data => {
-			console.log('Réponse du serveur:', data);
-			alert('Email envoyé avec succès');
+function SendEmail() {
+	var params = {
+		from_first_name: document.getElementById('firstnameForm').value,
+		from_last_name: document.getElementById('lastnameForm').value,
+		phone_number: document.getElementById('phoneNumberForm').value,
+		email: document.getElementById('emailForm').value,
+		date: (document.getElementById('dateForm').value == '' ? "no date provided" : document.getElementById('dateForm').value),
+		message: document.getElementById('descriptionForm').value
+	}
+	emailjs.send("service_a5k6u3p", "template_sgjkceg", params)
+		.then(function (res) {
+			console.log("Success" + res.status);
+			document.getElementById("descriptionForm").value = '';
+			document.getElementById("confirmationMessage").style.display = "block";
 		})
-		.catch(error => console.error('Erreur:', error));
+		.catch(function (error) {
+			console.error('Erreur lors de l\'envoi de l\'email:', error);
+		});
 }
 
-// agrandir la case de description si besoin
+// Enlarge description box is necessary
 
 $('#descriptionForm').on('input', function () {
-	this.style.height = 'auto'; // Réinitialiser la hauteur
-	this.style.height = (this.scrollHeight) + 'px'; // Ajuster la hauteur en fonction de la hauteur du contenu
+	if (this.scrollHeight > 120) {
+		this.style.height = 'auto'; // Reset height
+		this.style.height = (this.scrollHeight) + 'px'; // Adjust height with content height
+	}
 });
 
 // ----------------------
 //  MULTILANGUAGE SYSTEM
 // ----------------------
 
-// ----- Afficher le menu déroulant
+// Display scrolling menu
 
 const languageButton = document.getElementById("languageButton");
 const dropdownList = document.getElementById("dropdownList");
@@ -277,20 +258,19 @@ dropdownItems.forEach((item) => {
 
 		fetchLanguageFile(selectedValue);
 	});
-	// item.style.display = (item.getAttribute("value") === currentLanguage) ? 'none' : 'block';
 });
 
-// ----- CHANGER DE LANGUE 
+// Change Langage
 
 let currentLanguage = "fr";
 fetchLanguageFile(currentLanguage);
 
 function fetchLanguageFile(language) {
-	// Chargez le fichier de langue approprié (fr.json, en.json, es.json)
+	// Load langage file (fr.json, en.json, es.json)
 	fetch(`static/lang/${language}.json`)
 		.then((response) => response.json())
 		.then((data) => {
-			// Mettez à jour le contenu de la page avec les traductions
+			// Update page content with translations
 			document.getElementById("homeDescriptionText1").textContent = data.homeDescriptionText1;
 			document.getElementById("homeDescriptionText2").textContent = data.homeDescriptionText2;
 			document.getElementById("homeDescriptionText3").textContent = data.homeDescriptionText3;
@@ -305,9 +285,9 @@ function fetchLanguageFile(language) {
 			document.getElementById("dateForm").textContent = data.dateForm;
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
+			document.getElementById("confirmationMessage").textContent = data.confirmationMessage;
 
 			document.getElementById("scheduleText").textContent = data.scheduleText;
-			// document.getElementById("scheduleText2").textContent = data.scheduleText2;
 
 			document.getElementById("menuHome").textContent = data.menuHome;
 			document.getElementById("menuCatering").textContent = data.menuCatering;
