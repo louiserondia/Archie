@@ -11,11 +11,6 @@ const menuContent = document.getElementById('menu-content');
 const menuLines = document.getElementById('menu-lines');
 const menuCross = document.getElementById('menu-cross');
 
-// Quand on hover la première fois le logo, le texte descriptif apparaît
-// Apparaît aussi après 2 secondes d'inactivité
-
-// fix petit bug quand l'animatione est en cours automatiquement et qu'on passe dessus
-
 const logoRadis = document.getElementById('logo');
 const canvas = document.getElementById('canvas');
 const title = document.getElementById('title');
@@ -51,13 +46,13 @@ function setCanvasTextValuesForTransition() {
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	timeoutId = setTimeout(() => {
 		setCanvasTextValuesForTransition();
-	}, 1); // Affiche le texte direct sur téléphone
+	}, 1); // Display the text immediately on the phone
 }
 else {
 	timeoutId = setTimeout(() => {
 		if (!canvasTransitioning)
 			setCanvasTextValuesForTransition();
-	}, 1000); // Affiche le texte après 1 secondes d'inactivité
+	}, 1000); // Displays text after 1s of inactivity on the computer
 }
 
 
@@ -82,7 +77,7 @@ function handleMouseMove(event) {
 		if (!canvasTransitioning) {
 			setCanvasTextValuesForTransition();
 			if (!transformInProgress) {
-				// Animation quand on passe sur le radis (il se secoue)
+				// Animation when hover on the radis (it shakes)
 				canvas.style.animation = 'shake 0.5s ease infinite';
 				canvas.style.animationPlayState = 'running';
 				setTimeout(() => {
@@ -94,7 +89,7 @@ function handleMouseMove(event) {
 }
 
 
-// Ouvre et ferme le menu déroulant des options quand on clique sur les trois petites lignes
+// Opens and closes menu when click on the three small lines on top left corner
 
 function toggleDropdownMenu() {
 	menuContent.style.left =
@@ -107,10 +102,10 @@ function toggleDropdownMenu() {
 
 menuContent.addEventListener('click', () => (toggleDropdownMenu()));
 
-// Carousel images
-// (on cache l'ancienne image et on affiche la suivante)
+// CAROUSEL 
+// Computer
 
-let carousel = ['carousel-1', 'carousel-2', 'carousel-3', 'carousel-4', 'carousel-5', 'carousel-6'];
+let carousel = Array.from({ length: 23 }, (_, index) => "carousel-" + (index + 1));
 let carouselIndex = 0;
 let arrowLeft = document.getElementById('arrow-left');
 let arrowRight = document.getElementById('arrow-right');
@@ -128,7 +123,7 @@ arrowRight.addEventListener('click', () => {
 });
 
 
-// SWIPE POUR GSM
+// Phone
 
 let carouselContainer = document.getElementById('carousel-container');
 let touchStartX = null;
@@ -155,11 +150,11 @@ function showPreviousImage() {
 }
 
 
-// -----------------------
-// 			DESSIN
-// -----------------------
+// --------------------------------
+// 		CHARACTERS DRAWINGS
+// --------------------------------
 
-// Afficher les bulles de discussion quand on passe sur les persos
+// Display chat when hover on characters
 
 const charlotte = document.getElementById('charlotte');
 const charles = document.getElementById('charles');
@@ -181,7 +176,7 @@ function displayDialogue() {
 charlotte.addEventListener('mouseenter', () => displayDialogue());
 charles.addEventListener('mouseenter', () => displayDialogue());
 
-// faire que sur gsm l'image apparaisse quand on passe en scrollant
+// On the phone, images is displayed when scroll
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	document.addEventListener("DOMContentLoaded", function () {
@@ -247,18 +242,18 @@ function sendEmail(message) {
 		.catch(error => console.error('Erreur:', error));
 }
 
-// agrandir la case de description si besoin
+// Enlarge description box is necessary
 
 $('#descriptionForm').on('input', function () {
-	this.style.height = 'auto'; // Réinitialiser la hauteur
-	this.style.height = (this.scrollHeight) + 'px'; // Ajuster la hauteur en fonction de la hauteur du contenu
+	this.style.height = 'auto'; // Reset height
+	this.style.height = (this.scrollHeight) + 'px'; // Adjust height with content height
 });
 
 // ----------------------
 //  MULTILANGUAGE SYSTEM
 // ----------------------
 
-// ----- Afficher le menu déroulant
+// Display scrolling menu
 
 const languageButton = document.getElementById("languageButton");
 const dropdownList = document.getElementById("dropdownList");
@@ -277,20 +272,19 @@ dropdownItems.forEach((item) => {
 
 		fetchLanguageFile(selectedValue);
 	});
-	// item.style.display = (item.getAttribute("value") === currentLanguage) ? 'none' : 'block';
 });
 
-// ----- CHANGER DE LANGUE 
+// Change Langage
 
 let currentLanguage = "fr";
 fetchLanguageFile(currentLanguage);
 
 function fetchLanguageFile(language) {
-	// Chargez le fichier de langue approprié (fr.json, en.json, es.json)
+	// Load langage file (fr.json, en.json, es.json)
 	fetch(`static/lang/${language}.json`)
 		.then((response) => response.json())
 		.then((data) => {
-			// Mettez à jour le contenu de la page avec les traductions
+			// Update page content with translations
 			document.getElementById("homeDescriptionText1").textContent = data.homeDescriptionText1;
 			document.getElementById("homeDescriptionText2").textContent = data.homeDescriptionText2;
 			document.getElementById("homeDescriptionText3").textContent = data.homeDescriptionText3;
@@ -307,7 +301,6 @@ function fetchLanguageFile(language) {
 			document.getElementById("submitForm").textContent = data.submitForm;
 
 			document.getElementById("scheduleText").textContent = data.scheduleText;
-			// document.getElementById("scheduleText2").textContent = data.scheduleText2;
 
 			document.getElementById("menuHome").textContent = data.menuHome;
 			document.getElementById("menuCatering").textContent = data.menuCatering;
