@@ -217,7 +217,6 @@ function SendEmail() {
 	}
 	emailjs.send("service_a5k6u3p", "template_sgjkceg", params)
 		.then(function (res) {
-			console.log("Success" + res.status);
 			document.getElementById("descriptionForm").value = '';
 			document.getElementById("confirmationMessage").style.display = "block";
 		})
