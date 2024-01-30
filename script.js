@@ -187,7 +187,7 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 				const image = charlotte;
 				const imageTop = image.getBoundingClientRect().top;
 				const windowHeight = window.innerHeight;
-	
+
 				if (imageTop >= windowHeight / 8 && imageTop <= windowHeight / 2)
 					displayDialogue()
 			});
@@ -200,53 +200,39 @@ if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints
 //		  EMAIL
 // -------------------
 
-// Envoi d'un email avec le formulaire pour le catering
-
-// document.getElementById('contactForm').addEventListener('submit', function(event) {
-// 	event.preventDefault(); // Prevents the default form submission behavior  
-// 	const message = document.getElementById('message').value;
-
-// 	sendEmail(message);
-// 	document.getElementById('message').value = '';
-//   });
-
-//   function sendEmail(message) {
-//  	// You'll need to handle sending an email using your own backend or a third-party service like EmailJS or similar.
-// 	console.log('Email sent with message:', message);
-//   }
-
-
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {
 	event.preventDefault(); // Empêche le comportement par défaut du formulaire
-
-	const message = document.getElementById('message').value;
-
-	// Envoi du message au serveur
-	sendEmail(message);
+	SendEmail();
 });
 
-function sendEmail(message) {
-	fetch('http://127.0.0.1:5500/envoyer-email', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({ message })
-	})
-		.then(response => response.json())
-		.then(data => {
-			console.log('Réponse du serveur:', data);
-			alert('Email envoyé avec succès');
+function SendEmail() {
+	var params = {
+		from_first_name: document.getElementById('firstnameForm').value,
+		from_last_name: document.getElementById('lastnameForm').value,
+		phone_number: document.getElementById('phoneNumberForm').value,
+		email: document.getElementById('emailForm').value,
+		date: (document.getElementById('dateForm').value == '' ? "no date provided" : document.getElementById('dateForm').value),
+		message: document.getElementById('descriptionForm').value
+	}
+	emailjs.send("service_a5k6u3p", "template_sgjkceg", params)
+		.then(function (res) {
+			console.log("Success" + res.status);
+			document.getElementById("descriptionForm").value = '';
+			document.getElementById("confirmationMessage").style.display = "block";
 		})
-		.catch(error => console.error('Erreur:', error));
+		.catch(function (error) {
+			console.error('Erreur lors de l\'envoi de l\'email:', error);
+		});
 }
 
 // Enlarge description box is necessary
 
 $('#descriptionForm').on('input', function () {
-	this.style.height = 'auto'; // Reset height
-	this.style.height = (this.scrollHeight) + 'px'; // Adjust height with content height
+	if (this.scrollHeight > 120) {
+		this.style.height = 'auto'; // Reset height
+		this.style.height = (this.scrollHeight) + 'px'; // Adjust height with content height
+	}
 });
 
 // ----------------------
@@ -299,6 +285,7 @@ function fetchLanguageFile(language) {
 			document.getElementById("dateForm").textContent = data.dateForm;
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
+			document.getElementById("confirmationMessage").textContent = data.confirmationMessage;
 
 			document.getElementById("scheduleText").textContent = data.scheduleText;
 

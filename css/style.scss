@@ -496,6 +496,15 @@ ul, li {
 	}
 }
 
+#confirmationMessage {
+	display: none;
+    font-family: "futura-medium";
+    font-size: medium;
+    text-align: center;
+    padding: 0 2.5rem;
+	margin: 0.2rem;
+}
+
 @media (max-width: 600px) {
 	textarea {
 		width: 100% !important;
