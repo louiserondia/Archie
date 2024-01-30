@@ -3,7 +3,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  cursor: url("/static/img/radis6.svg"), default;
+  cursor: url("/static/img/radis.svg"), default;
   scroll-behavior: smooth;
   background-color: #dbe3e1;
   overflow-x: clip;
@@ -65,7 +65,7 @@ button {
 }
 
 button:hover {
-  cursor: url("/static/img/radis6.svg"), default;
+  cursor: url("/static/img/radis.svg"), default;
 }
 
 img,
@@ -80,7 +80,7 @@ label {
 }
 
 ul, li {
-  cursor: url("/static/img/radis6.svg"), default;
+  cursor: url("/static/img/radis.svg"), default;
 }
 
 @font-face {
@@ -172,32 +172,6 @@ ul, li {
   font-size: 1.25em;
   line-height: 1.17em;
 }
-.home .arrow-bottom {
-  border: none;
-  background-color: transparent;
-  padding: 1rem 0;
-}
-.home .arrow-bottom img {
-  height: 1rem;
-}
-
-@-webkit-keyframes shake {
-  0% {
-    transform: rotate(-35deg);
-  }
-  25% {
-    transform: rotate(-40deg);
-  }
-  50% {
-    transform: rotate(-30deg);
-  }
-  75% {
-    transform: rotate(-40deg);
-  }
-  100% {
-    transform: rotate(-35deg);
-  }
-}
 
 @keyframes shake {
   0% {
@@ -252,7 +226,7 @@ ul, li {
   z-index: 2000;
 }
 .menu img {
-  cursor: url("/static/img/radis6.svg"), default;
+  cursor: url("/static/img/radis.svg"), default;
   height: 2rem;
   width: auto;
 }
@@ -290,18 +264,19 @@ ul, li {
 }
 
 .menu-content div a h2 {
+  /* Couleur de texte par défaut */
   color: #dbe3e1;
   transition: color 0.2s ease-out;
 }
 
 .menu-content div a:hover h2 {
-  color: #a73c00;
   /* Couleur de texte au survol */
+  color: #a73c00;
 }
 
 .menu-content div:not(:hover) a h2 {
-  color: #dbe3e1;
   /* Couleur du texte lorsque rien n'est survolé */
+  color: #dbe3e1;
 }
 
 .menu-content .social-media-menu {
@@ -393,9 +368,6 @@ ul, li {
 #catering div form textarea::-moz-placeholder {
   color: rgba(0, 51, 59, 0.5);
 }
-#catering div form textarea:-ms-input-placeholder {
-  color: rgba(0, 51, 59, 0.5);
-}
 #catering div form textarea::placeholder {
   color: rgba(0, 51, 59, 0.5);
 }
@@ -433,6 +405,15 @@ ul, li {
   margin-left: auto;
 }
 
+#confirmationMessage {
+  display: none;
+  font-family: "futura-medium";
+  font-size: medium;
+  text-align: center;
+  padding: 0 2.5rem;
+  margin: 0.2rem;
+}
+
 @media (max-width: 600px) {
   textarea {
     width: 100% !important;
@@ -441,15 +422,6 @@ ul, li {
     width: 93.25% !important;
   }
 }
-#face1 {
-  display: flex;
-  width: 6rem;
-  transform: rotate(90deg) translate(-15rem, 0.3rem);
-  position: absolute;
-  left: -100px;
-  transition: left 0.2s ease-in-out;
-}
-
 .carousel {
   display: flex;
   justify-content: center;
@@ -533,6 +505,9 @@ ul, li {
   display: flex;
   margin-right: -1rem;
 }
+.dessin-perso .characters .charlotte #charlotte {
+  z-index: 1000;
+}
 .dessin-perso .characters .charlotte .charlotte-dialogue-div {
   display: flex;
   flex-direction: column;
@@ -551,11 +526,13 @@ ul, li {
 }
 .dessin-perso .characters .charles {
   display: flex;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 50%;
   margin-left: -1rem;
+}
+.dessin-perso .characters .charles #charles {
+  z-index: 1000;
 }
 .dessin-perso .characters .charles #charlesDialogue {
   transform: translate(-4rem, 12rem);
@@ -574,6 +551,7 @@ ul, li {
   max-width: 325px;
   position: absolute;
   top: 0;
+  opacity: 0.9;
   transform: translate(-2.5rem, -1rem);
 }
 
@@ -591,8 +569,8 @@ ul, li {
 }
 
 #dialoguesPhone {
-  opacity: 0 !important;
-  margin: 0 !important;
+  opacity: 0;
+  margin: 0;
 }
 
 @media (max-width: 850px) {
@@ -603,37 +581,29 @@ ul, li {
     margin-right: -1.5rem !important;
   }
   .characters .charlotte .charlotte-dialogue-div {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
+    transform: translate(-3.2rem) !important;
   }
   .characters .charlotte .charlotte-dialogue-div p {
-    margin-left: 5rem;
     width: 10.5rem !important;
+    margin-top: 1.5rem;
   }
   .characters .charlotte .charlotte-dialogue-div img {
-    opacity: 0.9;
-    margin-top: 0.5rem;
-    margin-left: 4rem;
     width: 215px !important;
-  }
-  .characters .charlotte .charlotte-dialogue-div #charlotteBubble2 {
-    margin-top: 0.7rem;
-    margin-left: 4.5rem;
-    height: 125px;
-  }
-  .characters .charlotte .charlotte-dialogue-div #dialogue1 {
-    left: -1rem;
+    height: 120px;
   }
   .characters .charlotte .charlotte-dialogue-div #dialogue4 {
-    margin-top: 2rem;
+    margin-left: 0.5rem;
   }
   .characters .charles #charlesDialogue {
     position: absolute;
-    margin-left: 28vw;
+    margin-left: 30vw;
   }
   .characters .charles #charlesDialogue #dialogue2 {
     margin-top: 1.5rem;
     width: 12rem !important;
     top: 0 !important;
+    left: 0 !important;
   }
   .characters .charles #charlesDialogue #dialogue3 {
     width: 12rem !important;
@@ -642,9 +612,6 @@ ul, li {
     opacity: 0.9;
     max-width: 275px !important;
     transform: translateX(-2rem) !important;
-  }
-  #dialoguesPhone {
-    margin: 0 auto 1.5rem auto !important;
   }
 }
 @media (max-width: 600px) {
@@ -661,13 +628,14 @@ ul, li {
     display: none;
   }
   #dialoguesPhone {
+    margin: 0 auto 1.5rem auto !important;
     width: 80vw;
     margin: 0 auto;
     opacity: 1 !important;
     text-align: center;
     padding: 1.5rem;
     border: 2px solid black;
-    border-radius: 50px;
+    border-radius: 40px;
     background-color: white;
   }
 }
@@ -675,12 +643,11 @@ ul, li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin: 4rem 0;
   background-color: transparent;
   flex-direction: column;
   width: 100%;
   background-color: transparent;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   overflow-x: clip;
@@ -725,7 +692,6 @@ ul, li {
   }
 }
 .custom-dropdown {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   color: #00333b;
@@ -740,7 +706,6 @@ ul, li {
   z-index: 1;
 }
 .custom-dropdown button {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border: none;
@@ -760,12 +725,13 @@ ul, li {
   padding: 0;
 }
 .custom-dropdown .dropdown-list li {
-  cursor: url("/static/img/radis6.svg"), default;
+  cursor: url("/static/img/radis.svg"), default;
 }
 .custom-dropdown .active {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-top: 0.2rem;
 }
 .custom-dropdown .active li:hover {
   color: #a73c00;
@@ -784,21 +750,6 @@ ul, li {
     padding: 0.25rem 0;
     border: 2px solid #00333b;
     background-color: #dbe3e1;
-  }
-}
-.svg {
-  display: flex;
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-@media (max-width: 600px) {
-  .terrasse {
-    width: 99vw;
-    height: auto;
-  }
-  .svg {
-    max-width: 200px;
   }
 }
 .box {
