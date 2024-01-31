@@ -17,6 +17,8 @@ const title = document.getElementById('title');
 const description = document.getElementById('description');
 const ctx = canvas.getContext('2d');
 
+ctx.willReadFrequently = true;
+
 // Load the image
 const img = new Image();
 img.src = logoRadis.src;
