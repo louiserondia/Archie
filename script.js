@@ -182,7 +182,6 @@ charles.addEventListener('mouseenter', () => displayDialogue());
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	document.addEventListener("DOMContentLoaded", function () {
-		document.getElementById('dialoguesPhone').style.opacity = '1';
 
 		if (window.innerWidth > 600) {
 			window.addEventListener("scroll", function () {

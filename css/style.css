@@ -79,7 +79,8 @@ label {
   color: #00333b;
 }
 
-ul, li {
+ul,
+li {
   cursor: url("/static/img/radis.svg"), default;
 }
 
@@ -233,7 +234,6 @@ ul, li {
 .menu #menu-cross {
   display: none;
   padding: 0.2rem 0.4rem;
-  background-color: none;
 }
 .menu #menu-lines {
   display: block;
@@ -267,11 +267,13 @@ ul, li {
   /* Couleur de texte par défaut */
   color: #dbe3e1;
   transition: color 0.2s ease-out;
+  cursor: url("/static/img/radis.svg"), default;
 }
 
 .menu-content div a:hover h2 {
   /* Couleur de texte au survol */
   color: #a73c00;
+  cursor: url("/static/img/radis.svg"), default;
 }
 
 .menu-content div:not(:hover) a h2 {
@@ -307,10 +309,15 @@ ul, li {
   border: 2px solid #00333b;
 }
 .schedule > div h3 {
-  margin: 0;
+  margin: 0 10%;
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  #scheduleText {
+    margin: 0;
+  }
+}
 .anchor {
   position: absolute;
   transform: translateY(-50vh);
@@ -342,6 +349,10 @@ ul, li {
   padding-top: 0.3rem;
   margin: 0 auto 0 0;
   height: 2rem;
+  font-size: 1.4rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #catering div {
@@ -432,7 +443,7 @@ ul, li {
 .carousel .carousel-imgs {
   display: flex;
   justify-content: center;
-  width: clamp(200px, 90vw, 500px + 2rem);
+  width: clamp(200px, 97vw, 500px + 2rem);
   height: clamp(300px, 112.5vw, (500px + 2rem) * 1.25);
   overflow: hidden;
 }
@@ -461,10 +472,7 @@ ul, li {
 .carousel #arrow-left {
   transform: scaleX(-1);
 }
-@media (max-width: 600px) {
-  .carousel .carousel-imgs {
-    width: 97vw;
-  }
+@media (max-width: 680px) {
   .carousel .arrow {
     z-index: 1;
     width: auto;
@@ -613,24 +621,31 @@ ul, li {
     max-width: 275px !important;
     transform: translateX(-2rem) !important;
   }
+  #dialoguesPhone {
+    opacity: 0 !important;
+    margin: 0;
+  }
 }
 @media (max-width: 600px) {
   .characters .charlotte {
     transform: translate(55vw, 8rem) rotate(-40deg);
   }
-  .characters .charlotte #charlotteBubble1, .characters .charlotte #charlotteBubble2, .characters .charlotte #dialogue1, .characters .charlotte #dialogue4 {
+  .characters .charlotte #charlotteBubble1,
+  .characters .charlotte #charlotteBubble2,
+  .characters .charlotte #dialogue1,
+  .characters .charlotte #dialogue4 {
     display: none;
   }
   .characters .charles {
     transform: translate(-50vw, -4rem) rotate(45deg);
   }
-  .characters .charles #charlesBubble, .characters .charles #dialogue2, .characters .charles #dialogue3 {
+  .characters .charles #charlesBubble,
+  .characters .charles #dialogue2,
+  .characters .charles #dialogue3 {
     display: none;
   }
   #dialoguesPhone {
-    margin: 0 auto 1.5rem auto !important;
-    width: 80vw;
-    margin: 0 auto;
+    margin: 0 1rem 1.5rem 1rem !important;
     opacity: 1 !important;
     text-align: center;
     padding: 1.5rem;
@@ -679,7 +694,7 @@ ul, li {
   transform: translate(6rem, -4rem);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .terrasse .top-layer .terrasse-tables {
     margin-top: -8rem;
   }
