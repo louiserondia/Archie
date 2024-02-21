@@ -105,7 +105,7 @@ menuContent.addEventListener('click', () => (toggleDropdownMenu()));
 // CAROUSEL 
 // Computer
 
-let carousel = Array.from({ length: 13 }, (_, index) => "carousel-" + (index + 1));
+let carousel = Array.from({ length: 16 }, (_, index) => "carousel-" + (index + 1));
 let carouselIndex = 0;
 let arrowLeft = document.getElementById('arrow-left');
 let arrowRight = document.getElementById('arrow-right');
