@@ -11,7 +11,7 @@ html {
 	cursor: $mouse;
 	scroll-behavior: smooth;
 	background-color: $light;
-	overflow-x: clip;
+	overflow-x: hidden;
 
 	::-webkit-scrollbar {
 		width: 10px;
@@ -84,22 +84,14 @@ label {
 	color: $blue;
 }
 
-ul, li {
+ul,
+li {
 	cursor: $mouse;
 }
 
 // ---------------------
 //  	   FONTS
 // ---------------------
-
-@font-face {
-	font-family: "YoungSerif-Regular";
-	src:
-		url("../static/font/YoungSerif-Regular.woff2") format("woff2"),
-		url("../static/font/YoungSerif-Regular.ttf") format("ttf");
-	font-weight: normal;
-	font-style: normal;
-}
 
 @font-face {
 	font-family: "Lato-Regular";
@@ -140,13 +132,6 @@ ul, li {
 	font-style: normal;
 }
 
-@font-face {
-	font-family: "HomemadeApple-Regular";
-	src: url("../static/font/HomemadeApple-Regular.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-}
-
 // ---------------------
 // 		HOME (LOGO)
 // ---------------------
@@ -162,7 +147,7 @@ ul, li {
 	gap: 1rem;
 	align-items: center;
 	justify-content: center;
-	margin-top: 3rem;
+	margin-top: 4rem;
 
 	.canvas-img {
 		height: 9rem;
@@ -236,25 +221,26 @@ ul, li {
 @media (max-width: 600px) {
 	.home {
 		margin-top: 2.5rem;
-		
+
 		.title {
 			font-size: 4em;
 		}
-		
+
 		.description {
 			margin: 0;
-			
+
 			p {
 				margin: 0.5rem 1.2rem;
 			}
 		}
-
 	}
-	
+}
+
+@media (max-width: 700px) {
 	#menu-cross {
 		border: 2px solid $light;
 	}
-	
+
 	#menu-lines {
 		border: 2px solid $blue;
 		background-color: $light;
@@ -268,7 +254,7 @@ ul, li {
 }
 
 // ---------------------
-// 	  MENU DEROULANT
+// 	  MENU CÔTÉ
 // ---------------------
 
 .menu {
@@ -289,7 +275,6 @@ ul, li {
 	#menu-cross {
 		display: none;
 		padding: 0.2rem 0.4rem;
-		background-color: none;
 	}
 
 	#menu-lines {
@@ -306,7 +291,7 @@ ul, li {
 	display: flex;
 	flex-direction: column;
 	width: clamp(250px, 65vw, 350px);
-	height: 100vh;
+	height: 100vh !important;
 	transition: left 0.2s ease-out;
 	z-index: 200;
 	justify-content: space-between;
@@ -327,18 +312,19 @@ ul, li {
 	/* Couleur de texte par défaut */
 	color: $light;
 	transition: color 0.2s ease-out;
+	cursor: $mouse;
 }
 
 .menu-content div a:hover h2 {
 	/* Couleur de texte au survol */
 	color: $rust;
+	cursor: $mouse;
 }
 
 .menu-content div:not(:hover) a h2 {
 	/* Couleur du texte lorsque rien n'est survolé */
 	color: $light;
 }
-
 
 .menu-content .social-media-menu {
 	justify-self: flex-end;
@@ -361,7 +347,7 @@ ul, li {
 	display: flex;
 	justify-content: center;
 
-	>div {
+	> div {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -374,8 +360,15 @@ ul, li {
 
 		h3 {
 			margin: 0;
-			text-align: center;
+			text-align: left;
+			word-break: break-word;
 		}
+	}
+}
+
+@media (max-width: 600px) {
+	#scheduleText {
+		margin: 0;
 	}
 }
 
@@ -417,6 +410,10 @@ ul, li {
 				padding-top: 0.3rem;
 				margin: 0 auto 0 0;
 				height: 2rem;
+				font-size: 1.4rem;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -473,6 +470,16 @@ ul, li {
 			display: flex;
 			flex-direction: column;
 
+			#dateText {
+				font-size: medium;
+				font-family: "futura-medium";
+				font-weight: 100;
+				margin: 0;
+				margin-top: -0.5rem;
+				padding-bottom: 0.25rem;
+				color: $blue;
+			}
+
 			#dateForm {
 				padding-bottom: 0.5rem;
 			}
@@ -498,10 +505,10 @@ ul, li {
 
 #confirmationMessage {
 	display: none;
-    font-family: "futura-medium";
-    font-size: medium;
-    text-align: center;
-    padding: 0 2.5rem;
+	font-family: "futura-medium";
+	font-size: medium;
+	text-align: center;
+	padding: 0 2.5rem;
 	margin: 0.2rem;
 }
 
@@ -525,13 +532,13 @@ ul, li {
 	align-items: center;
 	flex-direction: row;
 	margin: 3rem 0;
-
+	
 	.carousel-imgs {
 		display: flex;
 		justify-content: center;
-		width: clamp(200px, 90vw, calc(500px + 2rem));
-		height: clamp(300px, calc(90vw * 1.25), calc((500px + 2rem) * 1.25));
+		max-width: 33rem;
 		overflow: hidden;
+		margin: 0 0.3rem;
 
 		.carousel-img {
 			height: 100%;
@@ -548,8 +555,6 @@ ul, li {
 	.arrow {
 		background-color: inherit;
 		border: none;
-		margin: 0 0.5rem;
-
 		img {
 			height: 3rem;
 		}
@@ -564,11 +569,7 @@ ul, li {
 		transform: scaleX(-1);
 	}
 
-	@media (max-width: 600px) {
-		.carousel-imgs {
-			width: 97vw;
-		}
-
+	@media (max-width: 680px) {
 		.arrow {
 			z-index: +1;
 			width: auto;
@@ -618,7 +619,7 @@ ul, li {
 			margin-right: -1rem;
 
 			#charlotte {
-				z-index: 1000;
+				z-index: 1;
 			}
 
 			.charlotte-dialogue-div {
@@ -648,7 +649,7 @@ ul, li {
 			margin-left: -1rem;
 
 			#charles {
-				z-index: 1000;
+				z-index: 1;
 			}
 
 			#charlesDialogue {
@@ -656,7 +657,7 @@ ul, li {
 				display: flex;
 
 				#dialogue2 {
-					top: -.7rem;
+					top: -0.7rem;
 					left: -0.5rem;
 					width: 15rem;
 				}
@@ -679,7 +680,7 @@ ul, li {
 }
 
 .dialogue {
-	font-family: 'futura-medium';
+	font-family: "futura-medium";
 	width: 14rem;
 	z-index: +1;
 	text-align: center;
@@ -712,12 +713,12 @@ ul, li {
 					width: 10.5rem !important;
 					margin-top: 1.5rem;
 				}
-				
+
 				img {
 					width: 215px !important;
 					height: 120px;
 				}
-				
+
 				#dialogue4 {
 					margin-left: 0.5rem;
 				}
@@ -726,9 +727,6 @@ ul, li {
 
 		.charles {
 			#charlesDialogue {
-				position: absolute;
-				margin-left: 30vw;
-				
 				#dialogue2 {
 					margin-top: 1.5rem;
 					width: 12rem !important;
@@ -744,36 +742,50 @@ ul, li {
 					opacity: 0.9;
 					max-width: 275px !important;
 					transform: translateX(-2rem) !important;
+					overflow-x: clip;
 				}
 			}
 		}
 	}
-	
+	#dialoguesPhone {
+		opacity: 0 !important;
+		margin: 0;
+	}
 }
 
 // SMALL SCREEN DESSIN
+
+@media (max-width: 700px) {
+	#charlesDialogue {
+		display: flex;
+		transform: translate(-6rem, 12rem) !important;
+	}
+}
 
 @media (max-width: 600px) {
 	.characters {
 		.charlotte {
 			transform: translate(55vw, 8rem) rotate(-40deg);
-			
-			#charlotteBubble1, #charlotteBubble2, #dialogue1, #dialogue4 {
+
+			#charlotteBubble1,
+			#charlotteBubble2,
+			#dialogue1,
+			#dialogue4 {
 				display: none;
 			}
 		}
-		
+
 		.charles {
 			transform: translate(-50vw, -4rem) rotate(45deg);
-			#charlesBubble, #dialogue2, #dialogue3 {
+			#charlesBubble,
+			#dialogue2,
+			#dialogue3 {
 				display: none;
 			}
 		}
 	}
 	#dialoguesPhone {
-		margin: 0 auto 1.5rem auto !important;
-		width: 80vw;
-		margin: 0 auto;
+		margin: 0 1rem 1.5rem 1rem !important;
 		opacity: 1 !important;
 		text-align: center;
 		padding: 1.5rem;
@@ -831,7 +843,7 @@ ul, li {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 	.terrasse {
 		.top-layer {
 			.terrasse-tables {
@@ -908,17 +920,17 @@ ul, li {
 	outline: none;
 }
 
-@media (max-width: 600px) {
-	.custom-dropdown {
-		align-items: center;
+@media (max-width: 700px) {
+	// .custom-dropdown {
+	// 	align-items: center;
 
-		button {
-			width: 3rem;
-			padding: 0.25rem 0;
-			border: 2px solid $blue;
-			background-color: $light;
-		}
-	}
+	// 	button {
+	// 		width: 3rem;
+	// 		padding: 0.25rem 0;
+	// 		border: 2px solid $blue;
+	// 		background-color: $light;
+	// 	}
+	// }
 }
 
 // ---------------------

@@ -75,17 +75,15 @@ function handleMouseMove(event) {
 	const pixelData = ctx.getImageData(x, y, 1, 1).data;
 	const isTransparent = pixelData[3] === 0
 
-	if (!isTransparent) {
-		if (!canvasTransitioning) {
-			setCanvasTextValuesForTransition();
-			if (!transformInProgress) {
-				// Animation when hover on the radis (it shakes)
-				canvas.style.animation = 'shake 0.5s ease infinite';
-				canvas.style.animationPlayState = 'running';
-				setTimeout(() => {
-					canvas.style.animationPlayState = 'paused';
-				}, 1000);
-			}
+	if (!isTransparent && !canvasTransitioning) {
+		setCanvasTextValuesForTransition();
+		if (!transformInProgress) {
+			// Animation when hover on the radis (it shakes)
+			canvas.style.animation = 'shake 0.5s ease infinite';
+			canvas.style.animationPlayState = 'running';
+			setTimeout(() => {
+				canvas.style.animationPlayState = 'paused';
+			}, 1000);
 		}
 	}
 }
@@ -107,7 +105,7 @@ menuContent.addEventListener('click', () => (toggleDropdownMenu()));
 // CAROUSEL 
 // Computer
 
-let carousel = Array.from({ length: 23 }, (_, index) => "carousel-" + (index + 1));
+let carousel = Array.from({ length: 16 }, (_, index) => "carousel-" + (index + 1));
 let carouselIndex = 0;
 let arrowLeft = document.getElementById('arrow-left');
 let arrowRight = document.getElementById('arrow-right');
@@ -152,6 +150,18 @@ function showPreviousImage() {
 }
 
 
+// -------------------------
+// 		CATERING FORM
+// -------------------------
+
+var date = new Date();
+var year = date.getFullYear();
+var month = ('0' + (date.getMonth() + 1)).slice(-2); // ajoute un zéro devant le mois si nécessaire
+var day = ('0' + date.getDate()).slice(-2);
+var formattedDate = year + '-' + month + '-' + day;
+
+document.getElementById('dateForm').value = formattedDate;
+
 // --------------------------------
 // 		CHARACTERS DRAWINGS
 // --------------------------------
@@ -182,7 +192,6 @@ charles.addEventListener('mouseenter', () => displayDialogue());
 
 if (window.mobileCheck() || 'ontouchstart' in window || navigator.maxTouchPoints) {
 	document.addEventListener("DOMContentLoaded", function () {
-		document.getElementById('dialoguesPhone').style.opacity = '1';
 
 		if (window.innerWidth > 600) {
 			window.addEventListener("scroll", function () {
@@ -283,7 +292,7 @@ function fetchLanguageFile(language) {
 			document.getElementById("lastnameForm").placeholder = data.lastnameForm;
 			document.getElementById("phoneNumberForm").placeholder = data.phoneNumberForm;
 			document.getElementById("emailForm").placeholder = data.emailForm;
-			document.getElementById("dateForm").textContent = data.dateForm;
+			document.getElementById("dateText").textContent = data.dateForm;
 			document.getElementById("descriptionForm").placeholder = data.descriptionForm;
 			document.getElementById("submitForm").textContent = data.submitForm;
 			document.getElementById("confirmationMessage").textContent = data.confirmationMessage;
