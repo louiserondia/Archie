@@ -11,7 +11,7 @@ html {
 	cursor: $mouse;
 	scroll-behavior: smooth;
 	background-color: $light;
-	overflow-x: clip;
+	overflow-x: hidden;
 
 	::-webkit-scrollbar {
 		width: 10px;
@@ -94,15 +94,6 @@ li {
 // ---------------------
 
 @font-face {
-	font-family: "YoungSerif-Regular";
-	src:
-		url("../static/font/YoungSerif-Regular.woff2") format("woff2"),
-		url("../static/font/YoungSerif-Regular.ttf") format("ttf");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
 	font-family: "Lato-Regular";
 	src:
 		url("../static/font/Lato/Lato-Regular.woff2") format("woff2"),
@@ -141,13 +132,6 @@ li {
 	font-style: normal;
 }
 
-@font-face {
-	font-family: "HomemadeApple-Regular";
-	src: url("../static/font/HomemadeApple-Regular.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-}
-
 // ---------------------
 // 		HOME (LOGO)
 // ---------------------
@@ -163,7 +147,7 @@ li {
 	gap: 1rem;
 	align-items: center;
 	justify-content: center;
-	margin-top: 3rem;
+	margin-top: 4rem;
 
 	.canvas-img {
 		height: 9rem;
@@ -250,7 +234,9 @@ li {
 			}
 		}
 	}
+}
 
+@media (max-width: 700px) {
 	#menu-cross {
 		border: 2px solid $light;
 	}
@@ -305,14 +291,14 @@ li {
 	display: flex;
 	flex-direction: column;
 	width: clamp(250px, 65vw, 350px);
-	height: 100vh;
+	height: 100vh !important;
 	transition: left 0.2s ease-out;
 	z-index: 200;
 	justify-content: space-between;
-	
+
 	div {
 		margin: 6rem 0 0 2rem;
-		
+
 		h2 {
 			font-family: "Lato-Regular";
 			font-size: x-large;
@@ -373,14 +359,15 @@ li {
 		border: 2px solid $blue;
 
 		h3 {
-			margin: 0 10%;
-			text-align: center;
+			margin: 0;
+			text-align: left;
+			word-break: break-word;
 		}
 	}
 }
 
 @media (max-width: 600px) {
-	#scheduleText { 
+	#scheduleText {
 		margin: 0;
 	}
 }
@@ -483,6 +470,16 @@ li {
 			display: flex;
 			flex-direction: column;
 
+			#dateText {
+				font-size: medium;
+				font-family: "futura-medium";
+				font-weight: 100;
+				margin: 0;
+				margin-top: -0.5rem;
+				padding-bottom: 0.25rem;
+				color: $blue;
+			}
+
 			#dateForm {
 				padding-bottom: 0.5rem;
 			}
@@ -535,13 +532,13 @@ li {
 	align-items: center;
 	flex-direction: row;
 	margin: 3rem 0;
-
+	
 	.carousel-imgs {
 		display: flex;
 		justify-content: center;
-		width: clamp(200px, 97vw, calc(500px + 2rem));
-		height: clamp(300px, calc(90vw * 1.25), calc((500px + 2rem) * 1.25));
+		max-width: 33rem;
 		overflow: hidden;
+		margin: 0 0.3rem;
 
 		.carousel-img {
 			height: 100%;
@@ -558,8 +555,6 @@ li {
 	.arrow {
 		background-color: inherit;
 		border: none;
-		margin: 0 0.5rem;
-
 		img {
 			height: 3rem;
 		}
@@ -624,7 +619,7 @@ li {
 			margin-right: -1rem;
 
 			#charlotte {
-				z-index: 1000;
+				z-index: 1;
 			}
 
 			.charlotte-dialogue-div {
@@ -654,7 +649,7 @@ li {
 			margin-left: -1rem;
 
 			#charles {
-				z-index: 1000;
+				z-index: 1;
 			}
 
 			#charlesDialogue {
@@ -707,10 +702,10 @@ li {
 @media (max-width: 850px) {
 	.characters {
 		font-size: smaller;
-		
+
 		.charlotte {
 			margin-right: -1.5rem !important;
-			
+
 			.charlotte-dialogue-div {
 				margin: 1.5rem 0;
 				transform: translate(-3.2rem) !important;
@@ -718,12 +713,12 @@ li {
 					width: 10.5rem !important;
 					margin-top: 1.5rem;
 				}
-				
+
 				img {
 					width: 215px !important;
 					height: 120px;
 				}
-				
+
 				#dialogue4 {
 					margin-left: 0.5rem;
 				}
@@ -732,16 +727,13 @@ li {
 
 		.charles {
 			#charlesDialogue {
-				position: absolute;
-				margin-left: 30vw;
-				
 				#dialogue2 {
 					margin-top: 1.5rem;
 					width: 12rem !important;
 					top: 0 !important;
 					left: 0 !important;
 				}
-				
+
 				#dialogue3 {
 					width: 12rem !important;
 				}
@@ -750,6 +742,7 @@ li {
 					opacity: 0.9;
 					max-width: 275px !important;
 					transform: translateX(-2rem) !important;
+					overflow-x: clip;
 				}
 			}
 		}
@@ -761,6 +754,13 @@ li {
 }
 
 // SMALL SCREEN DESSIN
+
+@media (max-width: 700px) {
+	#charlesDialogue {
+		display: flex;
+		transform: translate(-6rem, 12rem) !important;
+	}
+}
 
 @media (max-width: 600px) {
 	.characters {
@@ -920,17 +920,17 @@ li {
 	outline: none;
 }
 
-@media (max-width: 600px) {
-	.custom-dropdown {
-		align-items: center;
+@media (max-width: 700px) {
+	// .custom-dropdown {
+	// 	align-items: center;
 
-		button {
-			width: 3rem;
-			padding: 0.25rem 0;
-			border: 2px solid $blue;
-			background-color: $light;
-		}
-	}
+	// 	button {
+	// 		width: 3rem;
+	// 		padding: 0.25rem 0;
+	// 		border: 2px solid $blue;
+	// 		background-color: $light;
+	// 	}
+	// }
 }
 
 // ---------------------

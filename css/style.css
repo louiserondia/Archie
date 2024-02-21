@@ -6,7 +6,7 @@ html {
   cursor: url("/static/img/radis.svg"), default;
   scroll-behavior: smooth;
   background-color: #dbe3e1;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 body ::-webkit-scrollbar,
 html ::-webkit-scrollbar {
@@ -85,12 +85,6 @@ li {
 }
 
 @font-face {
-  font-family: "YoungSerif-Regular";
-  src: url("../static/font/YoungSerif-Regular.woff2") format("woff2"), url("../static/font/YoungSerif-Regular.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "Lato-Regular";
   src: url("../static/font/Lato/Lato-Regular.woff2") format("woff2"), url("../static/font/Lato/Lato-Regular.ttf") format("ttf");
   font-weight: normal;
@@ -120,12 +114,6 @@ li {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "HomemadeApple-Regular";
-  src: url("../static/font/HomemadeApple-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 .whole-page {
   display: flex;
   flex-direction: column;
@@ -137,7 +125,7 @@ li {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 .home .canvas-img {
   height: 9rem;
@@ -204,6 +192,8 @@ li {
   .home .description p {
     margin: 0.5rem 1.2rem;
   }
+}
+@media (max-width: 700px) {
   #menu-cross {
     border: 2px solid #dbe3e1;
   }
@@ -248,7 +238,7 @@ li {
   display: flex;
   flex-direction: column;
   width: clamp(250px, 65vw, 350px);
-  height: 100vh;
+  height: 100vh !important;
   transition: left 0.2s ease-out;
   z-index: 200;
   justify-content: space-between;
@@ -309,8 +299,9 @@ li {
   border: 2px solid #00333b;
 }
 .schedule > div h3 {
-  margin: 0 10%;
-  text-align: center;
+  margin: 0;
+  text-align: left;
+  word-break: break-word;
 }
 
 @media (max-width: 600px) {
@@ -398,6 +389,15 @@ li {
   display: flex;
   flex-direction: column;
 }
+#catering div form .date-div #dateText {
+  font-size: medium;
+  font-family: "futura-medium";
+  font-weight: 100;
+  margin: 0;
+  margin-top: -0.5rem;
+  padding-bottom: 0.25rem;
+  color: #00333b;
+}
 #catering div form .date-div #dateForm {
   padding-bottom: 0.5rem;
 }
@@ -443,9 +443,9 @@ li {
 .carousel .carousel-imgs {
   display: flex;
   justify-content: center;
-  width: clamp(200px, 97vw, 500px + 2rem);
-  height: clamp(300px, 112.5vw, (500px + 2rem) * 1.25);
+  max-width: 33rem;
   overflow: hidden;
+  margin: 0 0.3rem;
 }
 .carousel .carousel-imgs .carousel-img {
   height: 100%;
@@ -460,7 +460,6 @@ li {
 .carousel .arrow {
   background-color: inherit;
   border: none;
-  margin: 0 0.5rem;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -514,7 +513,7 @@ li {
   margin-right: -1rem;
 }
 .dessin-perso .characters .charlotte #charlotte {
-  z-index: 1000;
+  z-index: 1;
 }
 .dessin-perso .characters .charlotte .charlotte-dialogue-div {
   display: flex;
@@ -540,7 +539,7 @@ li {
   margin-left: -1rem;
 }
 .dessin-perso .characters .charles #charles {
-  z-index: 1000;
+  z-index: 1;
 }
 .dessin-perso .characters .charles #charlesDialogue {
   transform: translate(-4rem, 12rem);
@@ -603,10 +602,6 @@ li {
   .characters .charlotte .charlotte-dialogue-div #dialogue4 {
     margin-left: 0.5rem;
   }
-  .characters .charles #charlesDialogue {
-    position: absolute;
-    margin-left: 30vw;
-  }
   .characters .charles #charlesDialogue #dialogue2 {
     margin-top: 1.5rem;
     width: 12rem !important;
@@ -620,10 +615,17 @@ li {
     opacity: 0.9;
     max-width: 275px !important;
     transform: translateX(-2rem) !important;
+    overflow-x: clip;
   }
   #dialoguesPhone {
     opacity: 0 !important;
     margin: 0;
+  }
+}
+@media (max-width: 700px) {
+  #charlesDialogue {
+    display: flex;
+    transform: translate(-6rem, 12rem) !important;
   }
 }
 @media (max-width: 600px) {
@@ -756,17 +758,6 @@ li {
   outline: none;
 }
 
-@media (max-width: 600px) {
-  .custom-dropdown {
-    align-items: center;
-  }
-  .custom-dropdown button {
-    width: 3rem;
-    padding: 0.25rem 0;
-    border: 2px solid #00333b;
-    background-color: #dbe3e1;
-  }
-}
 .box {
   width: 1rem;
   height: 5rem;
