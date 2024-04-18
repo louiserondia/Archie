@@ -3,3 +3,4 @@ css/style.css.map
 node_modules/*
 node_modules
 .gitignore
+css/style.css
