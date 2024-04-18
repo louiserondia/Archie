@@ -646,6 +646,15 @@ li {
 			.charlotte {
 				max-width: 300px;
 			}
+
+			#dialogue1 {
+				margin-left: 0.4rem;
+			}
+
+			#dialogue4 {
+				margin-left: 0.7rem;
+				margin-top: 1.5rem;
+			}
 		}
 		.charles {
 			display: flex;
@@ -662,7 +671,7 @@ li {
 				display: flex;
 
 				#dialogue2 {
-					top: -0.25rem;
+					top: -0.35rem;
 					left: -0.5rem;
 					width: 15rem;
 				}
@@ -758,6 +767,11 @@ li {
 	#dialoguesPhone {
 		opacity: 0 !important;
 		margin: 0;
+	}
+
+	.dialogue {
+	font-size: 0.95rem;
+
 	}
 }
 

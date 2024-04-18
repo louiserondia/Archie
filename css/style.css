@@ -553,6 +553,13 @@ li {
   .dessin-perso .characters .charlotte {
     max-width: 300px;
   }
+  .dessin-perso .characters #dialogue1 {
+    margin-left: 0.4rem;
+  }
+  .dessin-perso .characters #dialogue4 {
+    margin-left: 0.7rem;
+    margin-top: 1.5rem;
+  }
 }
 .dessin-perso .characters .charles {
   display: flex;
@@ -570,7 +577,7 @@ li {
   display: flex;
 }
 .dessin-perso .characters .charles #charlesDialogue #dialogue2 {
-  top: -0.25rem;
+  top: -0.35rem;
   left: -0.5rem;
   width: 15rem;
 }
@@ -645,6 +652,9 @@ li {
   #dialoguesPhone {
     opacity: 0 !important;
     margin: 0;
+  }
+  .dialogue {
+    font-size: 0.95rem;
   }
 }
 @media (max-width: 700px) {
