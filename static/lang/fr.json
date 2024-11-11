@@ -1,6 +1,6 @@
 {
 	"homeDescriptionText1": "Bienvenue chez Archie, où Charlotte & Charles vous concoctent une cuisine végétarienne et végan familiale.",
-	"homeDescriptionText2": "Ouverts du lundi au samedi de 09h à 17h, nous vous accueillons pour le petit-déjeuner, le lunch, le goûter, ou simplement une pause café/thé. Du mercredi au samedi, nous sommes ouverts jusque 22h pour boire et/ou manger 🍷",
+	"homeDescriptionText2": "Ouverts du lundi au samedi de 09h à 17h, nous vous accueillons pour le petit-déjeuner, le lunch, le goûter, ou simplement une pause café/thé.",
 	"homeDescriptionText3": "Si vous avez des projets d'événements, n'hésitez pas à faire appel à nous\u00A0! Que ce soit chez nous ou ailleurs, notre service traiteur apporte la saveur d'Archie à vos occasions spéciales.",
 	"homeDescriptionText4": "43, Parvis de Saint-Gilles, Bruxelles",
 	
@@ -21,12 +21,5 @@
 	"menuCatering": "CATERING",
 	"menuAboutUs": "QUI NOUS SOMMES",
 	"menuContact": "CONTACT",
-	"menuGalery": "GALERIE",
-
-	"dialogue1": "Coucou, c'est Charlotte, et voici mon acolyte dans cette aventure\u00A0!",
-	"dialogue2": "Salut tout le monde\u00A0! On dirige ce joyeux projet ensemble. Moi, c'est Charles.",
-	"dialogue3": "Archie, c'est le petit garçon espiègle de Charlotte et je suis accessoirement son oncle préféré\u00A0!",
-	"dialogue4": "Venez nous rendre visite et restez connecté·e·s pour suivre nos aventures\u00A0!",
-	"dialoguesPhone": "Bonjour, c'est Charlotte et Charles\u00A0! On dirige ce joyeux projet ensemble. Archie, c'est le petit garçon espiègle de Charlotte. Venez nous rendre visite et restez connecté·e·s pour suivre nos aventures\u00A0!"
-
+	"menuGalery": "GALERIE"
 }

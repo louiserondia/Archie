@@ -1,6 +1,6 @@
 {
 	"homeDescriptionText1": "Welkom bij Archie, waar Charlotte & Charles een vegetarische en veganistische keuken presenteren.",
-	"homeDescriptionText2": "Geopend van maandag tot en met zaterdag van 09.00 tot 17.00 uur, verwelkomen we u graag voor ontbijt, lunch, snacks of gewoon een koffie-/theepauze. Van woensdag t/m zaterdag zijn wij tot 22.00 uur geopend om te borrelen en/of eten🍷",
+	"homeDescriptionText2": "Geopend van maandag tot en met zaterdag van 09.00 tot 17.00 uur, verwelkomen we u graag voor ontbijt, lunch, snacks of gewoon een koffie-/theepauze.",
 	"homeDescriptionText3": "Als u plannen heeft voor evenementen, aarzel dan niet om contact met ons op te nemen! Of het nu bij ons is of elders, onze cateringservice brengt de smaak van Archie naar uw speciale gelegenheden.",
 	"homeDescriptionText4": "Sint-Gillisvoorplein 43, Brussel",
 
@@ -21,11 +21,5 @@
 	"menuCatering": "CATERING",
 	"menuAboutUs": "OVER ONS",
 	"menuContact": "CONTACT",
-	"menuGalery": "GALERIJ",
-
-	"dialogue1": "Hallo, met Charlotte, en hier is mijn kompaan in dit avontuur.",
-	"dialogue2": "Hallo allemaal! We leiden dit vrolijke project samen. Ik ben Charles!",
-	"dialogue3": "Archie is het ondeugende zoontje van Charlotte, en ik ben toevallig zijn favoriete oom!",
-	"dialogue4": "Kom ons bezoeken en blijf verbonden om onze avonturen te volgen!",
-	"dialoguesPhone": "Hallo, met Charlotte en Charles. We leiden dit vrolijke project samen. Archie is het ondeugende zoontje van Charlotte! Kom ons bezoeken en blijf verbonden om onze avonturen te volgen!"
+	"menuGalery": "GALERIJ"
 }
