@@ -1,6 +1,6 @@
 {
 	"homeDescriptionText1": "Welcome to Archie, where Charlotte & Charles offer friendly vegetarian and vegan cuisine.",
-	"homeDescriptionText2": "Open Monday to Saturday from 09:00 to 17:00, we are delighted to welcome you for breakfast, lunch, snacks, or just a coffee/tea break. From Wednesday to Saturday, we're open until 22PM to drink and/or eat🍷",
+	"homeDescriptionText2": "Open Monday to Saturday from 09:00 to 17:00, we are delighted to welcome you for breakfast, lunch, snacks, or just a coffee/tea break.",
 	"homeDescriptionText3": "If you have event plans, feel free to reach out to us! Whether it's at our place or elsewhere, our catering service brings the flavor of Archie to your special occasions.",
 	"homeDescriptionText4": "43, Parvis de Saint-Gilles, Brussels",
 
@@ -21,12 +21,5 @@
 	"menuCatering": "CATERING",
 	"menuAboutUs": "ABOUT US",
 	"menuContact": "CONTACT",
-	"menuGalery": "GALERY",
-
-	"dialogue1": "Hello, it's Charlotte, and here is my sidekick in this adventure.",
-	"dialogue2": "Hi everyone! We're leading this cheerful project together. I'm Charles!",
-	"dialogue3": "Archie is Charlotte's mischievous little boy, and I happen to be his favorite uncle!",
-	"dialogue4": "Come visit us and stay connected to follow our adventures!",
-	"dialoguesPhone": "Hi everyone, it's Charlotte and Charles! We're leading this cheerful project together. Archie is Charlotte's mischievous young boy! Come visit us and stay connected to follow our adventures!"
-	  
+	"menuGalery": "GALERY" 
 }
